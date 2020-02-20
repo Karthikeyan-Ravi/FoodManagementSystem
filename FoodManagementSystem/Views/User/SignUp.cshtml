@@ -1,0 +1,66 @@
+﻿@model FoodManagementSystem.Entity.CustomerFields
+
+@{
+    ViewBag.Title = "SignUp";
+}
+
+<h2>SignUp</h2>
+@using (Html.BeginForm("SignUp", "User", FormMethod.Post))
+{
+    <table>
+        <tr>
+            <td>
+                @Html.Label("Fullname")
+            </td>
+            <td>
+                @Html.TextBoxFor(Model => Model.FullName)
+            </td>
+        </tr>
+        <tr>
+            <td>
+                @Html.Label("PhoneNumber")
+            </td>
+            <td>
+                @Html.TextBoxFor(Model => Model.PhoneNumber)
+            </td>
+        </tr>
+        <tr>
+            <td>
+                @Html.Label("Gender")
+            </td>
+            <td>
+                @Html.EnumDropDownListFor(Model => Model.Gender)
+            </td>
+        </tr>
+        <tr>
+            <td>
+                @Html.Label("Email")
+            </td>
+            <td>
+                @Html.TextBoxFor(Model => Model.Mail)
+            </td>
+        </tr>
+        <tr>
+            <td>
+                @Html.Label("Password")
+            </td>
+            <td>
+                @Html.TextBoxFor(Model => Model.Password)
+            </td>
+        </tr>
+        <tr>
+            <td>
+                @Html.Label("Role")
+            </td>
+            <td>
+                @Html.RadioButtonFor(Model => Model.Role, "admin")Admin<br /> @Html.RadioButtonFor(Model => Model.Role, "user")User
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <input type="submit" id="register" value="Register" />
+            </td>
+        </tr>
+    </table>
+}
+
