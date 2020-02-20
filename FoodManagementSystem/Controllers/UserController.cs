@@ -1,4 +1,5 @@
-﻿using System;
+﻿using FoodManagementSystem.Entity;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
@@ -13,8 +14,21 @@ namespace FoodManagementSystem.Controllers
         {
             return View();
         }
+        [HttpGet]
         public ActionResult SignUp()
         {
+
+            return View();
+        }
+
+        [HttpPost]
+        public ActionResult SignUp(CustomerFields customer)
+        {
+            if (ModelState.IsValid)
+            {
+                return View(customer);
+            }
+
             return View();
         }
         public ActionResult SignIn()

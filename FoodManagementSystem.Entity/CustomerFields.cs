@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -14,11 +15,14 @@ namespace FoodManagementSystem.Entity
     }
     public class CustomerFields
     {
+        [Required(ErrorMessage ="Name required")]
         public string FullName
         {
             get;
             set;
         }
+        [Required(ErrorMessage = "Phone number required")]
+        [DataType(DataType.PhoneNumber)]
         public long PhoneNumber
         {
             get;
@@ -29,20 +33,30 @@ namespace FoodManagementSystem.Entity
             get;
             set;
         }
+        [Required(ErrorMessage = "Email required")]
+        [DataType(DataType.EmailAddress)]
         public string Mail
         {
             get;
             set;
         }
+        [Required]
+        [DataType(DataType.Password)]
+        [RegularExpression(@"((?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?=.*[@#$%]).{6,20})", ErrorMessage ="Invalid Password")]
         public string Password
         {
             get;
             set;
         }
+        [Required]
         public string Role
         {
             get;
             set;
+        }
+        public CustomerFields()
+        {
+
         }
         public CustomerFields(string fullName, long phoneNumber, string mail, string password, string role)
         {

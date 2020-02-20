@@ -8,12 +8,14 @@
 @using (Html.BeginForm("SignUp", "User", FormMethod.Post))
 {
     <table>
+        @Html.ValidationSummary(true)
         <tr>
             <td>
                 @Html.Label("Fullname")
             </td>
             <td>
                 @Html.TextBoxFor(Model => Model.FullName)
+                @Html.ValidationMessageFor(Model => Model.FullName)
             </td>
         </tr>
         <tr>
@@ -22,6 +24,7 @@
             </td>
             <td>
                 @Html.TextBoxFor(Model => Model.PhoneNumber)
+                @Html.ValidationMessageFor(Model => Model.PhoneNumber)
             </td>
         </tr>
         <tr>
@@ -35,9 +38,11 @@
         <tr>
             <td>
                 @Html.Label("Email")
+
             </td>
             <td>
                 @Html.TextBoxFor(Model => Model.Mail)
+                @Html.ValidationMessageFor(Model=>Model.Mail)
             </td>
         </tr>
         <tr>
@@ -46,6 +51,7 @@
             </td>
             <td>
                 @Html.TextBoxFor(Model => Model.Password)
+                @Html.ValidationMessageFor(Model=>Model.Password)
             </td>
         </tr>
         <tr>
@@ -54,6 +60,7 @@
             </td>
             <td>
                 @Html.RadioButtonFor(Model => Model.Role, "admin")Admin<br /> @Html.RadioButtonFor(Model => Model.Role, "user")User
+                @Html.ValidationMessageFor(Model => Model.Role)
             </td>
         </tr>
         <tr>
@@ -61,6 +68,7 @@
                 <input type="submit" id="register" value="Register" />
             </td>
         </tr>
+
     </table>
 }
 
