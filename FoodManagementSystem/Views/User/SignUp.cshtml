@@ -70,5 +70,14 @@
         </tr>
 
     </table>
+    <div>
+        @Html.Partial("PartialViewDemo")
+        @{ 
+            Html.RenderPartial("SignIn");
+        }
+        @{ 
+            Html.RenderAction("SignIn");
+        }
+    </div>
 }
 

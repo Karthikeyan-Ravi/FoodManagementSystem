@@ -138,6 +138,7 @@
     <Content Include="Views\User\SignIn.cshtml" />
     <Content Include="Views\Home\RunMaster.cshtml" />
     <Content Include="Views\Shared\MasterPage.cshtml" />
+    <Content Include="Views\Shared\PartialViewDemo.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

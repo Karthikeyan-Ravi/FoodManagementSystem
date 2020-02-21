@@ -16,13 +16,14 @@ namespace FoodManagementSystem.Entity
     public class CustomerFields
     {
         [Required(ErrorMessage ="Name required")]
+        [MaxLength(5)]
         public string FullName
         {
             get;
             set;
         }
         [Required(ErrorMessage = "Phone number required")]
-        [DataType(DataType.PhoneNumber)]
+        [DataType(DataType.PhoneNumber),MaxLength(10)]
         public long PhoneNumber
         {
             get;
