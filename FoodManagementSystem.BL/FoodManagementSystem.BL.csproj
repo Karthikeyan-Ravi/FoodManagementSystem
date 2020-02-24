@@ -9,9 +9,10 @@
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>FoodManagementSystem.BL</RootNamespace>
     <AssemblyName>FoodManagementSystem.BL</AssemblyName>
-    <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
+    <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <Deterministic>true</Deterministic>
+    <TargetFrameworkProfile />
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
@@ -51,9 +52,20 @@
       <Name>FoodManagementSystem.DAL</Name>
     </ProjectReference>
     <ProjectReference Include="..\FoodManagementSystem.Entity\FoodManagementSystem.Entity.csproj">
-      <Project>{BA141F85-648B-4CD4-8759-73A21C9E820B}</Project>
+      <Project>{ba141f85-648b-4cd4-8759-73a21c9e820b}</Project>
       <Name>FoodManagementSystem.Entity</Name>
     </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Properties\Web.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Properties\Web.Debug.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </None>
+    <None Include="Properties\Web.Release.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </None>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

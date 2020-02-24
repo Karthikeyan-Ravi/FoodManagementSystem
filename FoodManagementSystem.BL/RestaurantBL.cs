@@ -1,11 +1,6 @@
-﻿using FoodManagementSystem.Entity;
-using FoodManagementSystem.DAL;
-using System;
-using System.Collections.Generic;
+﻿using FoodManagementSystem.DAL;
+using FoodManagementSystem.Entity;
 using System.Data;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace FoodManagementSystem.BL
 {
@@ -28,5 +23,7 @@ namespace FoodManagementSystem.BL
         {
             restaurantRepository.InsertRestaurantDetails(restaurantFields);
         }
+
+        
     }
 }
