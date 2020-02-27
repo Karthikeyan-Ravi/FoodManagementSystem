@@ -1,17 +1,17 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio Version 16
-VisualStudioVersion = 16.0.29519.181
+# Visual Studio 14
+VisualStudioVersion = 14.0.25420.1
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FoodManagementSystem", "FoodManagementSystem\FoodManagementSystem.csproj", "{276AE0F6-CC9A-46F7-BC3F-EF491FD585DB}"
-EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FoodManagementSystem.Entity", "FoodManagementSystem.Entity\FoodManagementSystem.Entity.csproj", "{BA141F85-648B-4CD4-8759-73A21C9E820B}"
-EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FoodManagementSystem.DAL", "FoodManagementSystem.DAL\FoodManagementSystem.DAL.csproj", "{ADDAFDA0-8852-4341-9C38-A9ECFB12B0CF}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FoodManagementSystem.BL", "FoodManagementSystem.BL\FoodManagementSystem.BL.csproj", "{3F88BE28-FE95-4DD0-B675-816046728947}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FoodManagementSystem.Common", "FoodManagementSystem.Common\FoodManagementSystem.Common.csproj", "{0D51D956-32AB-4549-A677-1BEBAE034256}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FoodManagementSystem.Entity", "FoodManagementSystem.Entity\FoodManagementSystem.Entity.csproj", "{B73A7A75-DE9F-424D-A5BD-B327D1A6A3F5}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FoodManagementSystem.DAL", "FoodManagementSystem.DAL\FoodManagementSystem.DAL.csproj", "{1E600964-4FE0-41C0-B516-54B07A149A6B}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -23,14 +23,6 @@ Global
 		{276AE0F6-CC9A-46F7-BC3F-EF491FD585DB}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{276AE0F6-CC9A-46F7-BC3F-EF491FD585DB}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{276AE0F6-CC9A-46F7-BC3F-EF491FD585DB}.Release|Any CPU.Build.0 = Release|Any CPU
-		{BA141F85-648B-4CD4-8759-73A21C9E820B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{BA141F85-648B-4CD4-8759-73A21C9E820B}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{BA141F85-648B-4CD4-8759-73A21C9E820B}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{BA141F85-648B-4CD4-8759-73A21C9E820B}.Release|Any CPU.Build.0 = Release|Any CPU
-		{ADDAFDA0-8852-4341-9C38-A9ECFB12B0CF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{ADDAFDA0-8852-4341-9C38-A9ECFB12B0CF}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{ADDAFDA0-8852-4341-9C38-A9ECFB12B0CF}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{ADDAFDA0-8852-4341-9C38-A9ECFB12B0CF}.Release|Any CPU.Build.0 = Release|Any CPU
 		{3F88BE28-FE95-4DD0-B675-816046728947}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{3F88BE28-FE95-4DD0-B675-816046728947}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{3F88BE28-FE95-4DD0-B675-816046728947}.Release|Any CPU.ActiveCfg = Release|Any CPU
@@ -39,6 +31,14 @@ Global
 		{0D51D956-32AB-4549-A677-1BEBAE034256}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{0D51D956-32AB-4549-A677-1BEBAE034256}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{0D51D956-32AB-4549-A677-1BEBAE034256}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B73A7A75-DE9F-424D-A5BD-B327D1A6A3F5}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B73A7A75-DE9F-424D-A5BD-B327D1A6A3F5}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B73A7A75-DE9F-424D-A5BD-B327D1A6A3F5}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B73A7A75-DE9F-424D-A5BD-B327D1A6A3F5}.Release|Any CPU.Build.0 = Release|Any CPU
+		{1E600964-4FE0-41C0-B516-54B07A149A6B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1E600964-4FE0-41C0-B516-54B07A149A6B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1E600964-4FE0-41C0-B516-54B07A149A6B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1E600964-4FE0-41C0-B516-54B07A149A6B}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

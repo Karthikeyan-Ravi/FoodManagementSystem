@@ -1,4 +1,5 @@
 ﻿using FoodManagementSystem.Entity;
+using FoodManagementSystem.DAL;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -12,6 +13,8 @@ namespace FoodManagementSystem.Controllers
         // GET: User
         public ActionResult Index()
         {
+            RestaurantRepository restaurantRepository = new RestaurantRepository();
+            restaurantRepository.GetRestaurantDetails();
             return View();
         }
         [HttpGet]

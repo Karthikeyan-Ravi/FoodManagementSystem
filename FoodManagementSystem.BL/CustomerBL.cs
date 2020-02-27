@@ -1,4 +1,5 @@
-﻿using FoodManagementSystem.DAL;
+﻿
+using FoodManagementSystem.DAL;
 using FoodManagementSystem.Entity;
 
 namespace FoodManagementSystem.BL
@@ -16,3 +17,4 @@ namespace FoodManagementSystem.BL
         }
     }
 }
+

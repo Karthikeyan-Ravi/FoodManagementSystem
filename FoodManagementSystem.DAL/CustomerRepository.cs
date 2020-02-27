@@ -13,7 +13,7 @@ namespace FoodManagementSystem.DAL
     public class CustomerRepository
     {
         SqlConnection sqlConnection;
-        string connectionString = ConfigurationManager.ConnectionStrings["Connection"].ConnectionString;
+        string connectionString = System.Configuration.ConfigurationManager.ConnectionStrings["Connection"].ConnectionString;
 
 
         public bool GetSignUpDetails(CustomerFields customerFields)
@@ -65,5 +65,10 @@ namespace FoodManagementSystem.DAL
                 }
             }
         }
+        //public List<CustomerFields> GetCustomerDetails()
+        //{
+        //    FoodManagementSystemDBContext foodManagementDBContext = new FoodManagementSystemDBContext();
+        //    return foodManagementDBContext.User.ToList();
+        //}
     }
 }

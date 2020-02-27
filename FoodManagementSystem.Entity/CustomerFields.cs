@@ -1,9 +1,10 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.ComponentModel.DataAnnotations;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.ComponentModel.DataAnnotations;
+
 
 namespace FoodManagementSystem.Entity
 {
@@ -15,7 +16,9 @@ namespace FoodManagementSystem.Entity
     }
     public class CustomerFields
     {
-        [Required(ErrorMessage ="Name required")]
+
+
+        [Required(ErrorMessage = "Name required")]
         [MaxLength(5)]
         public string FullName
         {
@@ -23,7 +26,7 @@ namespace FoodManagementSystem.Entity
             set;
         }
         [Required(ErrorMessage = "Phone number required")]
-        [DataType(DataType.PhoneNumber),MaxLength(10)]
+        [DataType(DataType.PhoneNumber), MaxLength(10)]
         public long PhoneNumber
         {
             get;
@@ -43,7 +46,7 @@ namespace FoodManagementSystem.Entity
         }
         [Required]
         [DataType(DataType.Password)]
-        [RegularExpression(@"((?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?=.*[@#$%]).{6,20})", ErrorMessage ="Invalid Password")]
+        [RegularExpression(@"((?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?=.*[@#$%]).{6,20})", ErrorMessage = "Invalid Password")]
         public string Password
         {
             get;
@@ -68,4 +71,6 @@ namespace FoodManagementSystem.Entity
             this.Role = role;
         }
     }
+
 }
+   
