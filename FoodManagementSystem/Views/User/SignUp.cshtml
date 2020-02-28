@@ -1,4 +1,4 @@
-﻿@model FoodManagementSystem.Entity.CustomerFields
+﻿@model FoodManagementSystem.Models.UserSignUpViewModel
 
 @{
     ViewBag.Title = "SignUp";
@@ -11,16 +11,16 @@
         @Html.ValidationSummary(true)
         <tr>
             <td>
-                @Html.Label("Fullname")
+                @Html.LabelFor(Model=>Model.FullName)
             </td>
             <td>
-                @Html.TextBoxFor(Model => Model.FullName)
+                @Html.TextBoxFor(Model =>Model.FullName,new {@maxlength=11})
                 @Html.ValidationMessageFor(Model => Model.FullName)
             </td>
         </tr>
         <tr>
             <td>
-                @Html.Label("PhoneNumber")
+                @Html.LabelFor(Model=>Model.PhoneNumber)
             </td>
             <td>
                 @Html.TextBoxFor(Model => Model.PhoneNumber)
@@ -29,7 +29,7 @@
         </tr>
         <tr>
             <td>
-                @Html.Label("Gender")
+                @Html.LabelFor(Model=>Model.Gender)
             </td>
             <td>
                 @Html.EnumDropDownListFor(Model => Model.Gender)
@@ -37,26 +37,26 @@
         </tr>
         <tr>
             <td>
-                @Html.Label("Email")
+                @Html.LabelFor(Model=>Model.Mail)
 
             </td>
             <td>
-                @Html.TextBoxFor(Model => Model.Mail)
+                @Html.TextBoxFor(Model => Model.Mail, new { @maxlength = 64 })
                 @Html.ValidationMessageFor(Model=>Model.Mail)
             </td>
         </tr>
         <tr>
             <td>
-                @Html.Label("Password")
+                @Html.LabelFor(Model=>Model.Password)
             </td>
             <td>
-                @Html.TextBoxFor(Model => Model.Password)
+                @Html.PasswordFor(Model => Model.Password, new { @maxlength = 12 })
                 @Html.ValidationMessageFor(Model=>Model.Password)
             </td>
         </tr>
         <tr>
             <td>
-                @Html.Label("Role")
+                @Html.LabelFor(Model=>Model.Role)
             </td>
             <td>
                 @Html.RadioButtonFor(Model => Model.Role, "admin")Admin<br /> @Html.RadioButtonFor(Model => Model.Role, "user")User
@@ -70,7 +70,7 @@
         </tr>
 
     </table>
-    <div>
+    @*<div>
         @Html.Partial("PartialViewDemo")
         @{ 
             Html.RenderPartial("SignIn");
@@ -78,6 +78,6 @@
         @{ 
             Html.RenderAction("SignIn");
         }
-    </div>
+    </div>*@
 }
 

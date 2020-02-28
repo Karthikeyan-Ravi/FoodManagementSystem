@@ -11,9 +11,9 @@ namespace FoodManagementSystem.BL
         {
             return customerRepository.GetSignUpDetails(customerFields);
         }
-        public string GetLogInDetails(string mail, string password)
+        public string GetLogInDetails(CustomerFields customerFields)
         {
-            return customerRepository.GetLogInDetails(mail, password);
+            return customerRepository.GetLogInDetails(customerFields);
         }
     }
 }

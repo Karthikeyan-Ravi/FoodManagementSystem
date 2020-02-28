@@ -1,4 +1,4 @@
-﻿@model FoodManagementSystem.Entity.CustomerFields
+﻿@model FoodManagementSystem.Models.UserSignInViewModel
 
 @{
     ViewBag.Title = "SignIn";
@@ -10,7 +10,7 @@
     <table>
         <tr>
             <td>
-                @Html.Label("Email")
+                @Html.LabelFor(Model=>Model.Mail, new { @maxlength = 64 })
             </td>
             <td>
                 @Html.TextBoxFor(Model => Model.Mail)
@@ -18,10 +18,10 @@
         </tr>
         <tr>
             <td>
-                @Html.Label("Password")
+                @Html.LabelFor(Model=>Model.Password, new { @maxlength = 12 })
             </td>
             <td>
-                @Html.TextBoxFor(Model => Model.Password)
+                @Html.PasswordFor(Model => Model.Password)
             </td>
         </tr>
     </table>

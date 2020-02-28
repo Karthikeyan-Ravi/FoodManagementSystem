@@ -5,6 +5,8 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
+using FoodManagementSystem.Models;
+using FoodManagementSystem.BL;
 
 namespace FoodManagementSystem.Controllers
 {
@@ -25,17 +27,39 @@ namespace FoodManagementSystem.Controllers
         }
 
         [HttpPost]
-        public ActionResult SignUp(CustomerFields customer)
+        //[ActionName("SignUp")]
+        public ActionResult SignUp(UserSignUpViewModel userSignUpViewModel)
         {
+
             if (ModelState.IsValid)
             {
-                return View(customer);
+                CustomerFields customerFields = new CustomerFields();
+                customerFields.FullName = userSignUpViewModel.FullName;
+                customerFields.Mail = userSignUpViewModel.Mail;
+                customerFields.Password = userSignUpViewModel.Password;
+                customerFields.PhoneNumber = userSignUpViewModel.PhoneNumber;
+                customerFields.Role = userSignUpViewModel.Role;
+                CustomerBL customerBL = new CustomerBL();
+                customerBL.GetSignUpDetails(customerFields);
             }
 
             return View();
         }
         public ActionResult SignIn()
         {
+            return View();
+        }
+        [HttpPost]
+        public ActionResult SignIn(UserSignInViewModel userSignInViewModel)
+        {
+            if(ModelState.IsValid)
+            {
+                CustomerFields customerFields = new CustomerFields();
+                customerFields.Mail = userSignInViewModel.Mail;
+                customerFields.Password = userSignInViewModel.Password;
+                CustomerBL customerBL = new CustomerBL();
+                customerBL.GetLogInDetails(customerFields);
+            }
             return View();
         }
     }

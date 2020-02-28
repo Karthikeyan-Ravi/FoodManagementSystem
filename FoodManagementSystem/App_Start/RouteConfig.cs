@@ -17,7 +17,7 @@ namespace FoodManagementSystem
             routes.MapRoute(
                 name: "Default",
                 url: "{controller}/{action}/{id}",
-                defaults: new { controller = "User", action = "Index", id = UrlParameter.Optional }
+                defaults: new { controller = "User", action = "SignUp", id = UrlParameter.Optional }
             );
         }
     }

@@ -14,11 +14,11 @@ namespace FoodManagementSystem.DAL
         {
 
         }
-        //public DbSet<CustomerFields> User
-        //{
-        //    get;
-        //    set;
-        //}
+        public DbSet<CustomerFields> User
+        {
+            get;
+            set;
+        }
         public DbSet<RestaurantFields> Restaurant
         {
             get;

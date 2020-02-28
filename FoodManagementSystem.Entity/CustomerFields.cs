@@ -4,6 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
 
 
 namespace FoodManagementSystem.Entity
@@ -16,17 +17,21 @@ namespace FoodManagementSystem.Entity
     }
     public class CustomerFields
     {
-
+        [Key]
+        [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
+        public int UserID
+        {
+            get;
+            set;
+        }
 
         [Required(ErrorMessage = "Name required")]
-        [MaxLength(5)]
         public string FullName
         {
             get;
             set;
         }
         [Required(ErrorMessage = "Phone number required")]
-        [DataType(DataType.PhoneNumber), MaxLength(10)]
         public long PhoneNumber
         {
             get;
@@ -38,15 +43,12 @@ namespace FoodManagementSystem.Entity
             set;
         }
         [Required(ErrorMessage = "Email required")]
-        [DataType(DataType.EmailAddress)]
         public string Mail
         {
             get;
             set;
         }
         [Required]
-        [DataType(DataType.Password)]
-        [RegularExpression(@"((?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?=.*[@#$%]).{6,20})", ErrorMessage = "Invalid Password")]
         public string Password
         {
             get;
@@ -62,14 +64,14 @@ namespace FoodManagementSystem.Entity
         {
 
         }
-        public CustomerFields(string fullName, long phoneNumber, string mail, string password, string role)
-        {
-            this.FullName = fullName;
-            this.PhoneNumber = phoneNumber;
-            this.Mail = mail;
-            this.Password = password;
-            this.Role = role;
-        }
+        //public CustomerFields(string fullName, long phoneNumber, string mail, string password, string role)
+        //{
+        //    this.FullName = fullName;
+        //    this.PhoneNumber = phoneNumber;
+        //    this.Mail = mail;
+        //    this.Password = password;
+        //    this.Role = role;
+        //}
     }
 
 }
