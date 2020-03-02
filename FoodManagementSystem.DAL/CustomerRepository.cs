@@ -45,6 +45,16 @@ namespace FoodManagementSystem.DAL
         }
         public string GetLogInDetails(CustomerFields customerFields)
         {
+            FoodManagementSystemDBContext dbContext = new FoodManagementSystemDBContext();
+            List<CustomerFields> customer = dbContext.User.ToList();
+            foreach(var value in customer)
+            {
+                if (customerFields.Mail == value.Mail && customerFields.Password == value.Password)
+                {
+                    return value.Role;
+                }
+            }
+            return "Error";
             //string query = "Sp_LogIn";
             //using (sqlConnection = new SqlConnection(connectionString))
             //{
@@ -68,7 +78,6 @@ namespace FoodManagementSystem.DAL
             //        return "LogIn failed";
             //    }
             //}
-            return "kjfsd";
         }
         public List<CustomerFields> GetCustomerDetails()
         {

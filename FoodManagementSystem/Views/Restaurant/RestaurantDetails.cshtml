@@ -1,0 +1,40 @@
+﻿@model FoodManagementSystem.Models.RestaurantViewModel
+
+@{
+    ViewBag.Title = "RestaurantDetails";
+}
+
+<h2>RestaurantDetails</h2>
+
+@using (Html.BeginForm("RestaurantDetails", "Restaurant", FormMethod.Post))
+{
+    <table>
+        <tr>
+            <td>
+                @Html.LabelFor(Model=>Model.RestaurantName)
+            </td>
+            <td>
+                @Html.TextBoxFor(Model=>Model.RestaurantName)
+            </td>
+        </tr>
+        <tr>
+            <td>
+                @Html.LabelFor(Model => Model.RestaurantType)
+            </td>
+            <td>
+                @Html.TextBoxFor(Model => Model.RestaurantType)
+            </td>
+        </tr>
+        <tr>
+            <td>
+                @Html.LabelFor(Model => Model.Location)
+            </td>
+            <td>
+                @Html.TextBoxFor(Model => Model.Location)
+            </td>
+        </tr>
+    </table>
+    <a>
+        <input type="submit" id="addRestaurant" value="Add" />
+    </a>
+}

@@ -60,5 +60,4 @@ namespace FoodManagementSystem.Models
                 set;
             }
         }
-    
 }

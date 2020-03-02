@@ -12,6 +12,13 @@ namespace FoodManagementSystem.DAL
 {
     public class RestaurantRepository
     {
+        FoodManagementSystemDBContext dbContext = new FoodManagementSystemDBContext();
+        public void AddRestaurant(RestaurantFields restaurantFields)
+        {
+            
+            dbContext.Restaurant.Add(restaurantFields);
+            dbContext.SaveChanges();
+        }
         //SqlConnection sqlConnection;
         //string connectionString = ConfigurationManager.ConnectionStrings["Connection"].ConnectionString;
         //public DataTable DisplayRestaurantDetails()
@@ -74,6 +81,21 @@ namespace FoodManagementSystem.DAL
             FoodManagementSystemDBContext foodManagementDBContext = new FoodManagementSystemDBContext();
             return foodManagementDBContext.Restaurant.ToList();
         }
-
+        public RestaurantFields GetRestaurantId(int restaurantId)
+        {
+            return dbContext.Restaurant.ToList().Where(id => id.RestaurantID == restaurantId).SingleOrDefault();
+        }
+        public void UpdateRestaurant(RestaurantFields restaurantFields)
+        {
+            dbContext.Entry(restaurantFields).State = System.Data.Entity.EntityState.Modified;
+            dbContext.SaveChanges();
+        }
+        public void DeleteRestaurant(int id)
+        {
+            RestaurantFields restaurantFields = GetRestaurantId(id);
+            dbContext.Restaurant.Attach(restaurantFields);
+            dbContext.Restaurant.Remove(restaurantFields);
+            dbContext.SaveChanges();
+        }
     }
 }

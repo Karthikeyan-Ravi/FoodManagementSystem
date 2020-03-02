@@ -56,6 +56,19 @@
   <ItemGroup>
     <Compile Include="CustomerRepository.cs" />
     <Compile Include="FoodManagementSystemDBContext.cs" />
+    <Compile Include="Migrations\202002280934129_InitialCreate.cs" />
+    <Compile Include="Migrations\202002280934129_InitialCreate.designer.cs">
+      <DependentUpon>202002280934129_InitialCreate.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202002290951383_columnUpdate.cs" />
+    <Compile Include="Migrations\202002290951383_columnUpdate.designer.cs">
+      <DependentUpon>202002290951383_columnUpdate.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202003021247147_New.cs" />
+    <Compile Include="Migrations\202003021247147_New.designer.cs">
+      <DependentUpon>202003021247147_New.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="RestaurantRepository.cs" />
   </ItemGroup>
@@ -68,6 +81,17 @@
   <ItemGroup>
     <None Include="App.config" />
     <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Migrations\202002280934129_InitialCreate.resx">
+      <DependentUpon>202002280934129_InitialCreate.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202002290951383_columnUpdate.resx">
+      <DependentUpon>202002290951383_columnUpdate.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202003021247147_New.resx">
+      <DependentUpon>202003021247147_New.cs</DependentUpon>
+    </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">

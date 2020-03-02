@@ -1,0 +1,40 @@
+﻿@model FoodManagementSystem.Models.RestaurantViewModel
+
+@{
+    ViewBag.Title = "Index";
+}
+@Html.ActionLink("Add restaurant", "RestaurantDetails")
+<h2>Index</h2>
+<table border="1">
+    <tr>
+        <td>
+            RestaurantName
+        </td>
+        <td>
+            RestaurantType
+        </td>
+        <td>
+            Location
+        </td>
+    </tr>
+    @foreach (var items in ViewBag.RestaurantDetails)
+    {
+        <tr>
+            <td>
+                @items.RestaurantName
+            </td>
+            <td>
+                @items.RestaurantType
+            </td>
+            <td>
+                @items.Location
+            </td>
+            <td>
+                @Html.ActionLink("Edit", "Edit", new { id = items.RestaurantID})
+                @Html.ActionLink("Delete", "Delete", new { id = items.RestaurantID })
+            </td>
+        </tr>
+    }
+</table>
+
+

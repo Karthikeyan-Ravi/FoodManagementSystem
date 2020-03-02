@@ -1,12 +1,13 @@
 ﻿using FoodManagementSystem.DAL;
 using System.Data;
 using FoodManagementSystem.Entity;
+using System.Collections.Generic;
 
 namespace FoodManagementSystem.BL
 {
-    class RestaurantBL
+    public class RestaurantBL
     {
-        //RestaurantRepository restaurantRepository = new RestaurantRepository();
+        RestaurantRepository restaurantRepository = new RestaurantRepository();
         //public DataTable DisplayRestaurantDetails()
         //{
         //    return restaurantRepository.DisplayRestaurantDetails();
@@ -19,11 +20,26 @@ namespace FoodManagementSystem.BL
         //{
         //    restaurantRepository.DeleteRestaurantDetails(id);
         //}
-        //public void InsertRestaurantDetails(RestaurantFields restaurantFields)
-        //{
-        //    restaurantRepository.InsertRestaurantDetails(restaurantFields);
-        //}
-
-        
+        public void AddtRestaurant(RestaurantFields restaurantFields)
+        {
+            restaurantRepository.AddRestaurant(restaurantFields);
+        }  
+        public List<RestaurantFields> GetRestaurantDetails()
+        {
+            return restaurantRepository.GetRestaurantDetails();
+        }     
+        public RestaurantFields GetRestaurantId(int id)
+        {
+            return restaurantRepository.GetRestaurantId(id);
+        }
+        public void UpdateRestaurant(RestaurantFields restaurantFields)
+        {
+            restaurantRepository.UpdateRestaurant(restaurantFields);
+        }
+        public void DeleteRestaurant(int id)
+        {
+            restaurantRepository.DeleteRestaurant(id);
+        }
     }
 }
+  

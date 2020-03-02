@@ -15,8 +15,8 @@ namespace FoodManagementSystem.Controllers
         // GET: User
         public ActionResult Index()
         {
-            RestaurantRepository restaurantRepository = new RestaurantRepository();
-            restaurantRepository.GetRestaurantDetails();
+            //RestaurantRepository restaurantRepository = new RestaurantRepository();
+            //restaurantRepository.GetRestaurantDetails();
             return View();
         }
         [HttpGet]
@@ -58,9 +58,18 @@ namespace FoodManagementSystem.Controllers
                 customerFields.Mail = userSignInViewModel.Mail;
                 customerFields.Password = userSignInViewModel.Password;
                 CustomerBL customerBL = new CustomerBL();
-                customerBL.GetLogInDetails(customerFields);
+                string role=customerBL.GetLogInDetails(customerFields);
+                if(role=="Admin")
+                {
+                    Response.Write("Login successful");
+                }
+                else
+                {
+
+                }
             }
             return View();
         }
+        
     }
 }
