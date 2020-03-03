@@ -46,8 +46,8 @@ namespace FoodManagementSystem.DAL
         public string GetLogInDetails(CustomerFields customerFields)
         {
             FoodManagementSystemDBContext dbContext = new FoodManagementSystemDBContext();
-            List<CustomerFields> customer = dbContext.User.ToList();
-            foreach(var value in customer)
+            IEnumerable<CustomerFields> customer = dbContext.User.ToList();
+            foreach(CustomerFields value in customer)
             {
                 if (customerFields.Mail == value.Mail && customerFields.Password == value.Password)
                 {

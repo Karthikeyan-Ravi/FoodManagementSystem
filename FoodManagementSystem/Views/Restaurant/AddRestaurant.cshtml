@@ -1,20 +1,20 @@
 ﻿@model FoodManagementSystem.Models.RestaurantViewModel
 
 @{
-    ViewBag.Title = "RestaurantDetails";
+    ViewBag.Title = "AddRestaurant";
 }
 
-<h2>RestaurantDetails</h2>
+<h2>AddRestaurant</h2>
 
-@using (Html.BeginForm("RestaurantDetails", "Restaurant", FormMethod.Post))
+@using (Html.BeginForm("AddRestaurant", "Restaurant", FormMethod.Post))
 {
-    <table>
+    <table class="RestaurantContent">
         <tr>
             <td>
-                @Html.LabelFor(Model=>Model.RestaurantName)
+                @Html.LabelFor(Model => Model.RestaurantName)
             </td>
             <td>
-                @Html.TextBoxFor(Model=>Model.RestaurantName)
+                @Html.TextBoxFor(Model => Model.RestaurantName)
             </td>
         </tr>
         <tr>
@@ -35,6 +35,6 @@
         </tr>
     </table>
     <a>
-        <input type="submit" id="addRestaurant" value="Add" />
+        <input class="BtnStyle" type="submit" id="addRestaurant" value="Add" />
     </a>
 }

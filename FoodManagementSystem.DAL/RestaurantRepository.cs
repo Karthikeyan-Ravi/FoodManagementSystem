@@ -83,16 +83,16 @@ namespace FoodManagementSystem.DAL
         }
         public RestaurantFields GetRestaurantId(int restaurantId)
         {
-            return dbContext.Restaurant.ToList().Where(id => id.RestaurantID == restaurantId).SingleOrDefault();
+            return dbContext.Restaurant.Where(id => id.RestaurantID == restaurantId).SingleOrDefault();
         }
         public void UpdateRestaurant(RestaurantFields restaurantFields)
         {
             dbContext.Entry(restaurantFields).State = System.Data.Entity.EntityState.Modified;
             dbContext.SaveChanges();
         }
-        public void DeleteRestaurant(int id)
+        public void DeleteRestaurant(RestaurantFields restaurantFields)
         {
-            RestaurantFields restaurantFields = GetRestaurantId(id);
+            //RestaurantFields restaurantFields = GetRestaurantId(id);
             dbContext.Restaurant.Attach(restaurantFields);
             dbContext.Restaurant.Remove(restaurantFields);
             dbContext.SaveChanges();

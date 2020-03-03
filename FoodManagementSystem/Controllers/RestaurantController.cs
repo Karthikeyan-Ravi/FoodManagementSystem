@@ -20,19 +20,16 @@ namespace FoodManagementSystem.Controllers
             ViewBag.RestaurantDetails = restaurantDetails;
             return View();
         }
-        public ActionResult RestaurantDetails()
+        public ActionResult AddRestaurant()
         {
             return View();
         }
         [HttpPost]
-        public ActionResult RestaurantDetails(RestaurantViewModel restaurantViewModel)
+        public ActionResult AddRestaurant(RestaurantViewModel restaurantViewModel)
         {
             if (ModelState.IsValid)
             {
-                restaurantFields.RestaurantName = restaurantViewModel.RestaurantName;
-                restaurantFields.RestaurantType = restaurantViewModel.RestaurantType;
-                restaurantFields.Location = restaurantViewModel.Location;
-
+                var restaurantFields = AutoMapper.Mapper.Map<RestaurantViewModel, RestaurantFields>(restaurantViewModel);
                 restaurantBL.AddtRestaurant(restaurantFields);
                 Response.Write("Redtaurant added successfully");
             }
@@ -42,7 +39,34 @@ namespace FoodManagementSystem.Controllers
         {
             RestaurantViewModel restaurantViewModel = new RestaurantViewModel();
             restaurantFields =restaurantBL.GetRestaurantId(id);
+            //var restaurantViewModel = AutoMapper.Mapper.Map<RestaurantFields, RestaurantViewModel>(restaurantFields);
             restaurantViewModel = new RestaurantViewModel();
+
+            restaurantViewModel.RestaurantID = restaurantFields.RestaurantID;
+            restaurantViewModel.RestaurantName = restaurantFields.RestaurantName;
+            restaurantViewModel.RestaurantType = restaurantFields.RestaurantType;
+            restaurantViewModel.Location = restaurantFields.Location;
+            return View(restaurantViewModel);
+            
+        }
+        public ActionResult Update(RestaurantViewModel restaurantViewModel)
+        {
+            if(ModelState.IsValid)
+            {
+                var restaurantFields = AutoMapper.Mapper.Map<RestaurantViewModel, RestaurantFields>(restaurantViewModel);
+                //restaurantFields.RestaurantID = restaurantViewModel.RestaurantID;
+                //restaurantFields.RestaurantName = restaurantViewModel.RestaurantName;
+                //restaurantFields.RestaurantType = restaurantViewModel.RestaurantType;
+                //restaurantFields.Location = restaurantViewModel.Location;
+                restaurantBL.UpdateRestaurant(restaurantFields);
+                return RedirectToAction("Index");
+            }
+            return View();
+        }
+        public ActionResult Delete(int id)
+        {
+            restaurantFields=restaurantBL.GetRestaurantId(id);
+            RestaurantViewModel restaurantViewModel = new RestaurantViewModel();
             if(ModelState.IsValid)
             {
                 restaurantViewModel.RestaurantID = restaurantFields.RestaurantID;
@@ -52,24 +76,15 @@ namespace FoodManagementSystem.Controllers
                 return View(restaurantViewModel);
             }
             return View();
-
         }
-        public ActionResult Update(RestaurantViewModel restaurantViewModel)
+        [HttpPost]
+        public ActionResult Delete(RestaurantViewModel restaurantViewModel)
         {
-            if(ModelState.IsValid)
-            {
-                restaurantFields.RestaurantID = restaurantViewModel.RestaurantID;
-                restaurantFields.RestaurantName = restaurantViewModel.RestaurantName;
-                restaurantFields.RestaurantType = restaurantViewModel.RestaurantType;
-                restaurantFields.Location = restaurantViewModel.Location;
-                restaurantBL.UpdateRestaurant(restaurantFields);
-                return RedirectToAction("Index");
-            }
-            return View();
-        }
-        public ActionResult Delete(int id)
-        {
-            restaurantBL.DeleteRestaurant(id);
+            restaurantFields.RestaurantID = restaurantViewModel.RestaurantID;
+            restaurantFields.RestaurantName = restaurantViewModel.RestaurantName;
+            restaurantFields.RestaurantType = restaurantViewModel.RestaurantType;
+            restaurantFields.Location = restaurantViewModel.Location;
+            restaurantBL.DeleteRestaurant(restaurantFields);
             return RedirectToAction("Index");
         }
    }

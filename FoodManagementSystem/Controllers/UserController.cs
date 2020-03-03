@@ -10,6 +10,7 @@ using FoodManagementSystem.BL;
 
 namespace FoodManagementSystem.Controllers
 {
+    [HandleError]
     public class UserController : Controller
     {
         // GET: User
@@ -33,17 +34,12 @@ namespace FoodManagementSystem.Controllers
 
             if (ModelState.IsValid)
             {
-                CustomerFields customerFields = new CustomerFields();
-                customerFields.FullName = userSignUpViewModel.FullName;
-                customerFields.Mail = userSignUpViewModel.Mail;
-                customerFields.Password = userSignUpViewModel.Password;
-                customerFields.PhoneNumber = userSignUpViewModel.PhoneNumber;
-                customerFields.Role = userSignUpViewModel.Role;
+                var customerFields = AutoMapper.Mapper.Map<UserSignUpViewModel, CustomerFields>(userSignUpViewModel);
                 CustomerBL customerBL = new CustomerBL();
                 customerBL.GetSignUpDetails(customerFields);
             }
 
-            return View();
+            return RedirectToAction("SignIn");
         }
         public ActionResult SignIn()
         {
@@ -54,18 +50,20 @@ namespace FoodManagementSystem.Controllers
         {
             if(ModelState.IsValid)
             {
-                CustomerFields customerFields = new CustomerFields();
-                customerFields.Mail = userSignInViewModel.Mail;
-                customerFields.Password = userSignInViewModel.Password;
+                var customerFields= AutoMapper.Mapper.Map<UserSignInViewModel, CustomerFields>(userSignInViewModel);
                 CustomerBL customerBL = new CustomerBL();
                 string role=customerBL.GetLogInDetails(customerFields);
                 if(role=="Admin")
                 {
-                    Response.Write("Login successful");
+                    return RedirectToAction("Index", "Restaurant");
+                }
+                else if(role=="User")
+                {
+
                 }
                 else
                 {
-
+                    Response.Write("Invalid Email and Password");
                 }
             }
             return View();

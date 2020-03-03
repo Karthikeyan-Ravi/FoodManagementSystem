@@ -6,11 +6,12 @@
     <meta name="viewport" content="width=device-width" />
     <title>@ViewBag.Title</title>
 </head>
-<body>
-    <div>
+<body class="BackgroundImg">
+    <div class="MasterPageLink">
         @Html.ActionLink("SignUp", "SignUp", "User")
         @Html.ActionLink("SignIn", "SignIn", "User")
-        @RenderBody()
     </div>
+        @RenderBody()
+  
 </body>
 </html>

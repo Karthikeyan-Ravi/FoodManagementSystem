@@ -36,9 +36,9 @@ namespace FoodManagementSystem.BL
         {
             restaurantRepository.UpdateRestaurant(restaurantFields);
         }
-        public void DeleteRestaurant(int id)
+        public void DeleteRestaurant(RestaurantFields restaurantFields)
         {
-            restaurantRepository.DeleteRestaurant(id);
+            restaurantRepository.DeleteRestaurant(restaurantFields);
         }
     }
 }

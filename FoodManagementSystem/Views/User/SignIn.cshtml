@@ -3,32 +3,34 @@
 @{
     ViewBag.Title = "SignIn";
 }
-
-<h2>SignIn</h2>
-@using (Html.BeginForm("SignIn", "User", FormMethod.Post))
-{
-    <table>
-        <tr>
-            <td>
-                @Html.LabelFor(Model=>Model.Mail, new { @maxlength = 64 })
-            </td>
-            <td>
-                @Html.TextBoxFor(Model => Model.Mail)
-            </td>
-        </tr>
-        <tr>
-            <td>
-                @Html.LabelFor(Model=>Model.Password, new { @maxlength = 12 })
-            </td>
-            <td>
-                @Html.PasswordFor(Model => Model.Password)
-            </td>
-        </tr>
-    </table>
-    <a>
-        <input type="submit" id="signIn" value="SignIn" />
-    </a>
-    <a href='@Url.Action("SignUp", "User")'>
-        <input type='button' value='SignUp' />
-    </a>
-}
+<div class="Form">
+    <h2>SignIn</h2>
+    @using (Html.BeginForm("SignIn", "User", FormMethod.Post))
+    {
+        <table class="FormContent">
+            <tr>
+                <td>
+                    @Html.LabelFor(Model => Model.Mail, new { @maxlength = 64 })
+                </td>
+                <td>
+                    @Html.TextBoxFor(Model => Model.Mail)
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    @Html.LabelFor(Model => Model.Password, new { @maxlength = 12 })
+                </td>
+                <td>
+                    @Html.PasswordFor(Model => Model.Password)
+                </td>
+            </tr>
+        </table>
+        <a>
+            <input class="BtnStyle" type="submit" id="signIn" value="SignIn" />
+        </a>
+        <p>Don't have an account </p>
+        <a href='@Url.Action("SignUp", "User")'>
+            <input class="BtnStyle" type='button' value='SignUp' />
+        </a>
+    }
+</div>

@@ -9,9 +9,9 @@ namespace FoodManagementSystem.Models
     
         public enum Gender
         {
-            Male,
-            Female,
-            Others
+            M,
+            F,
+            O
         }
         public class UserSignUpViewModel
         {
@@ -46,7 +46,8 @@ namespace FoodManagementSystem.Models
             [Required]
             [DataType(DataType.Password)]
             [Display(Name ="Password")]
-            [RegularExpression(@"((?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?=.*[@#$%]).{6,20})", ErrorMessage = "Invalid Password")]
+            [MaxLength(8)]
+            [RegularExpression(@"([a-z]|[A-Z]|[0-9]|[\\W]){4}[a-zA-Z0-9\\W]{3,15}", ErrorMessage = "Invalid Password")]
             public string Password
             {
                 get;

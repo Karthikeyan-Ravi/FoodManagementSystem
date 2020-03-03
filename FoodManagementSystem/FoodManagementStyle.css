@@ -2,5 +2,43 @@
 }
 .BackgroundImg
 {
-    background-image:url('Images/cooked-food-in-stainless-steel-plate-2641886.jpg')
+    background-image:url(Images/pepperoni-pizza-803290.jpg);
+    background-size:cover;
+    background-repeat:no-repeat;
+    height:60%;
+    width:100%;
+}
+.FormContent
+{
+    font-family:'Times New Roman', Times, serif;
+    color:white;
+}
+.BtnStyle
+{
+    background:transparent;
+    border-color:aqua;
+    color:white;
+    padding:7px;
+    border-radius:7px;
+}
+a{
+    text-decoration:none;
+    color:white;
+}
+h2{
+    color:yellowgreen;
+}
+.Form{
+    margin-left:10%;
+    font-size:2rem;
+}
+.MasterPageLink{
+    font-family:'Times New Roman', Times, serif;
+    color:yellowgreen;
+    font-size:1.5rem;
+    margin-left:90%;
+}
+.RestaurantContent{
+    font-family:'Times New Roman', Times, serif;
+    color:white;
 }

@@ -4,80 +4,93 @@
     ViewBag.Title = "SignUp";
 }
 
-<h2>SignUp</h2>
-@using (Html.BeginForm("SignUp", "User", FormMethod.Post))
-{
-    <table>
-        @Html.ValidationSummary(true)
-        <tr>
-            <td>
-                @Html.LabelFor(Model=>Model.FullName)
-            </td>
-            <td>
-                @Html.TextBoxFor(Model =>Model.FullName,new {@maxlength=11})
-                @Html.ValidationMessageFor(Model => Model.FullName)
-            </td>
-        </tr>
-        <tr>
-            <td>
-                @Html.LabelFor(Model=>Model.PhoneNumber)
-            </td>
-            <td>
-                @Html.TextBoxFor(Model => Model.PhoneNumber)
-                @Html.ValidationMessageFor(Model => Model.PhoneNumber)
-            </td>
-        </tr>
-        <tr>
-            <td>
-                @Html.LabelFor(Model=>Model.Gender)
-            </td>
-            <td>
-                @Html.EnumDropDownListFor(Model => Model.Gender)
-            </td>
-        </tr>
-        <tr>
-            <td>
-                @Html.LabelFor(Model=>Model.Mail)
 
-            </td>
-            <td>
-                @Html.TextBoxFor(Model => Model.Mail, new { @maxlength = 64 })
-                @Html.ValidationMessageFor(Model=>Model.Mail)
-            </td>
-        </tr>
-        <tr>
-            <td>
-                @Html.LabelFor(Model=>Model.Password)
-            </td>
-            <td>
-                @Html.PasswordFor(Model => Model.Password, new { @maxlength = 12 })
-                @Html.ValidationMessageFor(Model=>Model.Password)
-            </td>
-        </tr>
-        <tr>
-            <td>
-                @Html.LabelFor(Model=>Model.Role)
-            </td>
-            <td>
-                @Html.RadioButtonFor(Model => Model.Role, "admin")Admin<br /> @Html.RadioButtonFor(Model => Model.Role, "user")User
-                @Html.ValidationMessageFor(Model => Model.Role)
-            </td>
-        </tr>
-        <tr>
-            <td>
-                <input type="submit" id="register" value="Register" />
-            </td>
-        </tr>
+<div class="Form">
+    <h2>SignUp</h2>
+    @using (Html.BeginForm("SignUp", "User", FormMethod.Post))
+    {
+        <table class="FormContent">
+            @Html.ValidationSummary(true)
+            <tr>
+                <td>
+                    @Html.LabelFor(Model => Model.FullName)
+                </td>
+                <td>
+                    @Html.TextBoxFor(Model => Model.FullName, new { @maxlength = 11 })
+                    @Html.ValidationMessageFor(Model => Model.FullName)
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    @Html.LabelFor(Model => Model.PhoneNumber)
+                </td>
+                <td>
+                    @Html.TextBoxFor(Model => Model.PhoneNumber)
+                    @Html.ValidationMessageFor(Model => Model.PhoneNumber)
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    @Html.LabelFor(Model => Model.Gender)
+                </td>
+                <td>
+                    @Html.EnumDropDownListFor(Model => Model.Gender)
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    @Html.LabelFor(Model => Model.Mail)
 
-    </table>
-    @*<div>
-        @Html.Partial("PartialViewDemo")
-        @{ 
-            Html.RenderPartial("SignIn");
-        }
-        @{ 
-            Html.RenderAction("SignIn");
-        }
-    </div>*@
-}
+                </td>
+                <td>
+                    @Html.TextBoxFor(Model => Model.Mail, new { @maxlength = 64 })
+                    @Html.ValidationMessageFor(Model => Model.Mail)
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    @Html.LabelFor(Model => Model.Password)
+                </td>
+                <td>
+                    @Html.PasswordFor(Model => Model.Password, new { @maxlength = 8 })
+                    @Html.ValidationMessageFor(Model => Model.Password)
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    @Html.LabelFor(Model => Model.Role)
+                </td>
+                <td>
+                    @Html.RadioButtonFor(Model => Model.Role, "admin")Admin<br />
+                    @Html.RadioButtonFor(Model => Model.Role, "user")User
+                    @Html.ValidationMessageFor(Model => Model.Role)
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <input class="BtnStyle" type="submit" id="register" value="Register" />
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <p>Have an account</p>
+                </td>
+                <td>
+                    <input class="BtnStyle" type="submit" id="signIn" value="SignIn" />
+                </td>
+            </tr>
+
+        </table>
+        @*<div>
+                @Html.Partial("PartialViewDemo")
+                @{
+                    Html.RenderPartial("SignIn");
+                }
+                @{
+                    Html.RenderAction("SignIn");
+                }
+            </div>*@
+
+    }
+</div>
 

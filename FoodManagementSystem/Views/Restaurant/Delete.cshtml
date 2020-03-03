@@ -1,0 +1,27 @@
+﻿@model FoodManagementSystem.Models.RestaurantViewModel
+
+@{
+    ViewBag.Title = "Delete";
+}
+
+<h2>Delete</h2>
+@using (Html.BeginForm("Delete", "Restaurant", FormMethod.Post))
+{
+    @Html.HiddenFor(Model=>Model.RestaurantID)
+    <table class="RestaurantContent">
+        <tr>
+            <td>RestaurantName</td>
+            <td>@Html.DisplayFor(Model=>Model.RestaurantName)</td>
+        </tr>
+        <tr>
+            <td>RestaurantType</td>
+            <td>@Html.DisplayFor(Model => Model.RestaurantType)</td>
+        </tr>
+        <tr>
+            <td>Location</td>
+            <td>@Html.DisplayFor(Model => Model.Location)</td>
+        </tr>
+    </table>
+    <input class="BtnStyle" type="submit" value="Confirm" />
+    @Html.ActionLink("Cancel","Index")
+}
