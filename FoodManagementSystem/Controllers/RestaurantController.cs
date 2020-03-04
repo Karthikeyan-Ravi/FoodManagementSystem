@@ -31,21 +31,21 @@ namespace FoodManagementSystem.Controllers
             {
                 var restaurantFields = AutoMapper.Mapper.Map<RestaurantViewModel, RestaurantFields>(restaurantViewModel);
                 restaurantBL.AddtRestaurant(restaurantFields);
-                Response.Write("Redtaurant added successfully");
+                return RedirectToAction("Index");
             }
             return View();
         }
         public ActionResult Edit(int id)
         {
-            RestaurantViewModel restaurantViewModel = new RestaurantViewModel();
+            //RestaurantViewModel restaurantViewModel = new RestaurantViewModel();
             restaurantFields =restaurantBL.GetRestaurantId(id);
-            //var restaurantViewModel = AutoMapper.Mapper.Map<RestaurantFields, RestaurantViewModel>(restaurantFields);
-            restaurantViewModel = new RestaurantViewModel();
+            var restaurantViewModel = AutoMapper.Mapper.Map<RestaurantFields, RestaurantViewModel>(restaurantFields);
+            //restaurantViewModel = new RestaurantViewModel();
 
-            restaurantViewModel.RestaurantID = restaurantFields.RestaurantID;
-            restaurantViewModel.RestaurantName = restaurantFields.RestaurantName;
-            restaurantViewModel.RestaurantType = restaurantFields.RestaurantType;
-            restaurantViewModel.Location = restaurantFields.Location;
+            //restaurantViewModel.RestaurantID = restaurantFields.RestaurantID;
+            //restaurantViewModel.RestaurantName = restaurantFields.RestaurantName;
+            //restaurantViewModel.RestaurantType = restaurantFields.RestaurantType;
+            //restaurantViewModel.Location = restaurantFields.Location;
             return View(restaurantViewModel);
             
         }
@@ -66,13 +66,14 @@ namespace FoodManagementSystem.Controllers
         public ActionResult Delete(int id)
         {
             restaurantFields=restaurantBL.GetRestaurantId(id);
-            RestaurantViewModel restaurantViewModel = new RestaurantViewModel();
+            var restaurantViewModel = AutoMapper.Mapper.Map<RestaurantFields, RestaurantViewModel>(restaurantFields);
+            //estaurantViewModel restaurantViewModel = new RestaurantViewModel();
             if(ModelState.IsValid)
             {
-                restaurantViewModel.RestaurantID = restaurantFields.RestaurantID;
-                restaurantViewModel.RestaurantName = restaurantFields.RestaurantName;
-                restaurantViewModel.RestaurantType = restaurantFields.RestaurantType;
-                restaurantViewModel.Location = restaurantFields.Location;
+                //restaurantViewModel.RestaurantID = restaurantFields.RestaurantID;
+                //restaurantViewModel.RestaurantName = restaurantFields.RestaurantName;
+                //restaurantViewModel.RestaurantType = restaurantFields.RestaurantType;
+                //restaurantViewModel.Location = restaurantFields.Location;
                 return View(restaurantViewModel);
             }
             return View();
@@ -80,10 +81,11 @@ namespace FoodManagementSystem.Controllers
         [HttpPost]
         public ActionResult Delete(RestaurantViewModel restaurantViewModel)
         {
-            restaurantFields.RestaurantID = restaurantViewModel.RestaurantID;
-            restaurantFields.RestaurantName = restaurantViewModel.RestaurantName;
-            restaurantFields.RestaurantType = restaurantViewModel.RestaurantType;
-            restaurantFields.Location = restaurantViewModel.Location;
+            var restaurantFields = AutoMapper.Mapper.Map<RestaurantViewModel, RestaurantFields>(restaurantViewModel);
+            //restaurantFields.RestaurantID = restaurantViewModel.RestaurantID;
+            //restaurantFields.RestaurantName = restaurantViewModel.RestaurantName;
+            //restaurantFields.RestaurantType = restaurantViewModel.RestaurantType;
+            //restaurantFields.Location = restaurantViewModel.Location;
             restaurantBL.DeleteRestaurant(restaurantFields);
             return RedirectToAction("Index");
         }

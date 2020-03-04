@@ -4,38 +4,41 @@
     ViewBag.Title = "Index";
 }
 <br />
-@Html.ActionLink("Add restaurant", "AddRestaurant")
-<h2>Restaurant Details</h2>
-<table border="1" class="RestaurantContent">
-    <tr>
-        <td>
-            RestaurantName
-        </td>
-        <td>
-            RestaurantType
-        </td>
-        <td>
-            Location
-        </td>
-    </tr>
-    @foreach (var items in ViewBag.RestaurantDetails)
-    {
+<div class="AddRestaurantActionLink">
+    @Html.ActionLink("Add restaurant", "AddRestaurant")
+</div>
+    <h2>Restaurant Details</h2>
+    <table border="1" class="RestaurantContent">
         <tr>
             <td>
-                @items.RestaurantName
+                RestaurantName
             </td>
             <td>
-                @items.RestaurantType
+                RestaurantType
             </td>
             <td>
-                @items.Location
-            </td>
-            <td>
-                @Html.ActionLink("Edit", "Edit", new { id = items.RestaurantID})
-                @Html.ActionLink("Delete", "Delete", new { id = items.RestaurantID })
+                Location
             </td>
         </tr>
-    }
-</table>
+        @foreach (var items in ViewBag.RestaurantDetails)
+        {
+            <tr>
+                <td>
+                    @items.RestaurantName
+                </td>
+                <td>
+                    @items.RestaurantType
+                </td>
+                <td>
+                    @items.Location
+                </td>
+                <td>
+                    @Html.ActionLink("Edit", "Edit", new { id = items.RestaurantID })
+                    @Html.ActionLink("Delete", "Delete", new { id = items.RestaurantID })
+                </td>
+            </tr>
+        }
+    </table>
+
 
 

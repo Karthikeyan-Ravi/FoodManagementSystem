@@ -16,7 +16,7 @@ namespace FoodManagementSystem
             AreaRegistration.RegisterAllAreas();
             RouteConfig.RegisterRoutes(RouteTable.Routes);
             Mapper.Mapping();
-            //FilterConfig.GlobalFilter(GlobalFilters.Filters);
+            FilterConfig.GlobalFilter(GlobalFilters.Filters);
         }
     }
 }

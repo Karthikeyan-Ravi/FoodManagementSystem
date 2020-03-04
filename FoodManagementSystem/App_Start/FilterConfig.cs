@@ -9,7 +9,7 @@ namespace FoodManagementSystem.App_Start
     {
         public static void GlobalFilter(GlobalFilterCollection filters)
         {
-            filters.Add(new HandleErrorAttribute());
+            filters.Add(new HandleErrorAttribute()); 
         }
 
     }

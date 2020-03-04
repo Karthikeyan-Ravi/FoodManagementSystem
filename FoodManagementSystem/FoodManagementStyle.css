@@ -30,7 +30,7 @@ h2{
 }
 .Form{
     margin-left:10%;
-    font-size:2rem;
+    font-size:2rem; 
 }
 .MasterPageLink{
     font-family:'Times New Roman', Times, serif;
@@ -41,4 +41,9 @@ h2{
 .RestaurantContent{
     font-family:'Times New Roman', Times, serif;
     color:white;
+}
+.AddRestaurantActionLink a{
+    font-family:'Times New Roman', Times, serif;
+    font-size:2rem;
+    color:white ;
 }
