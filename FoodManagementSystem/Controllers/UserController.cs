@@ -21,6 +21,7 @@ namespace FoodManagementSystem.Controllers
             return View();
         }
         [HttpGet]
+       
         public ActionResult SignUp()
         {
 
@@ -29,6 +30,7 @@ namespace FoodManagementSystem.Controllers
 
         [HttpPost]
         //[ActionName("SignUp")]
+        [ValidateAntiForgeryToken]
         public ActionResult SignUp(UserSignUpViewModel userSignUpViewModel)
         {
 
@@ -41,11 +43,13 @@ namespace FoodManagementSystem.Controllers
 
             return RedirectToAction("SignIn");
         }
+        
         public ActionResult SignIn()
         {
             return View();
         }
         [HttpPost]
+        [ValidateAntiForgeryToken]
         public ActionResult SignIn(UserSignInViewModel userSignInViewModel)
         {
             if(ModelState.IsValid)

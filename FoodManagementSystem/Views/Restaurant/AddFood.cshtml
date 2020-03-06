@@ -1,0 +1,46 @@
+﻿@model FoodManagementSystem.Models.FoodViewModel
+@{
+    ViewBag.Title = "AddFood";
+}
+
+<h2>AddFood</h2>
+@using (Html.BeginForm("AddFood", "Restaurant", FormMethod.Post))
+{
+    <table>
+        <tr>
+            <td>
+                @Html.LabelFor(Model=>Model.FoodName)
+            </td>
+            <td>
+                @Html.TextBoxFor(Model=>Model.FoodName)
+            </td>
+        </tr>
+        <tr>
+            <td>
+                @Html.LabelFor(Model => Model.FoodCategory)
+            </td>
+            <td>
+                @Html.TextBoxFor(Model => Model.FoodCategory)
+            </td>
+        </tr>
+        <tr>
+            <td>
+                @Html.LabelFor(Model => Model.FoodPrice)
+            </td>
+            <td>
+                @Html.TextBoxFor(Model => Model.FoodPrice)
+            </td>
+        </tr>
+        <tr>
+            <td>
+                @Html.LabelFor(Model=>Model.RestaurantFields)
+            </td>
+            <td>
+                @Html.DropDownListFor(Model => Model.RestaurantID,(IEnumerable<SelectListItem>)ViewBag.RestaurantFields,"Select Restaurant")
+            </td>
+        </tr>
+    </table>
+    <input type="submit" id="addFood" class="BtnStyle" />
+
+}
+

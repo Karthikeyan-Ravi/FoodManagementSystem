@@ -24,5 +24,10 @@ namespace FoodManagementSystem.DAL
             get;
             set;
         }
+        public DbSet<FoodItem> Food
+        {
+            get;
+            set;
+        }
     }
 }

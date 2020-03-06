@@ -11,7 +11,7 @@ namespace FoodManagementSystem.Entity
     public class RestaurantFields
     {
         [Key]
-        [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
+        //[DatabaseGenerated(DatabaseGeneratedOption.Identity)]
         public int RestaurantID
         {
             get;

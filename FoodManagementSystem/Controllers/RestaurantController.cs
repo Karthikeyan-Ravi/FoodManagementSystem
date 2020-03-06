@@ -89,6 +89,22 @@ namespace FoodManagementSystem.Controllers
             restaurantBL.DeleteRestaurant(restaurantFields);
             return RedirectToAction("Index");
         }
+        [HttpGet]
+        public ActionResult AddFood()
+        {
+            ViewBag.RestaurantFields = new SelectList(restaurantBL.GetRestaurantDetails(), "RestaurantID", "RestaurantName");
+            return View();
+        }
+        FoodBL foodBL = new FoodBL();
+        FoodItem foodItem = new FoodItem();
+        [HttpPost]
+        public ActionResult AddFood(FoodViewModel foodViewModel)
+        {
+            ViewBag.RestaurantFields = new SelectList(restaurantBL.GetRestaurantDetails(), "RestaurantID", "RestaurantName");
+            var foodItem = AutoMapper.Mapper.Map<FoodViewModel, FoodItem>(foodViewModel);
+            foodBL.AddFood(foodItem);
+            return View();
+        }
    }
 
 }

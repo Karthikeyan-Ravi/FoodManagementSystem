@@ -26,10 +26,12 @@
             </tr>
         </table>
         <a>
+            @Html.AntiForgeryToken()
             <input class="BtnStyle" type="submit" id="signIn" value="SignIn" />
         </a>
         <p>Don't have an account </p>
         <a href='@Url.Action("SignUp", "User")'>
+            @Html.AntiForgeryToken()
             <input class="BtnStyle" type='button' value='SignUp' />
         </a>
     }

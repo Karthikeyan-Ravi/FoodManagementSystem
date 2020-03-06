@@ -58,6 +58,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="CustomerFields.cs" />
+    <Compile Include="FoodItem.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="RestaurantFields.cs" />
   </ItemGroup>
