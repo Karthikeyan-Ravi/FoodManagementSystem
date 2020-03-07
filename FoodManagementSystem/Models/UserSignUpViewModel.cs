@@ -53,8 +53,6 @@ namespace FoodManagementSystem.Models
                 get;
                 set;
             }
-            [Required]
-            [Display(Name = "Role")]
             public string Role
             {
                 get;

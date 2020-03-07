@@ -38,7 +38,7 @@ namespace FoodManagementSystem.Entity
             set;
         }
         [Required]
-        public string FoodPrice
+        public int FoodPrice
         {
             get;
             set;

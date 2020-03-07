@@ -56,7 +56,7 @@
                     @Html.ValidationMessageFor(Model => Model.Password)
                 </td>
             </tr>
-            <tr>
+            @*<tr>
                 <td>
                     @Html.LabelFor(Model => Model.Role)
                 </td>
@@ -65,7 +65,7 @@
                     @Html.RadioButtonFor(Model => Model.Role, "user")User
                     @Html.ValidationMessageFor(Model => Model.Role)
                 </td>
-            </tr>
+            </tr>*@
             <tr>
                 <td>
                     @Html.AntiForgeryToken()

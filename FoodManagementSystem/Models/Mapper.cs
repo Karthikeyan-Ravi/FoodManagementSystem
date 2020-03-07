@@ -12,7 +12,7 @@ namespace FoodManagementSystem.Models
         {
             AutoMapper.Mapper.Initialize(config =>
             {
-                config.CreateMap<UserSignUpViewModel, CustomerFields>();
+                config.CreateMap<UserSignUpViewModel, CustomerFields>().ForMember(dest=>dest.Role,opt=>opt.MapFrom(src=>"User"));
                 config.CreateMap<UserSignInViewModel, CustomerFields>();
                 config.CreateMap<RestaurantViewModel, RestaurantFields>();
                 //config.CreateMap<RestaurantFields, RestaurantViewModel>();
