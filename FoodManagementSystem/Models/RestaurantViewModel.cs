@@ -1,4 +1,5 @@
-﻿using System;
+﻿using FoodManagementSystem.Entity;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
@@ -10,7 +11,6 @@ namespace FoodManagementSystem.Models
     public class RestaurantViewModel
     {
         [Key]
-        [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
         public int RestaurantID
         {
             get;
@@ -23,16 +23,29 @@ namespace FoodManagementSystem.Models
             get;
             set;
         }
+        //[Required(ErrorMessage = "Cuisine required")]
+        //public string Cuisines
+        //{
+        //    get;
+        //    set;
+        //}
         [Required(ErrorMessage = "Name required")]
-        [Display(Name = "RestaurantType")]
-        public string RestaurantType
+        [Display(Name = "Location")]
+        public string Location
         {
             get;
             set;
         }
-        [Required(ErrorMessage = "Name required")]
-        [Display(Name = "Location")]
-        public string Location
+        [Required(ErrorMessage = "Phone number required")]
+        [DataType(DataType.PhoneNumber)]
+        [Display(Name = "PhoneNumber")]
+        public long PhoneNumber
+        {
+            get;
+            set;
+        }
+        public ICollection<RestaurantCuisine> RestaurantCuisines { get; set; }
+        public int[] restaurantCuisine
         {
             get;
             set;

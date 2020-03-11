@@ -7,22 +7,21 @@ using System.Threading.Tasks;
 
 namespace FoodManagementSystem.DAL
 {
-    public class FoodItemRepository
+    public class CuisineRepository
     {
-        
-        public IEnumerable<FoodItem> GetFoodItems()
+        public void AddCuisine(Cuisine cuisine)
         {
             using (FoodManagementSystemDBContext dbContext = new FoodManagementSystemDBContext())
             {
-                return dbContext.FoodItems.ToList();
+                dbContext.Cuisines.Add(cuisine);
+                dbContext.SaveChanges();
             }
         }
-        public void AddFood(FoodItem foodItem)
+        public List<Cuisine> GetCuisine()
         {
             using (FoodManagementSystemDBContext dbContext = new FoodManagementSystemDBContext())
             {
-                dbContext.FoodItems.Add(foodItem);
-                dbContext.SaveChanges();
+                return dbContext.Cuisines.ToList();
             }
         }
     }

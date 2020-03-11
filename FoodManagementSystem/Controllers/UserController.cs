@@ -36,12 +36,13 @@ namespace FoodManagementSystem.Controllers
 
             if (ModelState.IsValid)
             {
-                var customerFields = AutoMapper.Mapper.Map<UserSignUpViewModel, CustomerFields>(userSignUpViewModel);
+                var customerFields = AutoMapper.Mapper.Map<UserSignUpViewModel, Customer>(userSignUpViewModel);
                 CustomerBL customerBL = new CustomerBL();
                 customerBL.GetSignUpDetails(customerFields);
+                return RedirectToAction("SignIn");
             }
-
-            return RedirectToAction("SignIn");
+            return View();
+            
         }
         
         public ActionResult SignIn()
@@ -54,7 +55,7 @@ namespace FoodManagementSystem.Controllers
         {
             if(ModelState.IsValid)
             {
-                var customerFields= AutoMapper.Mapper.Map<UserSignInViewModel, CustomerFields>(userSignInViewModel);
+                var customerFields= AutoMapper.Mapper.Map<UserSignInViewModel, Customer>(userSignInViewModel);
                 CustomerBL customerBL = new CustomerBL();
                 string role=customerBL.GetLogInDetails(customerFields);
                 if(role=="Admin")
@@ -63,7 +64,7 @@ namespace FoodManagementSystem.Controllers
                 }
                 else if(role=="User")
                 {
-
+                    return RedirectToAction("Index", "Restaurant");
                 }
                 else
                 {

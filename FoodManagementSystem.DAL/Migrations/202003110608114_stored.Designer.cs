@@ -7,13 +7,13 @@ namespace FoodManagementSystem.DAL.Migrations
     using System.Resources;
     
     [GeneratedCode("EntityFramework.Migrations", "6.4.0")]
-    public sealed partial class update : IMigrationMetadata
+    public sealed partial class stored : IMigrationMetadata
     {
-        private readonly ResourceManager Resources = new ResourceManager(typeof(update));
+        private readonly ResourceManager Resources = new ResourceManager(typeof(stored));
         
         string IMigrationMetadata.Id
         {
-            get { return "202003070911503_update"; }
+            get { return "202003110608114_stored"; }
         }
         
         string IMigrationMetadata.Source

@@ -14,20 +14,39 @@ namespace FoodManagementSystem.DAL
         {
 
         }
-        public DbSet<CustomerFields> User
+        public DbSet<Customer> Customers
         {
             get;
             set;
         }
-        public DbSet<RestaurantFields> Restaurant
+        public DbSet<Restaurant> Restaurants
         {
             get;
             set;
         }
-        public DbSet<FoodItem> Food
+        public DbSet<FoodItem> FoodItems
         {
             get;
             set;
         }
+        public DbSet<Cuisine> Cuisines
+        {
+            get;
+            set;
+        }
+        public DbSet<RestaurantCuisine> RestaurantCuisines
+        {
+            get;
+            set;
+        }
+        protected override void OnModelCreating(DbModelBuilder modelBuilder)
+        {
+            modelBuilder.Entity<Customer>()
+            .MapToStoredProcedures(p => p.Insert(sp => sp.HasName("sp_InsertCustomer"))
+            .Update(sp => sp.HasName("sp_UpdateCustomer"))
+            .Delete(sp => sp.HasName("sp_DeleteCustomer"))
+            );
+        }
+
     }
 }

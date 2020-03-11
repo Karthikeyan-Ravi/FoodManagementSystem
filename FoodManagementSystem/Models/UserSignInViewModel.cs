@@ -17,7 +17,7 @@ namespace FoodManagementSystem.Models
         }
         [Required]
         [DataType(DataType.Password)]
-        [RegularExpression(@"((?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?=.*[@#$%]).{6,20})", ErrorMessage = "Invalid Password")]
+        //[RegularExpression(@"((?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?=.*[@#$%]).{6,20})", ErrorMessage = "Invalid Password")]
         public string Password
         {
             get;

@@ -14,10 +14,13 @@
                 RestaurantName
             </td>
             <td>
-                RestaurantType
+                Cuisines
             </td>
             <td>
                 Location
+            </td>
+            <td>
+                PhoneNumber
             </td>
         </tr>
         @foreach (var items in ViewBag.RestaurantDetails)
@@ -27,10 +30,13 @@
                     @items.RestaurantName
                 </td>
                 <td>
-                    @items.RestaurantType
+                    @items.Cuisines
                 </td>
                 <td>
                     @items.Location
+                </td>
+                <td>
+                    @items.PhoneNumber
                 </td>
                 <td>
                     @Html.ActionLink("Edit", "Edit", new { id = items.RestaurantID })

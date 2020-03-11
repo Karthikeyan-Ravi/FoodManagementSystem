@@ -15,11 +15,15 @@
         </tr>
         <tr>
             <td>RestaurantType</td>
-            <td>@Html.EditorFor(Model => Model.RestaurantType)</td>
+            <td>@Html.EditorFor(Model => Model.Cuisines)</td>
         </tr>
         <tr>
             <td>Location</td>
             <td>@Html.EditorFor(Model => Model.Location)</td> 
+        </tr>
+        <tr>
+            <td>PhoneNumber</td>
+            <td>@Html.EditorFor(Model=>Model.PhoneNumber)</td>
         </tr>
     </table>
     @Html.ActionLink("Cancel", "Index")

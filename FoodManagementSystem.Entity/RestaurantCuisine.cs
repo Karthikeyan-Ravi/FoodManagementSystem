@@ -7,10 +7,10 @@ using System.Threading.Tasks;
 
 namespace FoodManagementSystem.Entity
 {
-    public class FoodItem
+    public class RestaurantCuisine
     {
         [Key]
-        public int FoodID
+        public int RestaurantCuisineID
         {
             get;
             set;
@@ -20,28 +20,23 @@ namespace FoodManagementSystem.Entity
             get;
             set;
         }
-        public Restaurant RestaurantFields
+        public Restaurant Restaurant
         {
             get;
             set;
         }
-        [Required]
-        public string FoodName
+        public int CuisineID
         {
             get;
             set;
         }
-        [Required]
-        public string FoodCategory
+        public Cuisine Cuisine
         {
             get;
             set;
         }
-        [Required]
-        public int FoodPrice
-        {
-            get;
-            set;
-        }
+        public RestaurantCuisine()
+        { }
+
     }
 }

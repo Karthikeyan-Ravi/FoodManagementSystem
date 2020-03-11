@@ -1,4 +1,5 @@
-﻿using System;
+﻿using FoodManagementSystem.Entity;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
@@ -8,41 +9,39 @@ using System.Threading.Tasks;
 
 namespace FoodManagementSystem.Entity
 {
-    public class RestaurantFields
+    public class Restaurant
     {
         [Key]
-        //[DatabaseGenerated(DatabaseGeneratedOption.Identity)]
         public int RestaurantID
         {
             get;
             set;
         }
-        [Required]
         public string RestaurantName
         {
             get;
             set;
         }
-        [Required]
-        public string RestaurantType
-        {
-            get;
-            set;
-        }
+        //[Required]
+        //public string Cuisines
+        //{
+        //    get;
+        //    set;
+        //}
         [Required]
         public string Location
         {
             get;
             set;
         }
-        public RestaurantFields()
-        { }
-        public RestaurantFields(string restaurantName, string restaurantType, string location)
+        [Required]
+        public long PhoneNumber
         {
-            this.RestaurantName = restaurantName;
-            this.RestaurantType = restaurantType;
-            this.Location = location;
+            get;
+            set;
         }
-
-    }
+        public ICollection<RestaurantCuisine> RestaurantCuisines { get; set; }
+        public Restaurant()
+        { }
+     }
 }

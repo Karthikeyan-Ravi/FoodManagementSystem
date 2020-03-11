@@ -19,10 +19,10 @@
         </tr>
         <tr>
             <td>
-                @Html.LabelFor(Model => Model.RestaurantType)
+                @Html.LabelFor(Model=>Model.restaurantCuisine)
             </td>
             <td>
-                @Html.TextBoxFor(Model => Model.RestaurantType)
+                @Html.ListBoxFor(Model=>Model.restaurantCuisine, (IEnumerable<SelectListItem>)ViewBag.restaurantCuisine, "Select cuisines")
             </td>
         </tr>
         <tr>
@@ -31,6 +31,14 @@
             </td>
             <td>
                 @Html.TextBoxFor(Model => Model.Location)
+            </td>
+        </tr>
+        <tr>
+            <td>
+                @Html.LabelFor(Model=>Model.PhoneNumber)
+            </td>
+            <td>
+                @Html.TextBoxFor(Model=>Model.PhoneNumber)
             </td>
         </tr>
     </table>

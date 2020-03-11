@@ -12,77 +12,48 @@ namespace FoodManagementSystem.DAL
 {
     public class CustomerRepository
     {
-        //SqlConnection sqlConnection;
-        //string connectionString = System.Configuration.ConfigurationManager.ConnectionStrings["Connection"].ConnectionString;
-
-
-        public bool GetSignUpDetails(CustomerFields customerFields)
+        public bool GetSignUpDetails(Customer customerFields)
         {
-            //string query = "Sp_Registration";
-            //using (sqlConnection = new SqlConnection(connectionString))
-            //{
-            //    SqlCommand sqlCommand = new SqlCommand(query, sqlConnection);
-            //    sqlCommand.CommandType = System.Data.CommandType.StoredProcedure;
-            //    SqlParameter sqlParameter = new SqlParameter();
-            //    sqlCommand.Parameters.AddWithValue("@FullName", customerFields.FullName);
-            //    sqlCommand.Parameters.AddWithValue("@PhoneNumber", customerFields.PhoneNumber);
-            //    sqlCommand.Parameters.AddWithValue("@Mail", customerFields.Mail);
-            //    sqlCommand.Parameters.AddWithValue("@Password", customerFields.Password);
-            //    sqlCommand.Parameters.AddWithValue("@Role", customerFields.Role);
-            //    sqlConnection.Open();
-            //    int rows = sqlCommand.ExecuteNonQuery();
-            //    if (rows >= 1)
-            //        return true;
-            //    else
-            //    {
-            //        return false;
-            //    }
-            //}
-            FoodManagementSystemDBContext dbContext = new FoodManagementSystemDBContext();
-            dbContext.User.Add(customerFields);
-            dbContext.SaveChanges();
-            return true;
-        }
-        public string GetLogInDetails(CustomerFields customerFields)
-        {
-            FoodManagementSystemDBContext dbContext = new FoodManagementSystemDBContext();
-            IEnumerable<CustomerFields> customer = dbContext.User.ToList();
-            foreach(CustomerFields value in customer)
+
+            using (FoodManagementSystemDBContext dbContext = new FoodManagementSystemDBContext())
             {
-                if (customerFields.Mail == value.Mail && customerFields.Password == value.Password)
-                {
-                    return value.Role;
-                }
+                SqlParameter name = new SqlParameter("@FullName", customerFields.FullName);
+                SqlParameter gender = new SqlParameter("@Gender", customerFields.Gender);
+                SqlParameter phone = new SqlParameter("@PhoneNumber", customerFields.PhoneNumber);
+                SqlParameter mail = new SqlParameter("@Mail", customerFields.Mail);
+                SqlParameter password = new SqlParameter("@Password", customerFields.Password);
+                SqlParameter role = new SqlParameter("@Role", customerFields.Role);
+                int result = dbContext.Database.ExecuteSqlCommand("sp_InsertCustomer @FullName,@PhoneNumber,@Gender,@Mail,@Password,@Role", name, phone, gender, mail, password, role);
+               
+                //dbContext.Customers.Add(customerFields);
+                //dbContext.SaveChanges();
+                return true;
             }
-            return "Error";
-            //string query = "Sp_LogIn";
-            //using (sqlConnection = new SqlConnection(connectionString))
-            //{
-            //    sqlConnection.Open();
-            //    SqlCommand sqlCommand = new SqlCommand(query, sqlConnection);
-            //    sqlCommand.CommandType = System.Data.CommandType.StoredProcedure;
-            //    SqlParameter sqlParameter = new SqlParameter();
-            //    sqlCommand.Parameters.AddWithValue("@Mail", mail);
-            //    sqlCommand.Parameters.AddWithValue("@Password", password);
-            //    sqlCommand.Parameters.Add("@Role", SqlDbType.VarChar, 10);
-            //    sqlCommand.Parameters["@Role"].Direction = ParameterDirection.Output;
-            //    SqlDataAdapter sqlDataAdapter = new SqlDataAdapter(sqlCommand);
-            //    DataTable dataTable = new DataTable();
-            //    sqlDataAdapter.Fill(dataTable);
-            //    if (Convert.ToString(sqlCommand.Parameters["@Role"].Value) == "User" || Convert.ToString(sqlCommand.Parameters["@Role"].Value) == "Admin")
-            //    {
-            //        return Convert.ToString(sqlCommand.Parameters["@Role"].Value);
-            //    }
-            //    else
-            //    {
-            //        return "LogIn failed";
-            //    }
-            //}
         }
-        public List<CustomerFields> GetCustomerDetails()
+        public string GetLogInDetails(Customer customerFields)
         {
-            FoodManagementSystemDBContext foodManagementDBContext = new FoodManagementSystemDBContext();
-            return foodManagementDBContext.User.ToList();
+            using (FoodManagementSystemDBContext dbContext = new FoodManagementSystemDBContext())
+            {
+                Customer customer = dbContext.Customers.Where(c => c.Mail == customerFields.Mail && c.Password == customerFields.Password).SingleOrDefault();
+            
+
+                    //foreach (CustomerFields value in customer)
+                //{
+                //    if (customerFields.Mail == value.Mail && customerFields.Password == value.Password)
+                //    {
+                //        return value.Role;
+                //    }
+                //}
+                return customer.Role;
+            }
+           
+        }
+        public List<Customer> GetCustomerDetails()
+        {
+            using (FoodManagementSystemDBContext foodManagementDBContext = new FoodManagementSystemDBContext())
+            {
+                return foodManagementDBContext.Customers.ToList();
+            }
         }
     }
 }

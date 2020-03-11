@@ -20,23 +20,23 @@ namespace FoodManagementSystem.BL
         //{
         //    restaurantRepository.DeleteRestaurantDetails(id);
         //}
-        public void AddtRestaurant(RestaurantFields restaurantFields)
+        public void AddtRestaurant(Restaurant restaurant)
         {
-            restaurantRepository.AddRestaurant(restaurantFields);
+            restaurantRepository.AddRestaurant(restaurant);
         }  
-        public List<RestaurantFields> GetRestaurantDetails()
+        public List<Restaurant> GetRestaurantDetails()
         {
             return restaurantRepository.GetRestaurantDetails();
         }     
-        public RestaurantFields GetRestaurantId(int id)
+        public Restaurant GetRestaurantId(int id)
         {
             return restaurantRepository.GetRestaurantId(id);
         }
-        public void UpdateRestaurant(RestaurantFields restaurantFields)
+        public void UpdateRestaurant(Restaurant restaurantFields)
         {
             restaurantRepository.UpdateRestaurant(restaurantFields);
         }
-        public void DeleteRestaurant(RestaurantFields restaurantFields)
+        public void DeleteRestaurant(Restaurant restaurantFields)
         {
             restaurantRepository.DeleteRestaurant(restaurantFields);
         }

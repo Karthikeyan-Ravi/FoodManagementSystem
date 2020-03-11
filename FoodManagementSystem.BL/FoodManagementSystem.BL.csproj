@@ -59,6 +59,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="CuisineBL.cs" />
     <Compile Include="CustomerBL.cs" />
     <Compile Include="FoodBL.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

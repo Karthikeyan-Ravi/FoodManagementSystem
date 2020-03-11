@@ -1,14 +1,16 @@
 ﻿using FoodManagementSystem.Entity;
 using System;
 using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations;
 using System.Linq;
 using System.Web;
 
 namespace FoodManagementSystem.Models
 {
-    public class FoodViewModel
+    public class RestaurantCuisineViewModel
     {
-        public int FoodID
+        [Key]
+        public int RestaurantCuisineID
         {
             get;
             set;
@@ -18,22 +20,17 @@ namespace FoodManagementSystem.Models
             get;
             set;
         }
-        public Restaurant RestaurantFields
+        public Restaurant Restaurant
         {
             get;
             set;
         }
-        public string FoodName
+        public int CuisineID
         {
             get;
             set;
         }
-        public string FoodCategory
-        {
-            get;
-            set;
-        }
-        public string FoodPrice
+        public Cuisine Cuisine
         {
             get;
             set;

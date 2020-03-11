@@ -3,16 +3,14 @@
     using System;
     using System.Data.Entity.Migrations;
     
-    public partial class update : DbMigration
+    public partial class Name : DbMigration
     {
         public override void Up()
         {
-            AlterColumn("dbo.FoodItems", "FoodPrice", c => c.Int(nullable: false));
         }
         
         public override void Down()
         {
-            AlterColumn("dbo.FoodItems", "FoodPrice", c => c.String(nullable: false));
         }
     }
 }

@@ -12,33 +12,46 @@ namespace FoodManagementSystem.DAL
 {
     public class RestaurantRepository
     {
-        FoodManagementSystemDBContext dbContext = new FoodManagementSystemDBContext();
-        public void AddRestaurant(RestaurantFields restaurantFields)
+        //FoodManagementSystemDBContext dbContext = new FoodManagementSystemDBContext();
+        public void AddRestaurant(Restaurant restaurant)
         {
-            
-            dbContext.Restaurant.Add(restaurantFields);
-            dbContext.SaveChanges();
+            using (FoodManagementSystemDBContext dbContext = new FoodManagementSystemDBContext())
+            {
+                dbContext.Restaurants.Add(restaurant);
+                dbContext.SaveChanges();
+            }
         }
-        public List<RestaurantFields> GetRestaurantDetails()
+        public List<Restaurant> GetRestaurantDetails()
         {
-            FoodManagementSystemDBContext foodManagementDBContext = new FoodManagementSystemDBContext();
-            return foodManagementDBContext.Restaurant.ToList();
+            using (FoodManagementSystemDBContext foodManagementDBContext = new FoodManagementSystemDBContext())
+            {
+                return foodManagementDBContext.Restaurants.ToList();
+            }
         }
-        public RestaurantFields GetRestaurantId(int restaurantId)
+        public Restaurant GetRestaurantId(int restaurantId)
         {
-            return dbContext.Restaurant.Where(id => id.RestaurantID == restaurantId).SingleOrDefault();
+            using (FoodManagementSystemDBContext dbContext = new FoodManagementSystemDBContext())
+            {
+                return dbContext.Restaurants.Where(id => id.RestaurantID == restaurantId).SingleOrDefault();
+            }
         }
-        public void UpdateRestaurant(RestaurantFields restaurantFields)
+        public void UpdateRestaurant(Restaurant restaurantFields)
         {
-            dbContext.Entry(restaurantFields).State = System.Data.Entity.EntityState.Modified;
-            dbContext.SaveChanges();
+            using (FoodManagementSystemDBContext dbContext = new FoodManagementSystemDBContext())
+            {
+                dbContext.Entry(restaurantFields).State = System.Data.Entity.EntityState.Modified;
+                dbContext.SaveChanges();
+            }
         }
-        public void DeleteRestaurant(RestaurantFields restaurantFields)
+        public void DeleteRestaurant(Restaurant restaurantFields)
         {
-            //RestaurantFields restaurantFields = GetRestaurantId(id);
-            dbContext.Restaurant.Attach(restaurantFields);
-            dbContext.Restaurant.Remove(restaurantFields);
-            dbContext.SaveChanges();
+            using (FoodManagementSystemDBContext dbContext = new FoodManagementSystemDBContext())
+            {
+                //RestaurantFields restaurantFields = GetRestaurantId(id);
+                dbContext.Restaurants.Attach(restaurantFields);
+                dbContext.Restaurants.Remove(restaurantFields);
+                dbContext.SaveChanges();
+            }
         }
     }
 }

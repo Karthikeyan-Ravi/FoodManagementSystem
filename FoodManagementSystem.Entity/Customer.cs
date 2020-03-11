@@ -15,7 +15,7 @@ namespace FoodManagementSystem.Entity
         Female,
         Others
     }
-    public class CustomerFields
+    public class Customer
     {
         [Key]
         [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
@@ -60,7 +60,7 @@ namespace FoodManagementSystem.Entity
             get;
             set;
         }
-        public CustomerFields()
+        public Customer()
         {
 
         }

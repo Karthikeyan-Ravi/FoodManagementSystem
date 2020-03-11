@@ -1,0 +1,23 @@
+﻿@model FoodManagementSystem.Models.CuisineViewModel
+
+@{
+    ViewBag.Title = "AddCuisine";
+}
+
+<h2>AddCuisine</h2>
+@using (Html.BeginForm("AddCuisine", "Admin", FormMethod.Post))
+{
+    <table>
+        <tr>
+            <td>
+                @Html.LabelFor(Model => Model.CuisineName)
+            </td>
+            <td>
+                @Html.TextBoxFor(Model=>Model.CuisineName)
+            </td>
+        </tr>
+    </table>
+    <a>
+        <input type="submit" id="addCuisine" value="Add" />
+    </a>
+}

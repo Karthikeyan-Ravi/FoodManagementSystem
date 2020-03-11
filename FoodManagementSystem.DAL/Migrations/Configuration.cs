@@ -10,7 +10,6 @@
         public Configuration()
         {
             AutomaticMigrationsEnabled = false;
-            ContextKey = "FoodManagementSystem.DAL.FoodManagementSystemDBContext";
         }
 
         protected override void Seed(FoodManagementSystem.DAL.FoodManagementSystemDBContext context)
