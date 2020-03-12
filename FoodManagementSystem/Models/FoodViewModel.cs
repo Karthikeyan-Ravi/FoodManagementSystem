@@ -28,11 +28,12 @@ namespace FoodManagementSystem.Models
             get;
             set;
         }
-        public string FoodCategory
+        public int FoodCategoryID
         {
             get;
             set;
         }
+        public FoodCategory FoodCategory { get; set; }
         public string FoodPrice
         {
             get;

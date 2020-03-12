@@ -9,7 +9,7 @@ namespace FoodManagementSystem.Entity
 {
     public class FoodItem
     {
-        [Key]
+        [Key] 
         public int FoodID
         {
             get;
@@ -32,11 +32,12 @@ namespace FoodManagementSystem.Entity
             set;
         }
         [Required]
-        public string FoodCategory
+        public int FoodCategoryID
         {
             get;
             set;
         }
+        public FoodCategory FoodCategory { get; set; }
         [Required]
         public int FoodPrice
         {

@@ -11,9 +11,9 @@ namespace FoodManagementSystem.BL
     public class FoodBL
     {
         FoodItemRepository foodItemRepository = new FoodItemRepository();
-        public IEnumerable<FoodItem> GetFoodItems()
+        public IEnumerable<FoodCategory> GetFoodCategories()
         {
-            return foodItemRepository.GetFoodItems();
+            return foodItemRepository.GetFoodCategories();
         }
         public void AddFood(FoodItem foodItem)
         {

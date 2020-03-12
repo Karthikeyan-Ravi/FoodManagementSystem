@@ -42,6 +42,7 @@ namespace FoodManagementSystem.Entity
         }
         public ICollection<RestaurantCuisine> RestaurantCuisines { get; set; }
         public Restaurant()
-        { }
+        {
+        }
      }
 }

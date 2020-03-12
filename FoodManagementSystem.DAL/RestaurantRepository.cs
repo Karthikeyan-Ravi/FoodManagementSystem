@@ -21,6 +21,7 @@ namespace FoodManagementSystem.DAL
                 dbContext.SaveChanges();
             }
         }
+       
         public List<Restaurant> GetRestaurantDetails()
         {
             using (FoodManagementSystemDBContext foodManagementDBContext = new FoodManagementSystemDBContext())

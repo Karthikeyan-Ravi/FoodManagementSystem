@@ -32,7 +32,7 @@ namespace FoodManagementSystem.Controllers
             CuisineBL cuisineBL = new CuisineBL();
             if (ModelState.IsValid)
             {
-                Restaurant restaurant = AutoMapper.Mapper.Map<RestaurantViewModel, Restaurant>(restaurantViewModel);
+                 Restaurant restaurant = AutoMapper.Mapper.Map<RestaurantViewModel, Restaurant>(restaurantViewModel);
                 restaurant.RestaurantCuisines = new List<RestaurantCuisine>();
                 foreach (int detail in restaurantViewModel.restaurantCuisine)
                 {
@@ -41,21 +41,18 @@ namespace FoodManagementSystem.Controllers
                     restaurant.RestaurantCuisines.Add(restaurantCuisine);
                 }
                 restaurantBL.AddtRestaurant(restaurant);
+                TempData["RestaurantID"] = restaurant.RestaurantID;
+                return RedirectToAction("AddFood", "Food");
             }
             ViewBag.restaurantCuisine = new SelectList(cuisineBL.GetCuisine(), "CuisineID", "CuisineName");
             return View(restaurantViewModel);
         }
         public ActionResult Edit(int id)
         {
-            //RestaurantViewModel restaurantViewModel = new RestaurantViewModel();
+           
             restaurantFields =restaurantBL.GetRestaurantId(id);
             var restaurantViewModel = AutoMapper.Mapper.Map<Restaurant, RestaurantViewModel>(restaurantFields);
-            //restaurantViewModel = new RestaurantViewModel();
-
-            //restaurantViewModel.RestaurantID = restaurantFields.RestaurantID;
-            //restaurantViewModel.RestaurantName = restaurantFields.RestaurantName;
-            //restaurantViewModel.Cuisine = restaurantFields.Cuisine;
-            //restaurantViewModel.Location = restaurantFields.Location;
+         
             return View(restaurantViewModel);
             
         }
@@ -64,10 +61,7 @@ namespace FoodManagementSystem.Controllers
             if(ModelState.IsValid)
             {
                 var restaurantFields = AutoMapper.Mapper.Map<RestaurantViewModel, Restaurant>(restaurantViewModel);
-                //restaurantFields.RestaurantID = restaurantViewModel.RestaurantID;
-                //restaurantFields.RestaurantName = restaurantViewModel.RestaurantName;
-                //restaurantFields.Cuisine = restaurantViewModel.Cuisine;
-                //restaurantFields.Location = restaurantViewModel.Location;
+               
                 restaurantBL.UpdateRestaurant(restaurantFields);
                 return RedirectToAction("Index");
             }
@@ -80,10 +74,7 @@ namespace FoodManagementSystem.Controllers
             //estaurantViewModel restaurantViewModel = new RestaurantViewModel();
             if(ModelState.IsValid)
             {
-                //restaurantViewModel.RestaurantID = restaurantFields.RestaurantID;
-                //restaurantViewModel.RestaurantName = restaurantFields.RestaurantName;
-                //restaurantViewModel.Cuisine = restaurantFields.Cuisine;
-                //restaurantViewModel.Location = restaurantFields.Location;
+               
                 return View(restaurantViewModel);
             }
             return View();
@@ -92,29 +83,26 @@ namespace FoodManagementSystem.Controllers
         public ActionResult Delete(RestaurantViewModel restaurantViewModel)
         {
             var restaurantFields = AutoMapper.Mapper.Map<RestaurantViewModel, Restaurant>(restaurantViewModel);
-            //restaurantFields.RestaurantID = restaurantViewModel.RestaurantID;
-            //restaurantFields.RestaurantName = restaurantViewModel.RestaurantName;
-            //restaurantFields.Cuisine = restaurantViewModel.Cuisine;
-            //restaurantFields.Location = restaurantViewModel.Location;
+            
             restaurantBL.DeleteRestaurant(restaurantFields);
             return RedirectToAction("Index");
         }
-        [HttpGet]
-        public ActionResult AddFood()
-        {
-            ViewBag.RestaurantFields = new SelectList(restaurantBL.GetRestaurantDetails(), "RestaurantID", "RestaurantName");
-            return View();
-        }
-        FoodBL foodBL = new FoodBL();
-        FoodItem foodItem = new FoodItem();
-        [HttpPost]
-        public ActionResult AddFood(FoodViewModel foodViewModel)
-        {
-            ViewBag.RestaurantFields = new SelectList(restaurantBL.GetRestaurantDetails(), "RestaurantID", "RestaurantName");
-            var foodItem = AutoMapper.Mapper.Map<FoodViewModel, FoodItem>(foodViewModel);
-            foodBL.AddFood(foodItem);
-            return View();
-        }
+        //[HttpGet]
+        //public ActionResult AddFood()
+        //{
+        //    ViewBag.RestaurantFields = new SelectList(restaurantBL.GetRestaurantDetails(), "RestaurantID", "RestaurantName");
+        //    return View();
+        //}
+        //FoodBL foodBL = new FoodBL();
+        //FoodItem foodItem = new FoodItem();
+        //[HttpPost]
+        //public ActionResult AddFood(FoodViewModel foodViewModel)
+        //{
+        //    ViewBag.RestaurantFields = new SelectList(restaurantBL.GetRestaurantDetails(), "RestaurantID", "RestaurantName");
+        //    var foodItem = AutoMapper.Mapper.Map<FoodViewModel, FoodItem>(foodViewModel);
+        //    foodBL.AddFood(foodItem);
+        //    return View();
+        //}
    }
 
 }

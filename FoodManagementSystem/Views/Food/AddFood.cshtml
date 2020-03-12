@@ -1,18 +1,21 @@
 ﻿@model FoodManagementSystem.Models.FoodViewModel
+
 @{
     ViewBag.Title = "AddFood";
 }
 
 <h2>AddFood</h2>
-@using (Html.BeginForm("AddFood", "Restaurant", FormMethod.Post))
+
+@using (Html.BeginForm("AddFood", "Food", FormMethod.Post))
 {
+    @Html.HiddenFor(Model=>Model.RestaurantID)
     <table>
         <tr>
             <td>
-                @Html.LabelFor(Model=>Model.FoodName)
+                @Html.LabelFor(Model => Model.FoodName)
             </td>
             <td>
-                @Html.TextBoxFor(Model=>Model.FoodName)
+                @Html.TextBoxFor(Model => Model.FoodName)
             </td>
         </tr>
         <tr>
@@ -20,7 +23,7 @@
                 @Html.LabelFor(Model => Model.FoodCategory)
             </td>
             <td>
-                @Html.TextBoxFor(Model => Model.FoodCategory)
+                @Html.DropDownListFor(Model=>Model.FoodCategoryID, (IEnumerable<SelectListItem>)ViewBag.FoodCategory, "Select Category")
             </td>
         </tr>
         <tr>
@@ -32,15 +35,7 @@
             </td>
         </tr>
         <tr>
-            <td>
-                @Html.LabelFor(Model=>Model.RestaurantFields)
-            </td>
-            <td>
-                @Html.DropDownListFor(Model => Model.RestaurantID,(IEnumerable<SelectListItem>)ViewBag.RestaurantFields,"Select Restaurant")
-            </td>
-        </tr>
-    </table>
-    <input type="submit" id="addFood" class="BtnStyle" />
-
+</table>
+  <a><input type="submit" id="addFood" value="Add Food" /></a>
 }
 

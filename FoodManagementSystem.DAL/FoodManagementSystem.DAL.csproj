@@ -87,6 +87,14 @@
     <Compile Include="Migrations\202003111250497_v-8.designer.cs">
       <DependentUpon>202003111250497_v-8.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\202003121047175_createTable.cs" />
+    <Compile Include="Migrations\202003121047175_createTable.designer.cs">
+      <DependentUpon>202003121047175_createTable.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202003121159071_RenameProperty.cs" />
+    <Compile Include="Migrations\202003121159071_RenameProperty.designer.cs">
+      <DependentUpon>202003121159071_RenameProperty.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="RestaurantRepository.cs" />
@@ -119,6 +127,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202003111250497_v-8.resx">
       <DependentUpon>202003111250497_v-8.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202003121047175_createTable.resx">
+      <DependentUpon>202003121047175_createTable.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202003121159071_RenameProperty.resx">
+      <DependentUpon>202003121159071_RenameProperty.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

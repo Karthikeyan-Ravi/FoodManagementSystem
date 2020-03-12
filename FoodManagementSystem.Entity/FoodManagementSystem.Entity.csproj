@@ -59,6 +59,7 @@
   <ItemGroup>
     <Compile Include="Cuisine.cs" />
     <Compile Include="Customer.cs" />
+    <Compile Include="FoodCategory.cs" />
     <Compile Include="FoodItem.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Restaurant.cs" />

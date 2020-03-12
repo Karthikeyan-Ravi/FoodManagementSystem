@@ -16,7 +16,7 @@ namespace FoodManagementSystem.App_Start
                 config.CreateMap<UserSignUpViewModel, Customer>().ForMember(dest => dest.Role, opt => opt.MapFrom(src => "User"));
                 config.CreateMap<UserSignInViewModel, Customer>();
                 config.CreateMap<RestaurantViewModel, Restaurant>();
-                //config.CreateMap<Restaurant, RestaurantViewModel>();
+                config.CreateMap<FoodViewModel,FoodItem>();
             });
         }
     }

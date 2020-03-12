@@ -39,6 +39,11 @@ namespace FoodManagementSystem.DAL
             get;
             set;
         }
+        public DbSet<FoodCategory> FoodCategories
+        {
+            get;
+            set;
+        }
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
         {
             modelBuilder.Entity<Customer>()

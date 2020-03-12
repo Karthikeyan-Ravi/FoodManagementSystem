@@ -10,11 +10,11 @@ namespace FoodManagementSystem.DAL
     public class FoodItemRepository
     {
         
-        public IEnumerable<FoodItem> GetFoodItems()
+        public IEnumerable<FoodCategory> GetFoodCategories()
         {
             using (FoodManagementSystemDBContext dbContext = new FoodManagementSystemDBContext())
             {
-                return dbContext.FoodItems.ToList();
+                return dbContext.FoodCategories.ToList();
             }
         }
         public void AddFood(FoodItem foodItem)
