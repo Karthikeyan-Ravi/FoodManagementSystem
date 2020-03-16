@@ -54,6 +54,12 @@ namespace FoodManagementSystem.Entity
             get;
             set;
         }
+        [Required(ErrorMessage ="Confirm password required")]
+        public string ConfirmPassword
+        {
+            get;
+            set;
+        }
         [Required]
         public string Role
         {

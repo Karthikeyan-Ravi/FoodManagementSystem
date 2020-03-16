@@ -6,9 +6,13 @@
 
 
 <div class="Form">
+    <script src="~/Scripts/jquery-3.4.1.min.js"></script>
+    <script src="~/Scripts/jquery.validate.min.js"></script>
+    <script src="~/Scripts/jquery.validate.unobtrusive.min.js"></script>
     <h2>SignUp</h2>
     @using (Html.BeginForm("SignUp", "User", FormMethod.Post))
     {
+        @Html.AntiForgeryToken()
         <table class="FormContent">
             @Html.ValidationSummary(true)
             <tr>
@@ -52,23 +56,30 @@
                     @Html.LabelFor(Model => Model.Password)
                 </td>
                 <td>
-                    @Html.PasswordFor(Model => Model.Password, new { @maxlength = 8 })
+                    @Html.PasswordFor(Model => Model.Password, new { @Maxlength = 10 })
                     @Html.ValidationMessageFor(Model => Model.Password)
                 </td>
             </tr>
-            @*<tr>
+            <tr>
+                <td>
+                    @Html.LabelFor(Model=>Model.ConfirmPassword)
+                </td>
+                <td>
+                    @Html.PasswordFor(Model=>Model.ConfirmPassword, new { @MaxLength = 10})
+                </td>
+            </tr>
+            <tr>
                 <td>
                     @Html.LabelFor(Model => Model.Role)
                 </td>
                 <td>
-                    @Html.RadioButtonFor(Model => Model.Role, "admin")Admin<br />
-                    @Html.RadioButtonFor(Model => Model.Role, "user")User
+                    @Html.RadioButtonFor(Model => Model.Role, "User")User<br />
+                    @Html.RadioButtonFor(Model => Model.Role, "Restaurant Manager")Restaurant Manager
                     @Html.ValidationMessageFor(Model => Model.Role)
                 </td>
-            </tr>*@
+            </tr>
             <tr>
                 <td>
-                    @Html.AntiForgeryToken()
                     <input class="BtnStyle" type="submit" id="register" value="Register" />
                 </td>
             </tr>
@@ -77,8 +88,7 @@
                     <p>Have an account</p>
                 </td>
                 <td>
-                    @Html.AntiForgeryToken()
-                    <input class="BtnStyle" type="submit" id="signIn" value="SignIn" />
+                  @Html.ActionLink("SignIn", "SignIn", "User");
                 </td>
             </tr>
 

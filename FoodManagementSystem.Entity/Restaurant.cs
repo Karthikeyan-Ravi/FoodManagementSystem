@@ -17,17 +17,13 @@ namespace FoodManagementSystem.Entity
             get;
             set;
         }
+        [Required]
         public string RestaurantName
         {
             get;
             set;
         }
-        //[Required]
-        //public string Cuisines
-        //{
-        //    get;
-        //    set;
-        //}
+         
         [Required]
         public string Location
         {
@@ -40,7 +36,18 @@ namespace FoodManagementSystem.Entity
             get;
             set;
         }
-        public ICollection<RestaurantCuisine> RestaurantCuisines { get; set; }
+        public int CuisineID
+        {
+            get;
+            set;
+        }
+        public Cuisine Cuisine
+        {
+            get;
+            set;
+        }
+        //public ICollection<RestaurantCuisine> RestaurantCuisines { get; set; }
+        //public ICollection<Cuisine> Cuisines { get; set; }
         public Restaurant()
         {
         }

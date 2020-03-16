@@ -21,7 +21,18 @@ namespace FoodManagementSystem.Entity
             get;
             set;
         }
-        public ICollection<RestaurantCuisine> RestaurantCuisines { get; set; }
+        //public int RestaurantID
+        //{
+        //    get;
+        //    set;
+        //}
+        //public Restaurant Restaurant
+        //{
+        //    get;
+        //    set;
+        //}
+
+        //public ICollection<RestaurantCuisine> RestaurantCuisines { get; set; }
         public Cuisine()
         { }
     }

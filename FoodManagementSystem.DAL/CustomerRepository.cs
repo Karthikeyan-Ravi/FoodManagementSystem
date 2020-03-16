@@ -17,16 +17,16 @@ namespace FoodManagementSystem.DAL
 
             using (FoodManagementSystemDBContext dbContext = new FoodManagementSystemDBContext())
             {
-                SqlParameter name = new SqlParameter("@FullName", customerFields.FullName);
-                SqlParameter gender = new SqlParameter("@Gender", customerFields.Gender);
-                SqlParameter phone = new SqlParameter("@PhoneNumber", customerFields.PhoneNumber);
-                SqlParameter mail = new SqlParameter("@Mail", customerFields.Mail);
-                SqlParameter password = new SqlParameter("@Password", customerFields.Password);
-                SqlParameter role = new SqlParameter("@Role", customerFields.Role);
-                int result = dbContext.Database.ExecuteSqlCommand("sp_InsertCustomer @FullName,@PhoneNumber,@Gender,@Mail,@Password,@Role", name, phone, gender, mail, password, role);
-               
-                //dbContext.Customers.Add(customerFields);
-                //dbContext.SaveChanges();
+                //SqlParameter name = new SqlParameter("@FullName", customerFields.FullName);
+                //SqlParameter gender = new SqlParameter("@Gender", customerFields.Gender);
+                //SqlParameter phone = new SqlParameter("@PhoneNumber", customerFields.PhoneNumber);
+                //SqlParameter mail = new SqlParameter("@Mail", customerFields.Mail);
+                //SqlParameter password = new SqlParameter("@Password", customerFields.Password);
+                //SqlParameter role = new SqlParameter("@Role", customerFields.Role);
+                //int result = dbContext.Database.ExecuteSqlCommand("sp_InsertCustomer @FullName,@PhoneNumber,@Gender,@Mail,@Password,@Role", name, phone, gender, mail, password, role);
+
+                dbContext.Customers.Add(customerFields);
+                dbContext.SaveChanges();
                 return true;
             }
         }
@@ -36,15 +36,12 @@ namespace FoodManagementSystem.DAL
             {
                 Customer customer = dbContext.Customers.Where(c => c.Mail == customerFields.Mail && c.Password == customerFields.Password).SingleOrDefault();
             
-
-                    //foreach (CustomerFields value in customer)
-                //{
-                //    if (customerFields.Mail == value.Mail && customerFields.Password == value.Password)
-                //    {
-                //        return value.Role;
-                //    }
-                //}
-                return customer.Role;
+                if(customer!=null)
+                {
+                    return customer.Role;
+                }
+                return "Not found";                
+                
             }
            
         }

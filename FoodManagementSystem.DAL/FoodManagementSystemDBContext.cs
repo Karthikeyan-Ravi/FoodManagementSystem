@@ -34,24 +34,21 @@ namespace FoodManagementSystem.DAL
             get;
             set;
         }
-        public DbSet<RestaurantCuisine> RestaurantCuisines
-        {
-            get;
-            set;
-        }
+        //public DbSet<RestaurantCuisine> RestaurantCuisines
+        //{
+        //    get;
+        //    set;
+        //}
         public DbSet<FoodCategory> FoodCategories
         {
             get;
             set;
         }
-        protected override void OnModelCreating(DbModelBuilder modelBuilder)
-        {
-            modelBuilder.Entity<Customer>()
-            .MapToStoredProcedures(p => p.Insert(sp => sp.HasName("sp_InsertCustomer"))
-            .Update(sp => sp.HasName("sp_UpdateCustomer"))
-            .Delete(sp => sp.HasName("sp_DeleteCustomer"))
-            );
-        }
+        //protected override void OnModelCreating(DbModelBuilder modelBuilder)
+        //{
+        //    modelBuilder.Entity<Restaurant>().MapToStoredProcedures();
+        //    modelBuilder.Entity<RestaurantCuisine>().MapToStoredProcedures();
+        // }
 
     }
 }

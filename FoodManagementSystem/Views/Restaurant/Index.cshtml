@@ -1,4 +1,4 @@
-﻿@model FoodManagementSystem.Models.RestaurantViewModel
+﻿@model IEnumerable<FoodManagementSystem.Models.RestaurantViewModel>
 
 @{
     ViewBag.Title = "Index";
@@ -14,7 +14,7 @@
                 RestaurantName
             </td>
             <td>
-                Cuisines
+                Cuisine
             </td>
             <td>
                 Location
@@ -23,21 +23,21 @@
                 PhoneNumber
             </td>
         </tr>
-        @foreach (var items in ViewBag.RestaurantDetails)
+        @foreach(var items in Model)
         {
             <tr>
                 <td>
                     @items.RestaurantName
                 </td>
                 <td>
-                    @items.Cuisines
+                    @items.Cuisine.CuisineName
                 </td>
                 <td>
                     @items.Location
                 </td>
                 <td>
                     @items.PhoneNumber
-                </td>
+                </td>       
                 <td>
                     @Html.ActionLink("Edit", "Edit", new { id = items.RestaurantID })
                     @Html.ActionLink("Delete", "Delete", new { id = items.RestaurantID })

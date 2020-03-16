@@ -24,7 +24,7 @@ namespace FoodManagementSystem.BL
         {
             restaurantRepository.AddRestaurant(restaurant);
         }  
-        public List<Restaurant> GetRestaurantDetails()
+        public IEnumerable<Restaurant> GetRestaurantDetails()
         {
             return restaurantRepository.GetRestaurantDetails();
         }     

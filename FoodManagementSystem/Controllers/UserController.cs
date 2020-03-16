@@ -30,7 +30,7 @@ namespace FoodManagementSystem.Controllers
 
         [HttpPost]
         //[ActionName("SignUp")]
-        //[ValidateAntiForgeryToken]
+        [ValidateAntiForgeryToken]
         public ActionResult SignUp(UserSignUpViewModel userSignUpViewModel)
         {
 
@@ -50,7 +50,7 @@ namespace FoodManagementSystem.Controllers
             return View();
         }
         [HttpPost]
-        //[ValidateAntiForgeryToken]
+        [ValidateAntiForgeryToken]
         public ActionResult SignIn(UserSignInViewModel userSignInViewModel)
         {
             if(ModelState.IsValid)
@@ -65,6 +65,10 @@ namespace FoodManagementSystem.Controllers
                 else if(role=="User")
                 {
                     return RedirectToAction("Index", "Restaurant");
+                }
+                else if (role == "Restaurant Manager")
+                {
+                    return RedirectToAction("AddRestaurant", "Restaurant");
                 }
                 else
                 {

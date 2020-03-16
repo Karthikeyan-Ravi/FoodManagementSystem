@@ -22,20 +22,39 @@ namespace FoodManagementSystem.DAL
             }
         }
        
-        public List<Restaurant> GetRestaurantDetails()
+        public IEnumerable<Restaurant> GetRestaurantDetails()
         {
-            using (FoodManagementSystemDBContext foodManagementDBContext = new FoodManagementSystemDBContext())
+            using (FoodManagementSystemDBContext dbContext = new FoodManagementSystemDBContext())
             {
-                return foodManagementDBContext.Restaurants.ToList();
+                return dbContext.Restaurants.Include("Cuisines").ToList();
+                //return foodManagementDBContext.Restaurants.Include("RestaurantCuisines").ToList();
+                //return foodManagementDBContext.Restaurants.Include("RestaurantCusines").Include
+                //var query = from restaurant in dbContext.Restaurants
+                //            from restaurantCuisine in restaurant.RestaurantCuisines
+                //            select new
+                //            {
+                //                RestaurantName = restaurant.RestaurantName,
+                //                Location = restaurant.Location,
+                //                CuisineName = restaurantCuisine.Cuisine.CuisineName
+                //            };
+                //return query.ToList();
             }
         }
         public Restaurant GetRestaurantId(int restaurantId)
         {
             using (FoodManagementSystemDBContext dbContext = new FoodManagementSystemDBContext())
             {
-                return dbContext.Restaurants.Where(id => id.RestaurantID == restaurantId).SingleOrDefault();
+                return dbContext.Restaurants.Include("RestaurantCuisines").Include("Cuisines").Where(id =>id.RestaurantID == restaurantId).SingleOrDefault();
+                
             }
         }
+        //public List<Restaurant> GetCuisineDetails(int id)
+        //{
+        //    using (FoodManagementSystemDBContext dbContext = new FoodManagementSystemDBContext())
+        //    {
+        //        return dbContext.RestaurantCuisines.Where(id=>id.RestaurantID==)
+        //    }
+        //}
         public void UpdateRestaurant(Restaurant restaurantFields)
         {
             using (FoodManagementSystemDBContext dbContext = new FoodManagementSystemDBContext())

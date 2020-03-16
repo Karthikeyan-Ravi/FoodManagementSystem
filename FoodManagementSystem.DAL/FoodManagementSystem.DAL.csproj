@@ -63,39 +63,6 @@
     <Compile Include="CustomerRepository.cs" />
     <Compile Include="FoodItemRepository.cs" />
     <Compile Include="FoodManagementSystemDBContext.cs" />
-    <Compile Include="Migrations\202003110603249_create.cs" />
-    <Compile Include="Migrations\202003110603249_create.designer.cs">
-      <DependentUpon>202003110603249_create.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\202003110608114_stored.cs" />
-    <Compile Include="Migrations\202003110608114_stored.designer.cs">
-      <DependentUpon>202003110608114_stored.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\202003110840370_CreateClass.cs" />
-    <Compile Include="Migrations\202003110840370_CreateClass.designer.cs">
-      <DependentUpon>202003110840370_CreateClass.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\202003110956460_Name.cs" />
-    <Compile Include="Migrations\202003110956460_Name.designer.cs">
-      <DependentUpon>202003110956460_Name.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\202003111032196_Property.cs" />
-    <Compile Include="Migrations\202003111032196_Property.designer.cs">
-      <DependentUpon>202003111032196_Property.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\202003111250497_v-8.cs" />
-    <Compile Include="Migrations\202003111250497_v-8.designer.cs">
-      <DependentUpon>202003111250497_v-8.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\202003121047175_createTable.cs" />
-    <Compile Include="Migrations\202003121047175_createTable.designer.cs">
-      <DependentUpon>202003121047175_createTable.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\202003121159071_RenameProperty.cs" />
-    <Compile Include="Migrations\202003121159071_RenameProperty.designer.cs">
-      <DependentUpon>202003121159071_RenameProperty.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="RestaurantRepository.cs" />
   </ItemGroup>
@@ -108,32 +75,6 @@
   <ItemGroup>
     <None Include="App.config" />
     <None Include="packages.config" />
-  </ItemGroup>
-  <ItemGroup>
-    <EmbeddedResource Include="Migrations\202003110603249_create.resx">
-      <DependentUpon>202003110603249_create.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\202003110608114_stored.resx">
-      <DependentUpon>202003110608114_stored.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\202003110840370_CreateClass.resx">
-      <DependentUpon>202003110840370_CreateClass.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\202003110956460_Name.resx">
-      <DependentUpon>202003110956460_Name.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\202003111032196_Property.resx">
-      <DependentUpon>202003111032196_Property.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\202003111250497_v-8.resx">
-      <DependentUpon>202003111250497_v-8.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\202003121047175_createTable.resx">
-      <DependentUpon>202003121047175_createTable.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\202003121159071_RenameProperty.resx">
-      <DependentUpon>202003121159071_RenameProperty.cs</DependentUpon>
-    </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">

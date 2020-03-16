@@ -7,6 +7,7 @@
     <h2>SignIn</h2>
     @using (Html.BeginForm("SignIn", "User", FormMethod.Post))
     {
+        @Html.AntiForgeryToken()
         <table class="FormContent">
             <tr>
                 <td>
@@ -26,13 +27,9 @@
             </tr>
         </table>
         <a>
-            @Html.AntiForgeryToken()
             <input class="BtnStyle" type="submit" id="signIn" value="SignIn" />
         </a>
         <p>Don't have an account </p>
-        <a href='@Url.Action("SignUp", "User")'>
-            @Html.AntiForgeryToken()
-            <input class="BtnStyle" type='button' value='SignUp' />
-        </a>
+        @Html.ActionLink("SignUp", "SignUp", "User");
     }
 </div>

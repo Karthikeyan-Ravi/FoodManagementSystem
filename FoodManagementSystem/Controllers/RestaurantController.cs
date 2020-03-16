@@ -6,7 +6,6 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
-
 namespace FoodManagementSystem.Controllers
 {
     public class RestaurantController : Controller
@@ -16,52 +15,64 @@ namespace FoodManagementSystem.Controllers
         // GET: Restaurant
         public ActionResult Index()
         {
-            IEnumerable<Restaurant> restaurantDetails = restaurantBL.GetRestaurantDetails();
-            ViewBag.RestaurantDetails = restaurantDetails;
-            return View();
+            IEnumerable<Restaurant> restaurantlList;
+            List<RestaurantViewModel> restaurantViewModelList=new List<RestaurantViewModel>();
+            restaurantlList = restaurantBL.GetRestaurantDetails();
+            //var restaurantViewModelList = AutoMapper.Mapper.Map<Restaurant, RestaurantViewModel>(restaurantlList);
+            foreach (Restaurant restaurant in restaurantlList)
+            {
+                var details = AutoMapper.Mapper.Map<Restaurant, RestaurantViewModel>(restaurant);
+                restaurantViewModelList.Add(details);
+            }
+            //ViewBag.RestaurantDetails = restaurantDetails;
+            return View(restaurantViewModelList);
         }
         public ActionResult AddRestaurant()
         {
             CuisineBL cuisineBL = new CuisineBL();
-            ViewBag.restaurantCuisine = new SelectList(cuisineBL.GetCuisine(), "CuisineID", "CuisineName");
+            ViewBag.CuisineDetails = new SelectList(cuisineBL.GetCuisine(), "CuisineID", "CuisineName");
             return View();
         }
         [HttpPost]
         public ActionResult AddRestaurant(RestaurantViewModel restaurantViewModel)
         {
-            CuisineBL cuisineBL = new CuisineBL();
+           
             if (ModelState.IsValid)
             {
-                 Restaurant restaurant = AutoMapper.Mapper.Map<RestaurantViewModel, Restaurant>(restaurantViewModel);
-                restaurant.RestaurantCuisines = new List<RestaurantCuisine>();
-                foreach (int detail in restaurantViewModel.restaurantCuisine)
-                {
-                    RestaurantCuisine restaurantCuisine = new RestaurantCuisine();
-                    restaurantCuisine.CuisineID = detail;
-                    restaurant.RestaurantCuisines.Add(restaurantCuisine);
-                }
+                CuisineBL cuisineBL = new CuisineBL();
+                ViewBag.CuisineDetails = new SelectList(cuisineBL.GetCuisine(), "CuisineID", "CuisineName");
+                Restaurant restaurant = AutoMapper.Mapper.Map<RestaurantViewModel, Restaurant>(restaurantViewModel);
+                //    restaurant.RestaurantCuisines = new List<RestaurantCuisine>();
+                //    foreach (int detail in restaurantViewModel.restaurantCuisine)
+                //    {
+                //        RestaurantCuisine restaurantCuisine = new RestaurantCuisine();
+                //        restaurantCuisine.CuisineID = detail;
+                //        restaurant.RestaurantCuisines.Add(restaurantCuisine);
+                //    }
+
                 restaurantBL.AddtRestaurant(restaurant);
-                TempData["RestaurantID"] = restaurant.RestaurantID;
+                //TempData["RestaurantID"] = restaurant.RestaurantID;
                 return RedirectToAction("AddFood", "Food");
+                //}
             }
-            ViewBag.restaurantCuisine = new SelectList(cuisineBL.GetCuisine(), "CuisineID", "CuisineName");
-            return View(restaurantViewModel);
+       
+            return View();
         }
         public ActionResult Edit(int id)
         {
-           
-            restaurantFields =restaurantBL.GetRestaurantId(id);
+
+            restaurantFields = restaurantBL.GetRestaurantId(id);
             var restaurantViewModel = AutoMapper.Mapper.Map<Restaurant, RestaurantViewModel>(restaurantFields);
-         
+
             return View(restaurantViewModel);
-            
+
         }
         public ActionResult Update(RestaurantViewModel restaurantViewModel)
         {
-            if(ModelState.IsValid)
+            if (ModelState.IsValid)
             {
                 var restaurantFields = AutoMapper.Mapper.Map<RestaurantViewModel, Restaurant>(restaurantViewModel);
-               
+
                 restaurantBL.UpdateRestaurant(restaurantFields);
                 return RedirectToAction("Index");
             }
@@ -69,12 +80,12 @@ namespace FoodManagementSystem.Controllers
         }
         public ActionResult Delete(int id)
         {
-            restaurantFields=restaurantBL.GetRestaurantId(id);
+            restaurantFields = restaurantBL.GetRestaurantId(id);
             var restaurantViewModel = AutoMapper.Mapper.Map<Restaurant, RestaurantViewModel>(restaurantFields);
             //estaurantViewModel restaurantViewModel = new RestaurantViewModel();
-            if(ModelState.IsValid)
+            if (ModelState.IsValid)
             {
-               
+
                 return View(restaurantViewModel);
             }
             return View();
@@ -83,7 +94,6 @@ namespace FoodManagementSystem.Controllers
         public ActionResult Delete(RestaurantViewModel restaurantViewModel)
         {
             var restaurantFields = AutoMapper.Mapper.Map<RestaurantViewModel, Restaurant>(restaurantViewModel);
-            
             restaurantBL.DeleteRestaurant(restaurantFields);
             return RedirectToAction("Index");
         }
@@ -103,6 +113,6 @@ namespace FoodManagementSystem.Controllers
         //    foodBL.AddFood(foodItem);
         //    return View();
         //}
-   }
+    }
 
 }

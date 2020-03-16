@@ -24,12 +24,7 @@ namespace FoodManagementSystem.Models
             set;
         }
         //[Required(ErrorMessage = "Cuisine required")]
-        //public string Cuisines
-        //{
-        //    get;
-        //    set;
-        //}
-        [Required(ErrorMessage = "Name required")]
+        [Required(ErrorMessage = "Location required")]
         [Display(Name = "Location")]
         public string Location
         {
@@ -44,11 +39,21 @@ namespace FoodManagementSystem.Models
             get;
             set;
         }
-        public ICollection<RestaurantCuisine> RestaurantCuisines { get; set; }
-        public int[] restaurantCuisine
+        public int CuisineID
         {
             get;
             set;
         }
+        public Cuisine Cuisine
+        {
+            get;
+            set;
+        }
+        //public ICollection<RestaurantCuisine> RestaurantCuisines { get; set; }
+        //public int[] restaurantCuisine
+        //{
+        //    get;
+        //    set;
+        //}
     }
 }
