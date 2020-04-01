@@ -1,8 +1,5 @@
-﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel.DataAnnotations;
-using System.Linq;
-using System.Web;
+﻿using System.ComponentModel.DataAnnotations;
+
 
 namespace FoodManagementSystem.Models
 {
@@ -10,13 +7,15 @@ namespace FoodManagementSystem.Models
     {
         [Required(ErrorMessage = "Email required")]
         [DataType(DataType.EmailAddress)]
-        public string Mail
+        [Display(Name ="Mail")]
+        public string Mail      //Attributes of UserSignInViewModel
         {
             get;
             set;
         }
-        [Required]
+        [Required(ErrorMessage ="Password required")]
         [DataType(DataType.Password)]
+        [Display(Name ="Password")]
         //[RegularExpression(@"((?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?=.*[@#$%]).{6,20})", ErrorMessage = "Invalid Password")]
         public string Password
         {

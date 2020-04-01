@@ -1,45 +1,59 @@
 ﻿using FoodManagementSystem.DAL;
-using System.Data;
 using FoodManagementSystem.Entity;
 using System.Collections.Generic;
 
 namespace FoodManagementSystem.BL
 {
-    public class RestaurantBL
+    // interface declaration 
+    public interface IResturant
     {
-        RestaurantRepository restaurantRepository = new RestaurantRepository();
-        //public DataTable DisplayRestaurantDetails()
-        //{
-        //    return restaurantRepository.DisplayRestaurantDetails();
-        //}
-        //public void UpdateRestaurantDetails(string name, string type, string location, int id)
-        //{
-        //    restaurantRepository.UpdateRestaurantDetails(name, type, location, id);
-        //}
-        //public void DeleteRestaurantDetails(int id)
-        //{
-        //    restaurantRepository.DeleteRestaurantDetails(id);
-        //}
-        public void AddtRestaurant(Restaurant restaurant)
+        // declaration of methods of 
+        // interface that will be implemented  
+        // by the class which inherits the interface 
+        void AddRestaurant(Restaurant restaurant);
+        IEnumerable<Restaurant> GetRestaurantDetails();
+        Restaurant GetRestaurantId(int id);
+        void UpdateRestaurant(Restaurant restaurantFields);
+        void DeleteRestaurant(int restaurantId);
+        //IEnumerable<Restaurant> GetRestaurantDetailsForDelete(int restaurantId);
+    }
+    public class RestaurantBL: IResturant            //Implementing the interfce
+    {
+        //creating an Reference of interface
+        IRestaurantRepository restaurantRepository;
+        public RestaurantBL()
+        {
+            // Declare an interface instance
+            restaurantRepository = new RestaurantRepository();
+        }
+        public void AddRestaurant(Restaurant restaurant)
         {
             restaurantRepository.AddRestaurant(restaurant);
-        }  
+        }
+        //Retrieves the restaurant details
         public IEnumerable<Restaurant> GetRestaurantDetails()
         {
             return restaurantRepository.GetRestaurantDetails();
-        }     
+        }
+        //Method to get restaurant details based on id
         public Restaurant GetRestaurantId(int id)
         {
             return restaurantRepository.GetRestaurantId(id);
         }
+        //Method to update the restaurant details
         public void UpdateRestaurant(Restaurant restaurantFields)
         {
             restaurantRepository.UpdateRestaurant(restaurantFields);
         }
-        public void DeleteRestaurant(Restaurant restaurantFields)
+        //Method to delete the restaurant details 
+        public void DeleteRestaurant(int restaurantId)
         {
-            restaurantRepository.DeleteRestaurant(restaurantFields);
+            restaurantRepository.DeleteRestaurant(restaurantId);
         }
+        //public IEnumerable<Restaurant> GetRestaurantDetailsForDelete(int restaurantId)
+        //{
+        //    return restaurantRepository.GetRestaurantDetailsForDelete(restaurantId);
+        //}
     }
 }
   

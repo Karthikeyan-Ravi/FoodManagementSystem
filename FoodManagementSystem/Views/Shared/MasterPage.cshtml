@@ -9,9 +9,29 @@
 <body class="BackgroundImg">
     <div class="MasterPageLink">
         @Html.ActionLink("SignUp", "SignUp", "User")
-        @Html.ActionLink("SignIn", "SignIn", "User")
+        @if (HttpContext.Current.User.Identity.IsAuthenticated)
+        {
+            @Html.ActionLink("Logout", "Logoff", "User")
+        }
+        else
+        {
+            @Html.ActionLink("LogIn", "SignIn", "User")
+        }
+        @Html.ActionLink("Home", "Index", "Home")
+        @if (HttpContext.Current.User.IsInRole("Admin"))
+        {
+            <span>@Html.ActionLink("ViewRestaurants", "Index", "Restaurant")</span>
+            <span>@Html.ActionLink("View foods", "Index", "Food")</span>
+            <span>@Html.ActionLink("ViewCuisines", "ViewCuisine", "Admin")</span>
+        }
+        @if (HttpContext.Current.User.IsInRole("Restaurant Manger"))
+        {
+            @Html.ActionLink("Add Restaurant", "AddRestaurant", "Restaurant")
+            @Html.ActionLink("Add Food", "AddFood", "Food")
+        }
+        @*@Html.ActionLink("SignIn", "SignIn", "User")*@
     </div>
-        @RenderBody()
-  
+    @RenderBody()
+
 </body>
 </html>

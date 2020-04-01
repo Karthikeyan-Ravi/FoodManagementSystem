@@ -6,16 +6,22 @@
 
 <h2>AddFood</h2>
 
+@if(TempData["RestaurantID"] != null)
+{
+    TempData.Keep("RestaurantID");
+}
 @using (Html.BeginForm("AddFood", "Food", FormMethod.Post))
 {
+    @Html.AntiForgeryToken()
     @Html.HiddenFor(Model=>Model.RestaurantID)
-    <table>
+    <table class="DisplayFoodContent">
         <tr>
             <td>
-                @Html.LabelFor(Model => Model.FoodName)
+                @Html.LabelFor(Model => Model.FoodName,new {@maxlength=25})
             </td>
             <td>
                 @Html.TextBoxFor(Model => Model.FoodName)
+                @Html.ValidationMessageFor(Model=>Model.FoodName)
             </td>
         </tr>
         <tr>
@@ -24,18 +30,21 @@
             </td>
             <td>
                 @Html.DropDownListFor(Model=>Model.FoodCategoryID, (IEnumerable<SelectListItem>)ViewBag.FoodCategory, "Select Category")
+                @Html.ValidationMessageFor(Model=>Model.FoodCategoryID)
             </td>
         </tr>
         <tr>
             <td>
-                @Html.LabelFor(Model => Model.FoodPrice)
+                @Html.LabelFor(Model => Model.FoodPrice,new {@maxlength=5})
             </td>
             <td>
                 @Html.TextBoxFor(Model => Model.FoodPrice)
+                @Html.ValidationMessageFor(Model=>Model.FoodPrice)
             </td>
         </tr>
         <tr>
 </table>
   <a><input type="submit" id="addFood" value="Add Food" /></a>
+  @Html.ActionLink("Done", "DisplayRestaurantFoods")
 }
 

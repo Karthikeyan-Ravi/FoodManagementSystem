@@ -124,6 +124,8 @@
     <Content Include="Images\baking-cheese-cooking-crust-315755.jpg" />
     <Content Include="Images\cooked-food-in-stainless-steel-plate-2641886.jpg" />
     <Content Include="Images\pepperoni-pizza-803290.jpg" />
+    <Content Include="Images\pepperoni-pizza-on-wood-board.jpg" />
+    <Content Include="Logger\Exception_Logger.txt" />
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
     <Content Include="Scripts\jquery-3.4.1.js" />
@@ -153,7 +155,6 @@
     </Compile>
     <Compile Include="Models\CuisineViewModel.cs" />
     <Compile Include="Models\FoodViewModel.cs" />
-    <Compile Include="Models\RestaurantCuisineViewModel.cs" />
     <Compile Include="Models\RestaurantViewModel.cs" />
     <Compile Include="Models\UserSignInViewModel.cs" />
     <Compile Include="Models\UserSignUpViewModel.cs" />
@@ -168,17 +169,21 @@
     <Content Include="Scripts\jquery-3.4.1.slim.min.map" />
     <Content Include="Scripts\jquery-3.4.1.min.map" />
     <Content Include="Views\User\SignIn.cshtml" />
-    <Content Include="Views\Home\RunMaster.cshtml" />
     <Content Include="Views\Shared\MasterPage.cshtml" />
     <Content Include="Views\Shared\PartialViewDemo.cshtml" />
     <Content Include="Views\Restaurant\Index.cshtml" />
     <Content Include="Views\Restaurant\Edit.cshtml" />
     <Content Include="Views\Restaurant\AddRestaurant.cshtml" />
-    <Content Include="Views\Restaurant\Delete.cshtml" />
     <Content Include="Views\Error\ErrorMessage.cshtml" />
     <Content Include="Views\Shared\Error.cshtml" />
     <Content Include="Views\Admin\AddCuisine.cshtml" />
     <Content Include="Views\Food\AddFood.cshtml" />
+    <Content Include="Views\Restaurant\Delete.cshtml" />
+    <Content Include="Views\Home\Index.cshtml" />
+    <Content Include="Views\Food\Index.cshtml" />
+    <Content Include="Views\Food\DisplayRestaurantFoods.cshtml" />
+    <Content Include="Views\Food\EditFood.cshtml" />
+    <Content Include="Views\Admin\ViewCuisine.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
@@ -188,7 +193,6 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
-    <Folder Include="ViewModels\" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\FoodManagementSystem.BL\FoodManagementSystem.BL.csproj">

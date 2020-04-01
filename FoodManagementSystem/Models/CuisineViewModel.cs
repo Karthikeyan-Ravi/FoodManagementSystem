@@ -1,15 +1,12 @@
-﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel.DataAnnotations;
-using System.Linq;
-using System.Web;
+﻿using System.ComponentModel.DataAnnotations;
 
 namespace FoodManagementSystem.Models
 {
     public class CuisineViewModel
     {
+        //Primary key attribute
         [Key]
-        public int CuisineID
+        public int CuisineID        //Attributes of CuisineViewModel
         {
             get;
             set;
@@ -21,5 +18,6 @@ namespace FoodManagementSystem.Models
             get;
             set;
         }
+        //public ICollection<Restaurant> Restaurant { get; set; }
     }
 }

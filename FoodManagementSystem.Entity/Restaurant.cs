@@ -1,16 +1,10 @@
-﻿using FoodManagementSystem.Entity;
-using System;
-using System.Collections.Generic;
-using System.ComponentModel.DataAnnotations;
-using System.ComponentModel.DataAnnotations.Schema;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using System.ComponentModel.DataAnnotations;
 
 namespace FoodManagementSystem.Entity
 {
     public class Restaurant
     {
+        //Primary key attribute
         [Key]
         public int RestaurantID
         {
@@ -18,7 +12,7 @@ namespace FoodManagementSystem.Entity
             set;
         }
         [Required]
-        public string RestaurantName
+        public string RestaurantName    //Attributes of restaurnt
         {
             get;
             set;
@@ -36,6 +30,7 @@ namespace FoodManagementSystem.Entity
             get;
             set;
         }
+        //Foreign  key attribute
         public int CuisineID
         {
             get;
@@ -46,8 +41,6 @@ namespace FoodManagementSystem.Entity
             get;
             set;
         }
-        //public ICollection<RestaurantCuisine> RestaurantCuisines { get; set; }
-        //public ICollection<Cuisine> Cuisines { get; set; }
         public Restaurant()
         {
         }

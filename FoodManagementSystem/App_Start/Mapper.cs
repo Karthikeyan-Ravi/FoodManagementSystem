@@ -1,15 +1,11 @@
 ﻿using FoodManagementSystem.Entity;
 using FoodManagementSystem.Models;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Web;
 
 namespace FoodManagementSystem.App_Start
 {
-    public class Mapper
+    public class Mapper             //Mapper class to automap entity & Viewmodel
     {
-        public static void Mapping()
+        public static void Mapping()    
         {
             AutoMapper.Mapper.Initialize(config =>
             {
@@ -18,6 +14,7 @@ namespace FoodManagementSystem.App_Start
                 config.CreateMap<RestaurantViewModel, Restaurant>();
                 config.CreateMap<Restaurant, RestaurantViewModel>(); 
                 config.CreateMap<FoodViewModel,FoodItem>();
+                config.CreateMap<Cuisine, CuisineViewModel>();
             });
         }
     }

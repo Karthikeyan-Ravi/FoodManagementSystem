@@ -1,14 +1,11 @@
-﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel.DataAnnotations;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using System.ComponentModel.DataAnnotations;
+
 
 namespace FoodManagementSystem.Entity
 {
     public class Cuisine
     {
+        //Primary key attribute
         [Key]
         public int CuisineID
         {
@@ -21,18 +18,6 @@ namespace FoodManagementSystem.Entity
             get;
             set;
         }
-        //public int RestaurantID
-        //{
-        //    get;
-        //    set;
-        //}
-        //public Restaurant Restaurant
-        //{
-        //    get;
-        //    set;
-        //}
-
-        //public ICollection<RestaurantCuisine> RestaurantCuisines { get; set; }
         public Cuisine()
         { }
     }

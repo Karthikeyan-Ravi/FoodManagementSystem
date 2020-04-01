@@ -1,10 +1,5 @@
 ﻿using FoodManagementSystem.Entity;
-using System;
-using System.Collections.Generic;
 using System.Data.Entity;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace FoodManagementSystem.DAL
 {
@@ -14,22 +9,22 @@ namespace FoodManagementSystem.DAL
         {
 
         }
-        public DbSet<Customer> Customers
+        public DbSet<Customer> Customers        //Property of customer table
         {
             get;
             set;
         }
-        public DbSet<Restaurant> Restaurants
+        public DbSet<Restaurant> Restaurants    //Property of Restaurant table
         {
             get;
             set;
         }
-        public DbSet<FoodItem> FoodItems
+        public DbSet<FoodItem> FoodItems        //Property of FoodItem table
         {
             get;
             set;
         }
-        public DbSet<Cuisine> Cuisines
+        public DbSet<Cuisine> Cuisines          //Property of Cuisine table
         {
             get;
             set;
@@ -39,7 +34,7 @@ namespace FoodManagementSystem.DAL
         //    get;
         //    set;
         //}
-        public DbSet<FoodCategory> FoodCategories
+        public DbSet<FoodCategory> FoodCategories       //Property of FoodCategory table
         {
             get;
             set;
@@ -49,6 +44,13 @@ namespace FoodManagementSystem.DAL
         //    modelBuilder.Entity<Restaurant>().MapToStoredProcedures();
         //    modelBuilder.Entity<RestaurantCuisine>().MapToStoredProcedures();
         // }
+        //protected override void OnModelCreating(DbModelBuilder modelBuilder)
+        //{
+        //    modelBuilder.Entity<Restaurant>()
+        //        .HasOptional<FoodItem>(s=>s.FoodItem)
+        //        .WithMany()
+        //        .WillCascadeOnDelete(true);
+        //}
 
     }
 }

@@ -1,4 +1,4 @@
-﻿@model IEnumerable<FoodManagementSystem.Models.RestaurantViewModel>
+﻿@model IEnumerable<FoodManagementSystem.Entity.Restaurant>
 
 @{
     ViewBag.Title = "Index";
@@ -40,7 +40,8 @@
                 </td>       
                 <td>
                     @Html.ActionLink("Edit", "Edit", new { id = items.RestaurantID })
-                    @Html.ActionLink("Delete", "Delete", new { id = items.RestaurantID })
+                    @Html.ActionLink("Delete", "Delete", new { id = items.RestaurantID },new { onclick="return confirm('Are you sure you wish to delete this restaurant');"})
+                    @Html.ActionLink("DisplayFood", "DisplayRestaurantFoods", "Food",new { id=items.RestaurantID},null)
                 </td>
             </tr>
         }

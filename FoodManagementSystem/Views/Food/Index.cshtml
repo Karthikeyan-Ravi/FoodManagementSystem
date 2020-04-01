@@ -1,0 +1,36 @@
+﻿@model IEnumerable<FoodManagementSystem.Entity.FoodItem>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Food Details</h2>
+<table class="DisplayFoodContent">
+    <tr>
+        <td>FoodName</td>
+        <td>FoodCategory</td>
+        <td>RestaurantName</td>
+        <td>Price</td>
+    </tr>
+    @foreach(var items in Model)
+    {
+        <tr>
+            <td>
+                @items.FoodName
+            </td>
+            <td>
+                @items.FoodCategory.CategoryName
+            </td>
+            <td>
+                @items.RestaurantFields.RestaurantName
+            </td>
+            <td>
+                @items.FoodPrice
+            </td>
+            @*<td>
+                @Html.ActionLink("Edit","EditFood",new { id=items.FoodID})
+                @Html.ActionLink("Delete","DeleteFood",new { id=items.FoodID},new {onclick= "return confirm('Are you sure you wish to delete this Food');" })
+            </td>*@
+        </tr>
+    }
+</table>

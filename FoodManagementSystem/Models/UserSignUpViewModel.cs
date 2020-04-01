@@ -1,23 +1,18 @@
-﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel.DataAnnotations;
-using System.Linq;
-using System.Web;
+﻿using System.ComponentModel.DataAnnotations;
 
 namespace FoodManagementSystem.Models
 {
-
-    public enum Gender
+    public enum Gender  
     {
         Male,
-        Femlae,
+        Female,
         Others
     }
     public class UserSignUpViewModel
     {
         [Required(ErrorMessage = "Name required")]
         [Display(Name = "FullName")]
-        public string FullName
+        public string FullName                  //Attributes of UserSignUpViewModel
         {
             get;
             set;

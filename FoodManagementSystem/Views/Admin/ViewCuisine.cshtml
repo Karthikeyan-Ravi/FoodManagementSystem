@@ -1,0 +1,22 @@
+﻿@model IEnumerable<FoodManagementSystem.Entity.Cuisine>
+
+@{
+    ViewBag.Title = "ViewCuisine";
+}
+
+<h2>ViewCuisine</h2>
+<table class="DisplayFoodContent" border="1">
+    <tr>
+        <td>CuisineName</td>
+    </tr>
+    @foreach(var items in Model)
+    {
+        <tr>
+            <td>
+                @items.CuisineName
+            </td>
+        </tr>
+    }
+</table>
+@Html.ActionLink("AddCuisine", "AddCuisine")
+

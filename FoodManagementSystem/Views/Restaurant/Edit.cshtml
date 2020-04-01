@@ -7,6 +7,7 @@
 <h2>Edit</h2>
 @using (Html.BeginForm("Update", "Restaurant", FormMethod.Post))
 {
+    @Html.AntiForgeryToken()
     @Html.HiddenFor(Model => Model.RestaurantID)
     <table class="RestaurantContent">
         <tr>
@@ -14,8 +15,8 @@
             <td>@Html.EditorFor(Model => Model.RestaurantName)</td>
         </tr>
         <tr>
-            <td>RestaurantType</td>
-            <td>@Html.EditorFor(Model => Model.RestaurantCuisines)</td>
+            <td>Cuisine</td>
+            <td>@Html.DropDownListFor(Model => Model.CuisineID, ViewBag.CuisineDetails as SelectList,"Select Cuisine" )</td>
         </tr>
         <tr>
             <td>Location</td>

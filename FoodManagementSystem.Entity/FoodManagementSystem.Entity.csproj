@@ -63,7 +63,6 @@
     <Compile Include="FoodItem.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Restaurant.cs" />
-    <Compile Include="RestaurantCuisine.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />

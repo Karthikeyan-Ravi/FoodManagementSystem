@@ -1,9 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.ComponentModel.DataAnnotations;
+﻿using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
 
 
@@ -17,6 +12,7 @@ namespace FoodManagementSystem.Entity
     }
     public class Customer
     {
+        //Primary key attribute
         [Key]
         [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
         public int UserID
@@ -26,7 +22,7 @@ namespace FoodManagementSystem.Entity
         }
 
         [Required(ErrorMessage = "Name required")]
-        public string FullName
+        public string FullName                      //Attributes of Customer
         {
             get;
             set;
@@ -70,14 +66,6 @@ namespace FoodManagementSystem.Entity
         {
 
         }
-        //public CustomerFields(string fullName, long phoneNumber, string mail, string password, string role)
-        //{
-        //    this.FullName = fullName;
-        //    this.PhoneNumber = phoneNumber;
-        //    this.Mail = mail;
-        //    this.Password = password;
-        //    this.Role = role;
-        //}
     }
 
 }

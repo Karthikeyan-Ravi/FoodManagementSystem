@@ -1,12 +1,11 @@
 ﻿body {
 }
-.BackgroundImg
-{
-    background-image:url(Images/pepperoni-pizza-803290.jpg);
+.BackgroundImg {
+    background-image: url(Images/pepperoni-pizza-on-wood-board.jpg);
     background-size:cover;
     background-repeat:no-repeat;
-    height:60%;
-    width:100%;
+    height: 60%;
+    width: 100%;
 }
 .FormContent
 {
@@ -23,27 +22,35 @@
 }
 a{
     /*text-decoration:none;*/
-    color:white;
+    color:lawngreen;
 }
 h2{
-    color:yellowgreen;
+    color:orangered;
 }
 .Form{
     margin-left:10%;  
     font-size:2rem; 
 }
-.MasterPageLink{
-    font-family:'Times New Roman', Times, serif;
-    color:yellowgreen;
-    font-size:1.5rem;
-    margin-left:90%;
+.MasterPageLink {
+    font-family: 'Times New Roman', Times, serif;
+    color: green;
+    font-size: 1.5rem;
+    margin-right:2%;
+    text-align: right;
 }
 .RestaurantContent{
+
     font-family:'Times New Roman', Times, serif;
     color:white;
-}
+} 
 .AddRestaurantActionLink a{
     font-family:'Times New Roman', Times, serif;
     font-size:2rem;
-    color:white ;
+}
+.DisplayFoodContent{
+    font-family:'Times New Roman', Times, serif;
+    color:white;
+}
+.SignUpLink{
+    color:orangered;
 }

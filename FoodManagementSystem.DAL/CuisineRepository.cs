@@ -1,15 +1,21 @@
 ﻿using FoodManagementSystem.Entity;
-using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace FoodManagementSystem.DAL
 {
-    public class CuisineRepository
+    // interface declaration 
+    public interface ICuisineRepository
     {
-        public void AddCuisine(Cuisine cuisine)
+        // declaration of methods of 
+        // interface that will be implemented  
+        // by the class which inherits the interface 
+        void AddCuisine(Cuisine cuisine);
+        List<Cuisine> GetCuisine();
+    }
+    public class CuisineRepository:ICuisineRepository   //Implementing the interfce
+    {
+        public void AddCuisine(Cuisine cuisine)     // Method to add Cuisine to DB
         {
             using (FoodManagementSystemDBContext dbContext = new FoodManagementSystemDBContext())
             {
@@ -17,7 +23,7 @@ namespace FoodManagementSystem.DAL
                 dbContext.SaveChanges();
             }
         }
-        public List<Cuisine> GetCuisine()
+        public List<Cuisine> GetCuisine()       //Method to get cuisines from db 
         {
             using (FoodManagementSystemDBContext dbContext = new FoodManagementSystemDBContext())
             {

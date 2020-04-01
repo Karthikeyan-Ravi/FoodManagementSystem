@@ -1,0 +1,29 @@
+﻿@model FoodManagementSystem.Models.FoodViewModel
+
+@{
+    ViewBag.Title = "EditFood";
+}
+
+<h2>EditFood</h2>
+@using (Html.BeginForm("UpdateFood", "Food", FormMethod.Post))
+{
+    @Html.AntiForgeryToken()
+    @Html.HiddenFor(Model=>Model.RestaurantID )
+    @Html.HiddenFor(Model=>Model.FoodID)
+    <table>
+        <tr>
+            <td>@Html.LabelFor(Model => Model.FoodName)</td>
+            <td>@Html.EditorFor(Model => Model.FoodName)</td>
+        </tr>
+        <tr>
+            <td>FoodCategory</td>
+            <td>@Html.DropDownListFor(Model => Model.FoodCategoryID, ViewBag.FoodCategory as SelectList, "Select category")</td>
+        </tr>
+        <tr>
+            <td>Price</td>
+            <td>@Html.EditorFor(Model => Model.FoodPrice)</td>
+        </tr>
+    </table>
+    @Html.ActionLink("Cancel", "DisplayRestaurantFoods")
+    <input type="submit" value="Submit" />
+}

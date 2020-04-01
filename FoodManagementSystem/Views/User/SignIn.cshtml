@@ -11,10 +11,11 @@
         <table class="FormContent">
             <tr>
                 <td>
-                    @Html.LabelFor(Model => Model.Mail, new { @maxlength = 64 })
+                    @Html.LabelFor(Model => Model.Mail, new { @maxlength = 30 })
                 </td>
                 <td>
                     @Html.TextBoxFor(Model => Model.Mail)
+                    @Html.ValidationMessageFor(Model=>Model.Mail)
                 </td>
             </tr>
             <tr>
@@ -23,6 +24,7 @@
                 </td>
                 <td>
                     @Html.PasswordFor(Model => Model.Password)
+                    @Html.ValidationMessageFor(Model=>Model.Password)
                 </td>
             </tr>
         </table>
@@ -30,6 +32,6 @@
             <input class="BtnStyle" type="submit" id="signIn" value="SignIn" />
         </a>
         <p>Don't have an account </p>
-        @Html.ActionLink("SignUp", "SignUp", "User");
+        @Html.ActionLink("SignUp", "SignUp", "User",new {@class= "SignUpLink"});
     }
 </div>

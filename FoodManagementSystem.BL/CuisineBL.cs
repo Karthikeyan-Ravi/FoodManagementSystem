@@ -1,23 +1,35 @@
 ﻿using FoodManagementSystem.DAL;
 using FoodManagementSystem.Entity;
-using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace FoodManagementSystem.BL
 {
-    public class CuisineBL
+    // interface declaration 
+    public interface ICuisineBL
     {
-        public void AddCuisine(Cuisine cuisine)
+        // declaration of methods of 
+        // interface that will be implemented  
+        // by the class which inherits the interface 
+        void AddCuisine(Cuisine cuisine);
+        List<Cuisine> GetCuisine();
+    }
+    public class CuisineBL: ICuisineBL       //Implementing the interfce
+    {
+        //creating an Reference of interface
+        ICuisineRepository cuisineRepository;
+        public CuisineBL()
         {
-            CuisineRepository cuisineRepository = new CuisineRepository();
+            // Declare an interface instance
+            cuisineRepository = new CuisineRepository();
+        }
+        //Add Cuisine to the database
+        public void AddCuisine(Cuisine cuisine)         
+        {
             cuisineRepository.AddCuisine(cuisine);
         }
+        //Retrieves the cuisine from database
         public List<Cuisine> GetCuisine()
         {
-            CuisineRepository cuisineRepository = new CuisineRepository();
             return cuisineRepository.GetCuisine();
         }
     }

@@ -1,20 +1,18 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace FoodManagementSystem.Entity
 {
     public class FoodItem
     {
+        //Primary key attribute
         [Key] 
         public int FoodID
         {
             get;
             set;
         }
+        //Foreign key attribute
         public int RestaurantID
         {
             get;
@@ -26,11 +24,12 @@ namespace FoodManagementSystem.Entity
             set;
         }
         [Required]
-        public string FoodName
+        public string FoodName              //Attributes of Food items
         {
             get;
             set;
         }
+        //Foreign key attribute
         [Required]
         public int FoodCategoryID
         {

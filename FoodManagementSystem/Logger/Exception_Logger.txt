@@ -1,0 +1,5 @@
+﻿Food ---> AddFood ---> The required anti-forgery form field "__RequestVerificationToken" is not present. ---> 3/28/2020 11:08:02 AM
+Food ---> AddFood ---> The required anti-forgery form field "__RequestVerificationToken" is not present. ---> 3/28/2020 11:09:07 AM
+Food ---> DisplayRestaurantFoods ---> Object reference not set to an instance of an object. ---> 3/31/2020 3:32:30 PM
+Food ---> Index ---> Object reference not set to an instance of an object. ---> 3/31/2020 3:56:53 PM
+Food ---> Index ---> Object reference not set to an instance of an object. ---> 3/31/2020 3:58:30 PM

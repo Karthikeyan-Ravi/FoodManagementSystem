@@ -8,13 +8,15 @@
 
 @using (Html.BeginForm("AddRestaurant", "Restaurant", FormMethod.Post))
 {
+    @Html.AntiForgeryToken()
     <table class="RestaurantContent">
         <tr>
             <td>
                 @Html.LabelFor(Model => Model.RestaurantName)
             </td>
             <td>
-                @Html.TextBoxFor(Model => Model.RestaurantName)
+                @Html.TextBoxFor(Model => Model.RestaurantName, new { @maxlength = 25 })
+                @Html.ValidationMessageFor(Model => Model.RestaurantName)
             </td>
         </tr>
         <tr>
@@ -22,15 +24,17 @@
                 @Html.LabelFor(Model=>Model.Cuisine.CuisineName)
             </td>
             <td>
-                @Html.ListBoxFor(Model=>Model.CuisineID, (IEnumerable<SelectListItem>)ViewBag.CuisineDetails, "Select cuisine")
+                @Html.DropDownListFor(Model=>Model.CuisineID, (IEnumerable<SelectListItem>)ViewBag.CuisineDetails, "Select cuisine")
+                @*@Html.ValidationMessageFor(Model=>Model.CuisineID)*@
             </td>
         </tr>
         <tr>
             <td>
-                @Html.LabelFor(Model => Model.Location)
+                @Html.LabelFor(Model => Model.Location,new {@maxlength=20 })
             </td>
             <td>
                 @Html.TextBoxFor(Model => Model.Location)
+                @Html.ValidationMessageFor(Model => Model.Location)
             </td>
         </tr>
         <tr>
@@ -38,7 +42,8 @@
                 @Html.LabelFor(Model=>Model.PhoneNumber)
             </td>
             <td>
-                @Html.TextBoxFor(Model=>Model.PhoneNumber)
+                @Html.TextBoxFor(Model=>Model.PhoneNumber,new { @maxlength=10})
+                @Html.ValidationMessageFor(Model=>Model.PhoneNumber)
             </td>
         </tr>
     </table>
