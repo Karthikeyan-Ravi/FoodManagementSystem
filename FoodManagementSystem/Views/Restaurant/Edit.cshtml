@@ -12,7 +12,7 @@
     <table class="RestaurantContent">
         <tr>
             <td>RestaurantName</td>
-            <td>@Html.EditorFor(Model => Model.RestaurantName)</td>
+            <td>@Html.EditorFor(Model => Model.RestaurantName,new { maxlength=25})</td>
         </tr>
         <tr>
             <td>Cuisine</td>
@@ -20,11 +20,11 @@
         </tr>
         <tr>
             <td>Location</td>
-            <td>@Html.EditorFor(Model => Model.Location)</td> 
+            <td>@Html.EditorFor(Model => Model.Location,new { maxlength = 20 })</td> 
         </tr>
         <tr>
             <td>PhoneNumber</td>
-            <td>@Html.EditorFor(Model=>Model.PhoneNumber)</td>
+            <td>@Html.EditorFor(Model=>Model.PhoneNumber, new { maxlength = 10 })</td>
         </tr>
     </table>
     @Html.ActionLink("Cancel", "Index")

@@ -4,13 +4,12 @@
     ViewBag.Title = "SignUp";
 }
 
-
-@*<div class="Form">
+<div class="Form">
     <script src="~/Scripts/jquery-3.4.1.min.js"></script>
     <script src="~/Scripts/jquery.validate.min.js"></script>
     <script src="~/Scripts/jquery.validate.unobtrusive.min.js"></script>
     <h2>SignUp</h2>
-    @using (Html.BeginForm("SignUp", "User", FormMethod.Post))
+    @using (Html.BeginForm("SignUp", "Account", FormMethod.Post))
     {
         @Html.AntiForgeryToken()
         <table class="FormContent">
@@ -41,7 +40,7 @@
                     @Html.RadioButtonFor(Model => Model.Gender, "Male")Male<br />
                     @Html.RadioButtonFor(Model => Model.Gender, "Female")Female<br />
                     @Html.RadioButtonFor(Model => Model.Gender, "Others")Others
-                    @Html.ValidationMessageFor(Model=>Model.Gender)
+                    @Html.ValidationMessageFor(Model => Model.Gender)
                 </td>
             </tr>
             <tr>
@@ -65,10 +64,10 @@
             </tr>
             <tr>
                 <td>
-                    @Html.LabelFor(Model=>Model.ConfirmPassword)
+                    @Html.LabelFor(Model => Model.ConfirmPassword)
                 </td>
                 <td>
-                    @Html.PasswordFor(Model=>Model.ConfirmPassword, new { @MaxLength = 12})
+                    @Html.PasswordFor(Model => Model.ConfirmPassword, new { @MaxLength = 12 })
                 </td>
             </tr>
             <tr>
@@ -91,21 +90,12 @@
                     <p>Have an account</p>
                 </td>
                 <td>
-                  @Html.ActionLink("SignIn", "SignIn", "User");
+                    @Html.ActionLink("SignIn", "SignIn", "Account");
                 </td>
             </tr>
 
         </table>
-        <div>
-                @Html.Partial("PartialViewDemo")
-                @{
-                    Html.RenderPartial("SignIn");
-                }
-                @{
-                    Html.RenderAction("SignIn");
-                }
-            </div>
-
     }
-</div>*@
+</div>
+
 

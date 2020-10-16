@@ -53,14 +53,14 @@ namespace FoodManagementSystem.DAL
                 dbContext.SaveChanges();
             }
         }
-        public void DeleteRestaurant(int restaurantId)      //Method to delete the restaurant details 
+        public void DeleteRestaurant(int restuarantId)      //Method to delete the restaurant details 
         {
             using (FoodManagementSystemDBContext dbContext = new FoodManagementSystemDBContext())
             {
                 //SqlParameter RestaurantID = new SqlParameter("@RestaurantID",restaurantFields.RestaurantID);
                 //var result=dbContext.Database.ExecuteSqlCommand.spname
-                Restaurant restaurantFields = GetRestaurantId(restaurantId);
-                dbContext.Restaurants.Attach(restaurantFields);
+                Restaurant restaurantFields = dbContext.Restaurants.Find(restuarantId);
+               // dbContext.Restaurants.Attach(restaurantFields);
                 dbContext.Restaurants.Remove(restaurantFields);
                 dbContext.SaveChanges();
             }

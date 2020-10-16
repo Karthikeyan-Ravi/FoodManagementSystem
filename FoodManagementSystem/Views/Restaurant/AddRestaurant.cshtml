@@ -9,7 +9,7 @@
 @using (Html.BeginForm("AddRestaurant", "Restaurant", FormMethod.Post))
 {
     @Html.AntiForgeryToken()
-    <table class="RestaurantContent">
+    <table class="AddReRestaurantContent">
         <tr>
             <td>
                 @Html.LabelFor(Model => Model.RestaurantName)
@@ -30,10 +30,10 @@
         </tr>
         <tr>
             <td>
-                @Html.LabelFor(Model => Model.Location,new {@maxlength=20 })
+                @Html.LabelFor(Model => Model.Location)
             </td>
             <td>
-                @Html.TextBoxFor(Model => Model.Location)
+                @Html.TextBoxFor(Model => Model.Location, new { @maxlength = 20 })
                 @Html.ValidationMessageFor(Model => Model.Location)
             </td>
         </tr>

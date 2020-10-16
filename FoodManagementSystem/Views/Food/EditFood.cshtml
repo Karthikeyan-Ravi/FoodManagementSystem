@@ -1,11 +1,11 @@
-﻿@model FoodManagementSystem.Models.FoodViewModel
+﻿@model FoodManagementSystem.Entity.FoodItem
 
 @{
     ViewBag.Title = "EditFood";
 }
 
 <h2>EditFood</h2>
-@using (Html.BeginForm("UpdateFood", "Food", FormMethod.Post))
+@using (Html.BeginForm("UpdateFood", "Food", FormMethod.Post, new { enctype = "multipart/form-data" }))
 {
     @Html.AntiForgeryToken()
     @Html.HiddenFor(Model=>Model.RestaurantID )
@@ -13,7 +13,7 @@
     <table>
         <tr>
             <td>@Html.LabelFor(Model => Model.FoodName)</td>
-            <td>@Html.EditorFor(Model => Model.FoodName)</td>
+            <td>@Html.EditorFor(Model => Model.FoodName,new { maxlenghth=25})</td>
         </tr>
         <tr>
             <td>FoodCategory</td>
@@ -21,7 +21,13 @@
         </tr>
         <tr>
             <td>Price</td>
-            <td>@Html.EditorFor(Model => Model.FoodPrice)</td>
+            <td>@Html.EditorFor(Model => Model.FoodPrice, new { @maxlength = 5 })</td>
+        </tr>
+        <tr>
+            <td>Image</td>
+            <td><img style="min-height:200px;width:100%" src="~/FoodImages/@Html.DisplayFor(Model=>Model.FoodImagePath)" />
+            <input type="file" id="foodViewModel" name="ImageUpload" /> </td>
+
         </tr>
     </table>
     @Html.ActionLink("Cancel", "DisplayRestaurantFoods")

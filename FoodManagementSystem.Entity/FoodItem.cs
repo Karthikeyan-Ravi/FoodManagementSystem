@@ -24,6 +24,7 @@ namespace FoodManagementSystem.Entity
             set;
         }
         [Required]
+        [MaxLength(20)]
         public string FoodName              //Attributes of Food items
         {
             get;
@@ -39,6 +40,11 @@ namespace FoodManagementSystem.Entity
         public FoodCategory FoodCategory { get; set; }
         [Required]
         public int FoodPrice
+        {
+            get;
+            set;
+        }
+        public string FoodImagePath
         {
             get;
             set;

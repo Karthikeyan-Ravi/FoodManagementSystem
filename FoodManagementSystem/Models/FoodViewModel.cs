@@ -1,5 +1,6 @@
 ﻿using FoodManagementSystem.Entity;
 using System.ComponentModel.DataAnnotations;
+using System.Web;
 
 namespace FoodManagementSystem.Models
 {
@@ -45,5 +46,11 @@ namespace FoodManagementSystem.Models
             get;
             set;
         }
+        public string FoodImagePath
+        {
+            get;
+            set;
+        }
+        public HttpPostedFileBase ImageUpload { get; set; }
     }
 }

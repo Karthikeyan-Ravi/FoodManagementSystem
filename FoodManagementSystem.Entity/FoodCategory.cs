@@ -11,6 +11,8 @@ namespace FoodManagementSystem.Entity
             get;
             set;
         }
+        [Required]
+        [MaxLength(7)]
         public string CategoryName
         {
             get;

@@ -5,7 +5,7 @@
 }
 
 <h2>RestaurantFoods</h2>
-@if(TempData["RestaurantID"]!=null)
+@if (TempData["RestaurantID"] != null)
 {
     TempData.Keep("RestaurantID");
 }
@@ -15,8 +15,9 @@
         <td>FoodCategory</td>
         <td>Price</td>
     </tr>
-    @foreach(var items in ViewBag.restaurantFoods)
+    @foreach (var items in ViewBag.restaurantFoods)
     {
+        items.FoodImagePath= Path.Combine("~/FoodImages/", items.FoodImagePath);
         <tr>
             <td>
                 @items.FoodName
@@ -28,8 +29,11 @@
                 @items.FoodPrice
             </td>
             <td>
-                @Html.ActionLink("Edit","EditFood",new { id=items.FoodID})
-                @Html.ActionLink("Delete","DeleteFood",new { id = items.FoodID, restaurantId = items.RestaurantID },new { onclick = "return confirm('Are you sure you wish to delete this Food');" })
+                <img style="min-height:200px;width:100%"src="@Url.Content(items.FoodImagePath)" />
+            </td>
+            <td>
+                @Html.ActionLink("Edit", "EditFood", new { id = items.FoodID })
+                @Html.ActionLink("Delete", "DeleteFood", new { id = items.FoodID, restaurantId = items.RestaurantID }, new { onclick = "return confirm('Are you sure you wish to delete this Food');" })
             </td>
         </tr>
     }

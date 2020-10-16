@@ -3,3 +3,76 @@ Food ---> AddFood ---> The required anti-forgery form field "__RequestVerificati
 Food ---> DisplayRestaurantFoods ---> Object reference not set to an instance of an object. ---> 3/31/2020 3:32:30 PM
 Food ---> Index ---> Object reference not set to an instance of an object. ---> 3/31/2020 3:56:53 PM
 Food ---> Index ---> Object reference not set to an instance of an object. ---> 3/31/2020 3:58:30 PM
+Restaurant ---> Index ---> Exception of type 'System.Exception' was thrown. ---> 4/1/2020 11:29:15 AM
+Restaurant ---> Index ---> The model backing the 'FoodManagementSystemDBContext' context has changed since the database was created. Consider using Code First Migrations to update the database (http://go.microsoft.com/fwlink/?LinkId=238269). ---> 4/1/2020 1:32:04 PM
+Food ---> Index ---> The model backing the 'FoodManagementSystemDBContext' context has changed since the database was created. Consider using Code First Migrations to update the database (http://go.microsoft.com/fwlink/?LinkId=238269). ---> 4/1/2020 1:32:25 PM
+Restaurant ---> AddRestaurant ---> An error occurred while updating the entries. See the inner exception for details. ---> 4/1/2020 1:46:07 PM
+Admin ---> AddCuisine ---> An error occurred while updating the entries. See the inner exception for details. ---> 4/1/2020 2:48:36 PM
+Restaurant ---> Edit ---> The parameters dictionary contains a null entry for parameter 'id' of non-nullable type 'System.Int32' for method 'System.Web.Mvc.ActionResult Edit(Int32)' in 'FoodManagementSystem.Controllers.RestaurantController'. An optional parameter must be a reference type, a nullable type, or be declared as an optional parameter.
+Parameter name: parameters ---> 4/2/2020 1:42:26 PM
+Restaurant ---> Edit ---> The parameters dictionary contains a null entry for parameter 'id' of non-nullable type 'System.Int32' for method 'System.Web.Mvc.ActionResult Edit(Int32)' in 'FoodManagementSystem.Controllers.RestaurantController'. An optional parameter must be a reference type, a nullable type, or be declared as an optional parameter.
+Parameter name: parameters ---> 4/2/2020 1:54:03 PM
+Restaurant ---> Edit ---> The parameters dictionary contains a null entry for parameter 'id' of non-nullable type 'System.Int32' for method 'System.Web.Mvc.ActionResult Edit(Int32)' in 'FoodManagementSystem.Controllers.RestaurantController'. An optional parameter must be a reference type, a nullable type, or be declared as an optional parameter.
+Parameter name: parameters ---> 4/2/2020 2:06:02 PM
+Restaurant ---> Edit ---> The parameters dictionary contains a null entry for parameter 'id' of non-nullable type 'System.Int32' for method 'System.Web.Mvc.ActionResult Edit(Int32)' in 'FoodManagementSystem.Controllers.RestaurantController'. An optional parameter must be a reference type, a nullable type, or be declared as an optional parameter.
+Parameter name: parameters ---> 4/2/2020 2:06:11 PM
+Restaurant ---> Edit ---> The parameters dictionary contains a null entry for parameter 'id' of non-nullable type 'System.Int32' for method 'System.Web.Mvc.ActionResult Edit(Int32)' in 'FoodManagementSystem.Controllers.RestaurantController'. An optional parameter must be a reference type, a nullable type, or be declared as an optional parameter.
+Parameter name: parameters ---> 4/2/2020 2:06:12 PM
+Restaurant ---> Edit ---> The parameters dictionary contains a null entry for parameter 'id' of non-nullable type 'System.Int32' for method 'System.Web.Mvc.ActionResult Edit(Int32)' in 'FoodManagementSystem.Controllers.RestaurantController'. An optional parameter must be a reference type, a nullable type, or be declared as an optional parameter.
+Parameter name: parameters ---> 4/2/2020 2:06:12 PM
+Restaurant ---> Edit ---> The parameters dictionary contains a null entry for parameter 'id' of non-nullable type 'System.Int32' for method 'System.Web.Mvc.ActionResult Edit(Int32)' in 'FoodManagementSystem.Controllers.RestaurantController'. An optional parameter must be a reference type, a nullable type, or be declared as an optional parameter.
+Parameter name: parameters ---> 4/2/2020 2:06:13 PM
+Restaurant ---> Edit ---> The parameters dictionary contains a null entry for parameter 'id' of non-nullable type 'System.Int32' for method 'System.Web.Mvc.ActionResult Edit(Int32)' in 'FoodManagementSystem.Controllers.RestaurantController'. An optional parameter must be a reference type, a nullable type, or be declared as an optional parameter.
+Parameter name: parameters ---> 4/2/2020 2:06:13 PM
+Restaurant ---> Edit ---> The parameters dictionary contains a null entry for parameter 'id' of non-nullable type 'System.Int32' for method 'System.Web.Mvc.ActionResult Edit(Int32)' in 'FoodManagementSystem.Controllers.RestaurantController'. An optional parameter must be a reference type, a nullable type, or be declared as an optional parameter.
+Parameter name: parameters ---> 4/2/2020 2:06:14 PM
+Restaurant ---> Edit ---> The parameters dictionary contains a null entry for parameter 'id' of non-nullable type 'System.Int32' for method 'System.Web.Mvc.ActionResult Edit(Int32)' in 'FoodManagementSystem.Controllers.RestaurantController'. An optional parameter must be a reference type, a nullable type, or be declared as an optional parameter.
+Parameter name: parameters ---> 4/2/2020 2:06:14 PM
+Restaurant ---> Edit ---> The parameters dictionary contains a null entry for parameter 'id' of non-nullable type 'System.Int32' for method 'System.Web.Mvc.ActionResult Edit(Int32)' in 'FoodManagementSystem.Controllers.RestaurantController'. An optional parameter must be a reference type, a nullable type, or be declared as an optional parameter.
+Parameter name: parameters ---> 4/2/2020 2:06:15 PM
+Home ---> Index ---> Encountered end tag "span" with no matching start tag.  Are your start/end tags properly balanced?
+ ---> 4/18/2020 12:47:53 PM
+User ---> DisplayFoodItems ---> The view 'DisplayFoodItems' or its master was not found or no view engine supports the searched locations. The following locations were searched:
+~/Views/User/DisplayFoodItems.aspx
+~/Views/User/DisplayFoodItems.ascx
+~/Views/Shared/DisplayFoodItems.aspx
+~/Views/Shared/DisplayFoodItems.ascx
+~/Views/User/DisplayFoodItems.cshtml
+~/Views/User/DisplayFoodItems.vbhtml
+~/Views/Shared/DisplayFoodItems.cshtml
+~/Views/Shared/DisplayFoodItems.vbhtml ---> 7/13/2020 10:35:17 AM
+User ---> DisplayFoodItems ---> The view 'DisplayFoodItems' or its master was not found or no view engine supports the searched locations. The following locations were searched:
+~/Views/User/DisplayFoodItems.aspx
+~/Views/User/DisplayFoodItems.ascx
+~/Views/Shared/DisplayFoodItems.aspx
+~/Views/Shared/DisplayFoodItems.ascx
+~/Views/User/DisplayFoodItems.cshtml
+~/Views/User/DisplayFoodItems.vbhtml
+~/Views/Shared/DisplayFoodItems.cshtml
+~/Views/Shared/DisplayFoodItems.vbhtml ---> 7/13/2020 10:36:23 AM
+User ---> DisplayFoodItems ---> The parameters dictionary contains a null entry for parameter 'id' of non-nullable type 'System.Int32' for method 'System.Web.Mvc.ActionResult DisplayFoodItems(Int32)' in 'FoodManagementSystem.Controllers.UserController'. An optional parameter must be a reference type, a nullable type, or be declared as an optional parameter.
+Parameter name: parameters ---> 7/13/2020 11:58:11 AM
+Food ---> DisplayRestaurantFoods ---> Value cannot be null.
+Parameter name: path2 ---> 7/15/2020 12:27:48 PM
+User ---> DisplayFoodItems ---> H:\Repos\FoodManagementSystem\FoodManagementSystem\Views\User\DisplayFoodItems.cshtml(17): error CS0103: The name 'product' does not exist in the current context ---> 10/12/2020 11:22:29 AM
+User ---> DisplayFoodItems ---> H:\Repos\FoodManagementSystem\FoodManagementSystem\Views\User\DisplayFoodItems.cshtml(17): error CS0103: The name 'product' does not exist in the current context ---> 10/12/2020 11:22:32 AM
+User ---> DisplayFoodItems ---> H:\Repos\FoodManagementSystem\FoodManagementSystem\Views\User\DisplayFoodItems.cshtml(17): error CS0103: The name 'product' does not exist in the current context ---> 10/12/2020 11:22:33 AM
+User ---> DisplayFoodItems ---> H:\Repos\FoodManagementSystem\FoodManagementSystem\Views\User\DisplayFoodItems.cshtml(17): error CS0103: The name 'product' does not exist in the current context ---> 10/12/2020 11:22:34 AM
+User ---> DisplayFoodItems ---> The parameters dictionary contains a null entry for parameter 'id' of non-nullable type 'System.Int32' for method 'System.Web.Mvc.ActionResult DisplayFoodItems(Int32)' in 'FoodManagementSystem.Controllers.UserController'. An optional parameter must be a reference type, a nullable type, or be declared as an optional parameter.
+Parameter name: parameters ---> 10/12/2020 11:22:57 AM
+User ---> DisplayFoodItems ---> The parameters dictionary contains a null entry for parameter 'id' of non-nullable type 'System.Int32' for method 'System.Web.Mvc.ActionResult DisplayFoodItems(Int32)' in 'FoodManagementSystem.Controllers.UserController'. An optional parameter must be a reference type, a nullable type, or be declared as an optional parameter.
+Parameter name: parameters ---> 10/12/2020 11:23:49 AM
+User ---> DisplayFoodItems ---> The parameters dictionary contains a null entry for parameter 'id' of non-nullable type 'System.Int32' for method 'System.Web.Mvc.ActionResult DisplayFoodItems(Int32)' in 'FoodManagementSystem.Controllers.UserController'. An optional parameter must be a reference type, a nullable type, or be declared as an optional parameter.
+Parameter name: parameters ---> 10/12/2020 11:23:57 AM
+User ---> DisplayFoodItems ---> The parameters dictionary contains a null entry for parameter 'id' of non-nullable type 'System.Int32' for method 'System.Web.Mvc.ActionResult DisplayFoodItems(Int32)' in 'FoodManagementSystem.Controllers.UserController'. An optional parameter must be a reference type, a nullable type, or be declared as an optional parameter.
+Parameter name: parameters ---> 10/12/2020 11:25:17 AM
+User ---> DisplayFoodItems ---> The parameters dictionary contains a null entry for parameter 'id' of non-nullable type 'System.Int32' for method 'System.Web.Mvc.ActionResult DisplayFoodItems(Int32)' in 'FoodManagementSystem.Controllers.UserController'. An optional parameter must be a reference type, a nullable type, or be declared as an optional parameter.
+Parameter name: parameters ---> 10/12/2020 11:25:25 AM
+User ---> DisplayFoodItems ---> The parameters dictionary contains a null entry for parameter 'id' of non-nullable type 'System.Int32' for method 'System.Web.Mvc.ActionResult DisplayFoodItems(Int32)' in 'FoodManagementSystem.Controllers.UserController'. An optional parameter must be a reference type, a nullable type, or be declared as an optional parameter.
+Parameter name: parameters ---> 10/12/2020 11:25:26 AM
+User ---> DisplayFoodItems ---> The parameters dictionary contains a null entry for parameter 'id' of non-nullable type 'System.Int32' for method 'System.Web.Mvc.ActionResult DisplayFoodItems(Int32)' in 'FoodManagementSystem.Controllers.UserController'. An optional parameter must be a reference type, a nullable type, or be declared as an optional parameter.
+Parameter name: parameters ---> 10/12/2020 11:25:26 AM
+User ---> DisplayFoodItems ---> The parameters dictionary contains a null entry for parameter 'id' of non-nullable type 'System.Int32' for method 'System.Web.Mvc.ActionResult DisplayFoodItems(Int32)' in 'FoodManagementSystem.Controllers.UserController'. An optional parameter must be a reference type, a nullable type, or be declared as an optional parameter.
+Parameter name: parameters ---> 10/12/2020 11:25:27 AM
+User ---> DisplayFoodItems ---> The parameters dictionary contains a null entry for parameter 'id' of non-nullable type 'System.Int32' for method 'System.Web.Mvc.ActionResult DisplayFoodItems(Int32)' in 'FoodManagementSystem.Controllers.UserController'. An optional parameter must be a reference type, a nullable type, or be declared as an optional parameter.
+Parameter name: parameters ---> 10/12/2020 11:25:27 AM

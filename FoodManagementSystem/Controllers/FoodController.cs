@@ -1,15 +1,14 @@
-﻿using FoodManagementSystem.App_Start;
-using FoodManagementSystem.BL;
+﻿using FoodManagementSystem.BL;
 using FoodManagementSystem.Entity;
 using FoodManagementSystem.Models;
 using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 using System.Web.Mvc;
 
 namespace FoodManagementSystem.Controllers
 {
-    [CustomException]
     public class FoodController : Controller
     {
         //creating an Reference of interface
@@ -28,16 +27,19 @@ namespace FoodManagementSystem.Controllers
         }
         public ActionResult DisplayRestaurantFoods(int? id)//For admin purpose to display foods of particular restaurant
         {
-            IEnumerable<FoodItem> restaurantFoods;
-            if(TempData["RestaurantID"] == null)
+            IEnumerable<FoodItem> restaurantFoods; 
+            if(id!= null)           //If restaurant id not equal to null the tempdata is updated with the new restaurant id
                 TempData["RestaurantID"] = id;
-            restaurantFoods = foodBL.DisplayRestaurantFoods((int)TempData["RestaurantID"]);
-           
-            if (restaurantFoods.Count() != 0)
+            if (TempData["RestaurantID"] != null)   //If restaurant id equals to null, tempdata contains the value from previous view
             {
-                ViewBag.restaurantFoods = restaurantFoods;
-                return View();
+                restaurantFoods = foodBL.DisplayRestaurantFoods((int)TempData["RestaurantID"]);
+                if (restaurantFoods.Count() != 0)
+                {
+                    ViewBag.restaurantFoods = restaurantFoods;
+                    return View();
 
+                }
+                return RedirectToAction("AddFood");
             }
             return RedirectToAction("AddFood");
         }
@@ -58,8 +60,18 @@ namespace FoodManagementSystem.Controllers
             //FoodBL foodBL = new FoodBL();
             if (ModelState.IsValid)
             {
-                var foodItem = AutoMapper.Mapper.Map<FoodViewModel, FoodItem>(foodViewModel);
+                string fileName = Path.GetFileNameWithoutExtension(foodViewModel.ImageUpload.FileName);
+                string extension = Path.GetExtension(foodViewModel.ImageUpload.FileName);
+                fileName = fileName + DateTime.Now.ToString("yymmssfff") + extension;
+                foodViewModel.FoodImagePath = fileName;
+                FoodManagementSystem.Entity.FoodItem foodItem = AutoMapper.Mapper.Map<FoodViewModel, FoodItem>(foodViewModel);
+                fileName=Path.Combine(Server.MapPath("~/FoodImages/"),fileName);
+                foodViewModel.ImageUpload.SaveAs(fileName);
                 foodBL.AddFood(foodItem);
+                if (foodItem != null)
+                    Response.Write("Food added successfully");
+                else
+                    return View();
             }
             ViewBag.FoodCategory = new SelectList(foodBL.GetFoodCategories(), "FoodCategoryID", "CategoryName");
             return View();
@@ -68,9 +80,9 @@ namespace FoodManagementSystem.Controllers
         public ActionResult EditFood(int id)    //Edit the food details
         {
             FoodItem foodItem = foodBL.GetFoodDetailsById(id);
-            var foodViewModel = AutoMapper.Mapper.Map<FoodItem, FoodViewModel>(foodItem);
+           // FoodManagementSystem.Models.FoodViewModel foodViewModel = AutoMapper.Mapper.Map<FoodItem, FoodViewModel>(foodItem);
             ViewBag.FoodCategory = new SelectList(foodBL.GetFoodCategories(), "FoodCategoryID", "CategoryName");
-            return View(foodViewModel);
+            return View(foodItem);
         }
         [ValidateAntiForgeryToken]
         //POST:UpdateFood
@@ -78,7 +90,14 @@ namespace FoodManagementSystem.Controllers
         {
             if(ModelState.IsValid)
             {
-                var foodItem = AutoMapper.Mapper.Map<FoodViewModel, FoodItem>(foodViewModel);
+                string fileName = Path.GetFileNameWithoutExtension(foodViewModel.ImageUpload.FileName);
+                string extension = Path.GetExtension(foodViewModel.ImageUpload.FileName);
+                fileName = fileName + DateTime.Now.ToString("yymmssfff") + extension;
+                foodViewModel.FoodImagePath = fileName;
+                FoodManagementSystem.Entity.FoodItem foodItem = AutoMapper.Mapper.Map<FoodViewModel, FoodItem>(foodViewModel);
+                fileName = Path.Combine(Server.MapPath("~/FoodImages/"), fileName);
+                foodViewModel.ImageUpload.SaveAs(fileName);
+               // var foodItem = AutoMapper.Mapper.Map<FoodViewModel, FoodItem>(foodViewModel);
                 foodBL.UpdateFood(foodItem);
                 return RedirectToAction("DisplayRestaurantFoods",new { id = foodItem.RestaurantID });
             }

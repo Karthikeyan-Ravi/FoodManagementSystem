@@ -22,7 +22,7 @@ namespace FoodManagementSystem.BL
             customerRepository = new CustomerRepository();
         }
         public bool SignUpDetails(Customer customerFields)   //Add  the customer details to db   
-        {
+        {           
             return customerRepository.SignUpDetails(customerFields);
         }
         public Customer GetLogInDetails(Customer customerFields)    //Check the login details

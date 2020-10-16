@@ -48,6 +48,7 @@ namespace FoodManagementSystem.BL
         //Method to delete the restaurant details 
         public void DeleteRestaurant(int restaurantId)
         {
+          //Restaurant restaurant=  restaurantRepository.GetRestaurantId(restaurantId);
             restaurantRepository.DeleteRestaurant(restaurantId);
         }
         //public IEnumerable<Restaurant> GetRestaurantDetailsForDelete(int restaurantId)

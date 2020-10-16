@@ -3,11 +3,9 @@ using FoodManagementSystem.Models;
 using FoodManagementSystem.BL;
 using System.Collections.Generic;
 using System.Web.Mvc;
-using FoodManagementSystem.App_Start;
 
 namespace FoodManagementSystem.Controllers
 {
-    [CustomException]
     [Authorize(Roles="Admin")]
     public class AdminController : Controller
     {
@@ -37,7 +35,8 @@ namespace FoodManagementSystem.Controllers
             {
                 Cuisine cuisine = new Cuisine();
                 cuisine.CuisineName = cuisineViewModel.CuisineName;
-                cuisineBL.AddCuisine(cuisine); 
+                cuisineBL.AddCuisine(cuisine);
+                Response.Write("Cuisine added successfully");
             }
             return View();
         }

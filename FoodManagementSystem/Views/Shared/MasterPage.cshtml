@@ -8,16 +8,16 @@
 </head>
 <body class="BackgroundImg">
     <div class="MasterPageLink">
-        @Html.ActionLink("SignUp", "SignUp", "User")
+        @Html.ActionLink("Home", "Index", "Home")
         @if (HttpContext.Current.User.Identity.IsAuthenticated)
         {
-            @Html.ActionLink("Logout", "Logoff", "User")
+            @Html.ActionLink("Logout", "Logoff", "Account")
         }
         else
         {
-            @Html.ActionLink("LogIn", "SignIn", "User")
+            <span>@Html.ActionLink("SignUp", "SignUp", "Account")</span>
+            <span>@Html.ActionLink("LogIn", "SignIn", "Account")</span>
         }
-        @Html.ActionLink("Home", "Index", "Home")
         @if (HttpContext.Current.User.IsInRole("Admin"))
         {
             <span>@Html.ActionLink("ViewRestaurants", "Index", "Restaurant")</span>
@@ -29,9 +29,11 @@
             @Html.ActionLink("Add Restaurant", "AddRestaurant", "Restaurant")
             @Html.ActionLink("Add Food", "AddFood", "Food")
         }
-        @*@Html.ActionLink("SignIn", "SignIn", "User")*@
+        @if(HttpContext.Current.User.IsInRole("User"))
+        {
+            @Html.ActionLink("Restaurants", "DisplayRestaurant","User")
+        }
     </div>
     @RenderBody()
-
 </body>
 </html>

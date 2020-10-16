@@ -1,0 +1,34 @@
+﻿@model IEnumerable<FoodManagementSystem.Entity.Restaurant>
+
+@{
+    ViewBag.Title = "DisplayRestaurant";
+}
+
+<h2>Restaurants</h2>
+
+<table border="1" class="RestaurantContent">
+    <tr>
+        <td>
+            RestaurantName
+        </td>
+        <td>
+            Cuisine
+        </td>
+        <td>
+            Location
+        </td>
+        <td>
+            PhoneNumber
+        </td>
+    </tr>
+    @foreach(var items in Model)
+    {
+        <tr>
+            <td>@Html.ActionLink(items.RestaurantName, "DisplayFoodItems", new {id=items.RestaurantID} )</td>
+            <td>@items.Cuisine.CuisineName</td>
+            <td>@items.Location</td>
+            <td>@items.PhoneNumber</td>
+         </tr>
+    }
+    
+</table>

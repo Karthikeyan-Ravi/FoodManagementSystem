@@ -1,13 +1,14 @@
 ﻿using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
 
 namespace FoodManagementSystem.Models
 {
-    public enum Gender  
-    {
-        Male,
-        Female,
-        Others
-    }
+    //public enum Gender  
+    //{
+    //    Male,
+    //    Female,
+    //    Others
+    //}
     public class UserSignUpViewModel
     {
         [Required(ErrorMessage = "Name required")]
@@ -17,6 +18,7 @@ namespace FoodManagementSystem.Models
             get;
             set;
         }
+        [Index(IsUnique = true)]
         [Required(ErrorMessage = "Phone number required")]
         [DataType(DataType.PhoneNumber)]
         [Display(Name = "PhoneNumber")]
@@ -25,11 +27,14 @@ namespace FoodManagementSystem.Models
             get;
             set;
         }
-        public Gender Gender
+        [Required(ErrorMessage ="Gender required")]
+        [Display(Name ="Gender")]
+        public string Gender
         {
             get;
             set;
         }
+        [Index(IsUnique = true)]
         [Required(ErrorMessage = "Email required")]
         [DataType(DataType.EmailAddress)]
         [Display(Name = "Mail")]
@@ -58,6 +63,7 @@ namespace FoodManagementSystem.Models
             set;
         }
         [Required]
+        [Display(Name ="Role")]
         public string Role
         {
             get;

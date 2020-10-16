@@ -10,18 +10,18 @@
 {
     TempData.Keep("RestaurantID");
 }
-@using (Html.BeginForm("AddFood", "Food", FormMethod.Post))
+@using (Html.BeginForm("AddFood", "Food", FormMethod.Post, new { enctype = "multipart/form-data" }))
 {
     @Html.AntiForgeryToken()
-    @Html.HiddenFor(Model=>Model.RestaurantID)
+    @Html.HiddenFor(Model => Model.RestaurantID)
     <table class="DisplayFoodContent">
         <tr>
             <td>
-                @Html.LabelFor(Model => Model.FoodName,new {@maxlength=25})
+                @Html.LabelFor(Model => Model.FoodName)
             </td>
             <td>
-                @Html.TextBoxFor(Model => Model.FoodName)
-                @Html.ValidationMessageFor(Model=>Model.FoodName)
+                @Html.TextBoxFor(Model => Model.FoodName, new { @maxlength = 25 })
+                @Html.ValidationMessageFor(Model => Model.FoodName)
             </td>
         </tr>
         <tr>
@@ -29,20 +29,24 @@
                 @Html.LabelFor(Model => Model.FoodCategory)
             </td>
             <td>
-                @Html.DropDownListFor(Model=>Model.FoodCategoryID, (IEnumerable<SelectListItem>)ViewBag.FoodCategory, "Select Category")
-                @Html.ValidationMessageFor(Model=>Model.FoodCategoryID)
+                @Html.DropDownListFor(Model => Model.FoodCategoryID, (IEnumerable<SelectListItem>)ViewBag.FoodCategory, "Select Category")
+                @Html.ValidationMessageFor(Model => Model.FoodCategoryID)
             </td>
         </tr>
         <tr>
             <td>
-                @Html.LabelFor(Model => Model.FoodPrice,new {@maxlength=5})
+                @Html.LabelFor(Model => Model.FoodPrice)
             </td>
             <td>
-                @Html.TextBoxFor(Model => Model.FoodPrice)
-                @Html.ValidationMessageFor(Model=>Model.FoodPrice)
+                @Html.TextBoxFor(Model => Model.FoodPrice, new { @maxlength = 5 })
+                @Html.ValidationMessageFor(Model => Model.FoodPrice)
             </td>
         </tr>
         <tr>
+            <td>
+                <input type="file" id="foodViewModel" name="ImageUpload" />
+            </td>
+        </tr>
 </table>
   <a><input type="submit" id="addFood" value="Add Food" /></a>
   @Html.ActionLink("Done", "DisplayRestaurantFoods")

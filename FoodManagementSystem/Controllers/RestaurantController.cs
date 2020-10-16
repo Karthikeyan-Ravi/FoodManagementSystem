@@ -3,11 +3,9 @@ using FoodManagementSystem.Models;
 using FoodManagementSystem.BL;
 using System.Collections.Generic;
 using System.Web.Mvc;
-using FoodManagementSystem.App_Start;
 
 namespace FoodManagementSystem.Controllers
 {
-    [CustomException]
     [Authorize(Roles ="Admin")]
     public class RestaurantController : Controller
     {
@@ -24,6 +22,7 @@ namespace FoodManagementSystem.Controllers
         // GET: Restaurant
         public ActionResult Index()//For admin purpose to display all the restaurants 
         {
+            // throw new System.Exception();
             IEnumerable<Restaurant> restaurantlList;
             restaurantlList = restaurantBL.GetRestaurantDetails();
             return View(restaurantlList);

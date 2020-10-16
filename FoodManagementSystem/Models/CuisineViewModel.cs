@@ -1,4 +1,5 @@
 ﻿using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
 
 namespace FoodManagementSystem.Models
 {
@@ -11,6 +12,7 @@ namespace FoodManagementSystem.Models
             get;
             set;
         }
+        [Index(IsUnique = true)]
         [Required]
         [Display(Name ="CuisineName")]
         public string CuisineName

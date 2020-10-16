@@ -63,6 +63,27 @@
     <Compile Include="CustomerRepository.cs" />
     <Compile Include="FoodItemRepository.cs" />
     <Compile Include="FoodManagementSystemDBContext.cs" />
+    <Compile Include="Migrations\202004010718417_InitialCreate.cs" />
+    <Compile Include="Migrations\202004010718417_InitialCreate.designer.cs">
+      <DependentUpon>202004010718417_InitialCreate.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202004010814264_Maxlength.cs" />
+    <Compile Include="Migrations\202004010814264_Maxlength.designer.cs">
+      <DependentUpon>202004010814264_Maxlength.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202004010916396_table.cs" />
+    <Compile Include="Migrations\202004010916396_table.designer.cs">
+      <DependentUpon>202004010916396_table.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202004020705242_Gender.cs" />
+    <Compile Include="Migrations\202004020705242_Gender.designer.cs">
+      <DependentUpon>202004020705242_Gender.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202007150646564_Image.cs" />
+    <Compile Include="Migrations\202007150646564_Image.designer.cs">
+      <DependentUpon>202007150646564_Image.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="RestaurantRepository.cs" />
   </ItemGroup>
@@ -75,6 +96,23 @@
   <ItemGroup>
     <None Include="App.config" />
     <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Migrations\202004010718417_InitialCreate.resx">
+      <DependentUpon>202004010718417_InitialCreate.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202004010814264_Maxlength.resx">
+      <DependentUpon>202004010814264_Maxlength.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202004010916396_table.resx">
+      <DependentUpon>202004010916396_table.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202004020705242_Gender.resx">
+      <DependentUpon>202004020705242_Gender.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202007150646564_Image.resx">
+      <DependentUpon>202007150646564_Image.cs</DependentUpon>
+    </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">

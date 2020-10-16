@@ -1,11 +1,12 @@
-﻿@model FoodManagementSystem.Models.UserSignInViewModel          
+﻿@model FoodManagementSystem.Models.UserSignInViewModel
 
 @{
     ViewBag.Title = "SignIn";
 }
-@*<div class="Form">
+
+<div class="Form">
     <h2>SignIn</h2>
-    @using (Html.BeginForm("SignIn", "User", FormMethod.Post))
+    @using (Html.BeginForm("SignIn", "Account", FormMethod.Post))
     {
         @Html.AntiForgeryToken()
         <table class="FormContent">
@@ -15,7 +16,7 @@
                 </td>
                 <td>
                     @Html.TextBoxFor(Model => Model.Mail, new { @maxlength = 30 })
-                    @Html.ValidationMessageFor(Model=>Model.Mail)
+                    @Html.ValidationMessageFor(Model => Model.Mail)
                 </td>
             </tr>
             <tr>
@@ -24,7 +25,7 @@
                 </td>
                 <td>
                     @Html.PasswordFor(Model => Model.Password, new { @maxlength = 12 })
-                    @Html.ValidationMessageFor(Model=>Model.Password)
+                    @Html.ValidationMessageFor(Model => Model.Password)
                 </td>
             </tr>
         </table>
@@ -32,6 +33,8 @@
             <input class="BtnStyle" type="submit" id="signIn" value="SignIn" />
         </a>
         <p>Don't have an account </p>
-        @Html.ActionLink("SignUp", "SignUp", "User",new {@class= "SignUpLink"});
+        @Html.ActionLink("SignUp", "SignUp", "Account", new { @class = "SignUpLink" });
     }
-</div>*@
+</div>
+
+

@@ -1,5 +1,5 @@
 ﻿using System.ComponentModel.DataAnnotations;
-
+using System.ComponentModel.DataAnnotations.Schema;
 
 namespace FoodManagementSystem.Entity
 {
@@ -12,7 +12,9 @@ namespace FoodManagementSystem.Entity
             get;
             set;
         }
+        [Index(IsUnique = true)]
         [Required]
+        [MaxLength(20)]
         public string CuisineName
         {
             get;
