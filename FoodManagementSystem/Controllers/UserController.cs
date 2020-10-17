@@ -1,10 +1,6 @@
 ﻿using FoodManagementSystem.Entity;
-using System;
-using System.Web;
 using System.Web.Mvc;
-using FoodManagementSystem.Models;
 using FoodManagementSystem.BL;
-using System.Web.Security;
 using System.Collections.Generic;
 
 namespace FoodManagementSystem.Controllers
