@@ -57,6 +57,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Cart.cs" />
     <Compile Include="Cuisine.cs" />
     <Compile Include="Customer.cs" />
     <Compile Include="FoodCategory.cs" />

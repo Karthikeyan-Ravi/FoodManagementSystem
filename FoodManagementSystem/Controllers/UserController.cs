@@ -2,6 +2,8 @@
 using System.Web.Mvc;
 using FoodManagementSystem.BL;
 using System.Collections.Generic;
+using FoodManagementSystem.DAL;
+using FoodManagementSystem.Models;
 
 namespace FoodManagementSystem.Controllers
 {
@@ -9,11 +11,13 @@ namespace FoodManagementSystem.Controllers
     {
         IResturant restaurantBL;
         IFoodBL foodBL;
+        ICustomerBL customerBL;
         public UserController()
         {
             // Declare an interface instance
             restaurantBL = new RestaurantBL();
             foodBL = new FoodBL();
+            customerBL = new CustomerBL();
         }
         public ActionResult DisplayRestaurant()
         {
@@ -24,6 +28,16 @@ namespace FoodManagementSystem.Controllers
         {
             IEnumerable<FoodItem> restaurantFoods = foodBL.DisplayRestaurantFoods(id);
             return View(restaurantFoods);
+        }
+        public ActionResult AddToCart(int id, int restaurantId, string mailId)
+        {
+            FoodItem foodItems = foodBL.GetFoodDetailsById(id);
+            Customer customer = customerBL.GetCustomerByMailId(mailId);
+            Cart cart = new Cart();
+            cart.FoodId = id;
+            cart.UserId = customer.UserID;
+            customerBL.AddToCart(cart);
+            return RedirectToAction("DisplayFoodItems", new {id=restaurantId});
         }
         ////creating an Reference of interface
         //ICustomerBL customerBL;

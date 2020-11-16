@@ -15,6 +15,8 @@ namespace FoodManagementSystem.DAL
         bool SignUpDetails(Customer customerFields);
         Customer GetLogInDetails(Customer customerFields);
         List<Customer> GetCustomerDetails();
+        Customer GetCustomerByMailId(string mailId);
+        void AddToCart(Cart cart);
     }
     public class CustomerRepository: ICustomerRepository     //Implementing the interfce
     {
@@ -57,6 +59,21 @@ namespace FoodManagementSystem.DAL
             using (FoodManagementSystemDBContext foodManagementDBContext = new FoodManagementSystemDBContext())
             {
                 return foodManagementDBContext.Customers.ToList();
+            }
+        }
+        public Customer GetCustomerByMailId(string mailId)
+        {
+            using (FoodManagementSystemDBContext foodManagementDBContext = new FoodManagementSystemDBContext())
+            {
+                return foodManagementDBContext.Customers.Where(m => m.Mail == mailId).FirstOrDefault();
+            }
+        }
+        public void AddToCart(Cart cart)
+        {
+            using (FoodManagementSystemDBContext foodManagementDBContext = new FoodManagementSystemDBContext())
+            {
+                foodManagementDBContext.Carts.Add(cart);
+                foodManagementDBContext.SaveChanges();
             }
         }
     }

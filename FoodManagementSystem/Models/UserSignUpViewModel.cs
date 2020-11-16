@@ -47,7 +47,7 @@ namespace FoodManagementSystem.Models
         [DataType(DataType.Password)]
         [Display(Name = "Password")]
         [MaxLength(10)]
-        [RegularExpression("^(?=.{8,})(?=.*[a-z])(?=.*[A-Z])(?!.*s).*$", ErrorMessage = "Password should contain Uppercase,Lowecase,Symbol and Number")]
+        [RegularExpression(@"^(?=.{8,})(?=.*[a-z])(?=.*[A-Z])(?!.*s).*$", ErrorMessage = "Password should contain Uppercase,Lowecase,Symbol and Number")]
         public string Password
         {
             get;

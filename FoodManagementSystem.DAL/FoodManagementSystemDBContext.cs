@@ -39,6 +39,11 @@ namespace FoodManagementSystem.DAL
             get;
             set;
         }
+        public DbSet<Cart> Carts
+        {
+            get;
+            set;
+        }
         //protected override void OnModelCreating(DbModelBuilder modelBuilder)
         //{
         //    modelBuilder.Entity<Restaurant>().MapToStoredProcedures();

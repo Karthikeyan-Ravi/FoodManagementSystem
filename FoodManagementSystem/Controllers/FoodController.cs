@@ -62,17 +62,26 @@ namespace FoodManagementSystem.Controllers
             {
                 string fileName = Path.GetFileNameWithoutExtension(foodViewModel.ImageUpload.FileName);
                 string extension = Path.GetExtension(foodViewModel.ImageUpload.FileName);
-                fileName = fileName + DateTime.Now.ToString("yymmssfff") + extension;
-                foodViewModel.FoodImagePath = fileName;
-                FoodManagementSystem.Entity.FoodItem foodItem = AutoMapper.Mapper.Map<FoodViewModel, FoodItem>(foodViewModel);
-                fileName=Path.Combine(Server.MapPath("~/FoodImages/"),fileName);
-                foodViewModel.ImageUpload.SaveAs(fileName);
-                foodBL.AddFood(foodItem);
-                if (foodItem != null)
-                    Response.Write("Food added successfully");
+                if (extension == ".jpg" || extension == ".jpeg" || extension == ".png")
+                {
+                    fileName = fileName + DateTime.Now.ToString("yymmssfff") + extension;
+                    foodViewModel.FoodImagePath = fileName;
+                    FoodManagementSystem.Entity.FoodItem foodItem = AutoMapper.Mapper.Map<FoodViewModel, FoodItem>(foodViewModel);
+                    fileName = Path.Combine(Server.MapPath("~/FoodImages/"), fileName);
+                    foodViewModel.ImageUpload.SaveAs(fileName);
+                    foodBL.AddFood(foodItem);
+                    if (foodItem != null)
+                        Response.Write("Food added successfully");
+                    else
+                        return View();
+                }
                 else
+                {
+                    ViewBag.ErrorImage = "Invalid image format";
                     return View();
+                }
             }
+            
             ViewBag.FoodCategory = new SelectList(foodBL.GetFoodCategories(), "FoodCategoryID", "CategoryName");
             return View();
         }

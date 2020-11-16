@@ -11,6 +11,8 @@ namespace FoodManagementSystem.BL
         // by the class which inherits the interface 
         bool SignUpDetails(Customer customerFields);
         Customer GetLogInDetails(Customer customerFields);
+        Customer GetCustomerByMailId(string mailId);
+        void AddToCart(Cart cart);
     }
     public class CustomerBL: ICustomerBL          //Implementing the interfce
     {
@@ -28,6 +30,14 @@ namespace FoodManagementSystem.BL
         public Customer GetLogInDetails(Customer customerFields)    //Check the login details
         {
             return customerRepository.GetLogInDetails(customerFields);
+        }
+        public Customer GetCustomerByMailId(string mailId)
+        {
+            return customerRepository.GetCustomerByMailId(mailId);
+        }
+        public void AddToCart(Cart cart)
+        {
+            customerRepository.AddToCart(cart);
         }
     }
 }

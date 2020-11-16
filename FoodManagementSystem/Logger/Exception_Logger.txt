@@ -76,3 +76,27 @@ User ---> DisplayFoodItems ---> The parameters dictionary contains a null entry 
 Parameter name: parameters ---> 10/12/2020 11:25:27 AM
 User ---> DisplayFoodItems ---> The parameters dictionary contains a null entry for parameter 'id' of non-nullable type 'System.Int32' for method 'System.Web.Mvc.ActionResult DisplayFoodItems(Int32)' in 'FoodManagementSystem.Controllers.UserController'. An optional parameter must be a reference type, a nullable type, or be declared as an optional parameter.
 Parameter name: parameters ---> 10/12/2020 11:25:27 AM
+User ---> AddToCart ---> An error occurred while updating the entries. See the inner exception for details. ---> 11/10/2020 12:17:52 PM
+Food ---> AddFood ---> hfhch is not a valid value for Decimal. ---> 11/11/2020 3:15:40 PM
+Food ---> AddFood ---> hfhch is not a valid value for Decimal. ---> 11/11/2020 3:15:48 PM
+Food ---> AddFood ---> hfhch is not a valid value for Decimal. ---> 11/11/2020 3:16:04 PM
+Food ---> AddFood ---> hfhch is not a valid value for Decimal. ---> 11/11/2020 3:21:54 PM
+Food ---> AddFood ---> hfhch is not a valid value for Decimal. ---> 11/11/2020 3:22:09 PM
+Food ---> AddFood ---> hfhch is not a valid value for Decimal. ---> 11/11/2020 3:22:14 PM
+Food ---> AddFood ---> 44jnk is not a valid value for Decimal. ---> 11/11/2020 3:23:03 PM
+Food ---> AddFood ---> 44jnk is not a valid value for Decimal. ---> 11/11/2020 3:23:09 PM
+Food ---> AddFood ---> hfhch is not a valid value for Decimal. ---> 11/11/2020 3:33:40 PM
+Food ---> AddFood ---> hfhch is not a valid value for Decimal. ---> 11/11/2020 3:33:49 PM
+Food ---> AddFood ---> hfhch is not a valid value for Decimal. ---> 11/11/2020 3:33:53 PM
+Food ---> AddFood ---> hfhch is not a valid value for Decimal. ---> 11/11/2020 3:33:58 PM
+Food ---> AddFood ---> kjbkh is not a valid value for Decimal. ---> 11/11/2020 3:35:20 PM
+Food ---> AddFood ---> kjbkh is not a valid value for Decimal. ---> 11/11/2020 3:35:30 PM
+Food ---> AddFood ---> kjbkh is not a valid value for Decimal. ---> 11/11/2020 3:35:38 PM
+Food ---> AddFood ---> kjbkh is not a valid value for Decimal. ---> 11/11/2020 3:35:47 PM
+Food ---> AddFood ---> kjbkh is not a valid value for Decimal. ---> 11/11/2020 3:35:57 PM
+Food ---> AddFood ---> uhbuu is not a valid value for Decimal. ---> 11/11/2020 3:36:23 PM
+Food ---> AddFood ---> uhbuu is not a valid value for Decimal. ---> 11/11/2020 3:36:31 PM
+Food ---> AddFood ---> 5151j is not a valid value for Decimal. ---> 11/11/2020 3:37:25 PM
+Food ---> AddFood ---> 5151j is not a valid value for Decimal. ---> 11/11/2020 3:37:29 PM
+Food ---> AddFood ---> hfhch is not a valid value for Decimal. ---> 11/11/2020 3:45:10 PM
+Food ---> AddFood ---> hfhch is not a valid value for Decimal. ---> 11/11/2020 3:45:17 PM

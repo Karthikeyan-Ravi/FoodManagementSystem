@@ -45,12 +45,19 @@
       <HintPath>..\packages\EntityFramework.6.4.0\lib\net45\EntityFramework.SqlServer.dll</HintPath>
       <Private>True</Private>
     </Reference>
+    <Reference Include="MailChimp.Net, Version=5.0.0.0, Culture=neutral, PublicKeyToken=37d26d538413c581, processorArchitecture=MSIL">
+      <HintPath>..\packages\MailChimp.Net.V3.5.0.0\lib\net45\MailChimp.Net.dll</HintPath>
+    </Reference>
+    <Reference Include="Newtonsoft.Json, Version=12.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <HintPath>..\packages\Newtonsoft.Json.12.0.3\lib\net45\Newtonsoft.Json.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.ComponentModel.DataAnnotations" />
     <Reference Include="System.configuration" />
     <Reference Include="System.Core" />
     <Reference Include="System.Data.Entity" />
     <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Web" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -59,6 +66,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="CartRepository.cs" />
     <Compile Include="CuisineRepository.cs" />
     <Compile Include="CustomerRepository.cs" />
     <Compile Include="FoodItemRepository.cs" />
@@ -82,6 +90,14 @@
     <Compile Include="Migrations\202007150646564_Image.cs" />
     <Compile Include="Migrations\202007150646564_Image.designer.cs">
       <DependentUpon>202007150646564_Image.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202011100505305_AddToCart.cs" />
+    <Compile Include="Migrations\202011100505305_AddToCart.designer.cs">
+      <DependentUpon>202011100505305_AddToCart.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202011100542420_CartEntity.cs" />
+    <Compile Include="Migrations\202011100542420_CartEntity.designer.cs">
+      <DependentUpon>202011100542420_CartEntity.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -112,6 +128,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202007150646564_Image.resx">
       <DependentUpon>202007150646564_Image.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202011100505305_AddToCart.resx">
+      <DependentUpon>202011100505305_AddToCart.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202011100542420_CartEntity.resx">
+      <DependentUpon>202011100542420_CartEntity.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

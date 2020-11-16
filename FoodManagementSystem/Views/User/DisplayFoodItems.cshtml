@@ -15,6 +15,7 @@
             <h3 style="color:#121E55;font-size:100%"><b>@foodItem.FoodName</b></h3>
             <h3 style="color:#121E55;font-size:100%">@foodItem.FoodCategory.CategoryName</h3>
             <h3 style="color:#121E55;font-size:100%">@foodItem.FoodPrice</h3>
+            @Html.ActionLink("Add to cart", "AddToCart", new { @id=foodItem.FoodID,restaurantId=foodItem.RestaurantID,mailId=HttpContext.Current.User.Identity.Name})
             @*<h4 class="btn btn-danger" style="border-radius:20px 20px 20px 20px;padding-left:3%">@Html.ActionLink("Product Detail", "ViewProduct", "Cart", new { id = product.ProductId, @class = "LinkColor" }, null)</h4>*@
         </div>
     }
@@ -24,7 +25,7 @@
     <tr>
         <td>FoodName</td>
         <td>FoodCategory</td>
-        <td>Price</td>
+        <td>Price</td>                                                           
     </tr>
     @foreach (var items in Model)
     {
