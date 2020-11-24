@@ -8,7 +8,7 @@
     @Html.ActionLink("Add restaurant", "AddRestaurant")
 </div>
     <h2>Restaurant Details</h2>
-    <table border="1" class="RestaurantContent">
+    <table border="1" class="RestaurantContent" align="center" cellpadding="20" style="background-color:white">
         <tr>
             <td>
                 RestaurantName
@@ -39,9 +39,9 @@
                     @items.PhoneNumber
                 </td>       
                 <td class="link">
-                    @Html.ActionLink("Edit", "Edit", new { id = items.RestaurantID }, new { @class ="link"})
-                    @Html.ActionLink("Delete", "Delete", new { id = items.RestaurantID }, new { onclick = "return confirm('Are you sure you wish to delete this restaurant along with resturant foods');" , @class = "link"})
-                    @Html.ActionLink("DisplayFood", "DisplayRestaurantFoods", "Food", new { id=items.RestaurantID}, new { @class = "link" })
+                    @Html.ActionLink("Edit", "Edit", new { id = items.RestaurantID }, new { @class = "editDeleteLink" })
+                    @Html.ActionLink("Delete", "Delete", new { id = items.RestaurantID }, new { onclick = "return confirm('Are you sure you wish to delete this restaurant along with resturant foods');" , @class = "editDeleteLink" })
+                    @Html.ActionLink("DisplayFood", "DisplayRestaurantFoods", "Food", new { id=items.RestaurantID}, new { @class = "editDeleteLink" })
                 </td>
             </tr>
         }

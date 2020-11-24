@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 
 namespace FoodManagementSystem.Entity
@@ -23,7 +24,7 @@ namespace FoodManagementSystem.Entity
             get;
             set;
         }
-        [Required]
+        [Required(ErrorMessage = "FoodName required")]
         [MaxLength(20)]
         public string FoodName              //Attributes of Food items
         {
@@ -38,7 +39,8 @@ namespace FoodManagementSystem.Entity
             set;
         }
         public FoodCategory FoodCategory { get; set; }
-        [Required]
+        [Required(ErrorMessage = "FoodPrice required")]
+
         public int FoodPrice
         {
             get;

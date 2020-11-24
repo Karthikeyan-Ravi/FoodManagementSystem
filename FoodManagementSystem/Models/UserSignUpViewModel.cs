@@ -13,6 +13,7 @@ namespace FoodManagementSystem.Models
     {
         [Required(ErrorMessage = "Name required")]
         [Display(Name = "FullName")]
+        [RegularExpression(@"^[A-Za-z]+$", ErrorMessage = "Incoorect format")]
         public string FullName                  //Attributes of UserSignUpViewModel
         {
             get;

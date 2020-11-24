@@ -1,0 +1,58 @@
+﻿@model IEnumerable<FoodManagementSystem.Entity.Cart>
+
+@{
+    ViewBag.Title = "DisplayCartItems";
+}
+
+<h2>DisplayCartItems</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table border="1" cellpadding="20px" class="RestaurantContent" style="background-color:white">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.Customer.FullName)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.FoodItem.FoodName)
+        </th>
+        <th>
+            @Html.DisplayNameFor(Model => Model.FoodItem.FoodPrice)
+        </th>
+        <th></th>
+    </tr>
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Customer.FullName)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.FoodItem.FoodName)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.FoodItem.FoodPrice)
+            </td>
+            <td>
+                @Html.ActionLink("Delete", "DeleteCartItem", new { item.CartId }, new { onclick = "return confirm ('Confirm Delete');", @class = "link" })
+            </td>
+        </tr>
+    }
+</table>
+<table border="1" class="RestaurantContent" style="background-color:white">
+    <tr>
+        <td>
+            Total price 
+        </td>
+        <td>
+            @ViewBag.TotalPrice
+        </td>
+    </tr>
+    <tr>
+        <td>
+            @Html.ActionLink("Proceed to payment","Payment","User")
+        </td>
+    </tr>
+</table>
+

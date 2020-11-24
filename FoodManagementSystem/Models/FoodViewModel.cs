@@ -54,7 +54,6 @@ namespace FoodManagementSystem.Models
             get;
             set;
         }
-        [Required(ErrorMessage ="Food image required")]
         public HttpPostedFileBase ImageUpload { get; set; }
     }
 }

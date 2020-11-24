@@ -100,3 +100,88 @@ Food ---> AddFood ---> 5151j is not a valid value for Decimal. ---> 11/11/2020 3
 Food ---> AddFood ---> 5151j is not a valid value for Decimal. ---> 11/11/2020 3:37:29 PM
 Food ---> AddFood ---> hfhch is not a valid value for Decimal. ---> 11/11/2020 3:45:10 PM
 Food ---> AddFood ---> hfhch is not a valid value for Decimal. ---> 11/11/2020 3:45:17 PM
+User ---> AddToCart ---> An error occurred while updating the entries. See the inner exception for details. ---> 11/16/2020 4:57:19 PM
+User ---> DisplayFoodItems ---> H:\Repos\FoodManagementSystem\FoodManagementSystem\Views\User\DisplayFoodItems.cshtml(34): error CS1002: ; expected ---> 11/18/2020 12:22:31 PM
+User ---> DisplayFoodItems ---> The parameters dictionary contains a null entry for parameter 'id' of non-nullable type 'System.Int32' for method 'System.Web.Mvc.ActionResult DisplayFoodItems(Int32)' in 'FoodManagementSystem.Controllers.UserController'. An optional parameter must be a reference type, a nullable type, or be declared as an optional parameter.
+Parameter name: parameters ---> 11/18/2020 12:24:52 PM
+User ---> DisplayFoodItems ---> The parameters dictionary contains a null entry for parameter 'id' of non-nullable type 'System.Int32' for method 'System.Web.Mvc.ActionResult DisplayFoodItems(Int32)' in 'FoodManagementSystem.Controllers.UserController'. An optional parameter must be a reference type, a nullable type, or be declared as an optional parameter.
+Parameter name: parameters ---> 11/18/2020 2:26:42 PM
+Food ---> UpdateFood ---> The view 'UpdateFood' or its master was not found or no view engine supports the searched locations. The following locations were searched:
+~/Views/Food/UpdateFood.aspx
+~/Views/Food/UpdateFood.ascx
+~/Views/Shared/UpdateFood.aspx
+~/Views/Shared/UpdateFood.ascx
+~/Views/Food/UpdateFood.cshtml
+~/Views/Food/UpdateFood.vbhtml
+~/Views/Shared/UpdateFood.cshtml
+~/Views/Shared/UpdateFood.vbhtml ---> 11/18/2020 2:47:28 PM
+Food ---> UpdateFood ---> The view 'UpdateFood' or its master was not found or no view engine supports the searched locations. The following locations were searched:
+~/Views/Food/UpdateFood.aspx
+~/Views/Food/UpdateFood.ascx
+~/Views/Shared/UpdateFood.aspx
+~/Views/Shared/UpdateFood.ascx
+~/Views/Food/UpdateFood.cshtml
+~/Views/Food/UpdateFood.vbhtml
+~/Views/Shared/UpdateFood.cshtml
+~/Views/Shared/UpdateFood.vbhtml ---> 11/18/2020 2:47:33 PM
+Food ---> EditFood ---> The model item passed into the dictionary is of type 'FoodManagementSystem.Entity.FoodItem', but this dictionary requires a model item of type 'FoodManagementSystem.Models.FoodViewModel'. ---> 11/18/2020 3:07:55 PM
+Food ---> EditFood ---> The model item passed into the dictionary is of type 'FoodManagementSystem.Entity.FoodItem', but this dictionary requires a model item of type 'FoodManagementSystem.Models.FoodViewModel'. ---> 11/18/2020 3:07:59 PM
+Food ---> EditFood ---> The model item passed into the dictionary is of type 'FoodManagementSystem.Entity.FoodItem', but this dictionary requires a model item of type 'FoodManagementSystem.Models.FoodViewModel'. ---> 11/18/2020 3:08:00 PM
+Food ---> EditFood ---> The model item passed into the dictionary is of type 'FoodManagementSystem.Entity.FoodItem', but this dictionary requires a model item of type 'FoodManagementSystem.Models.FoodViewModel'. ---> 11/18/2020 3:08:00 PM
+Food ---> EditFood ---> The model item passed into the dictionary is of type 'FoodManagementSystem.Entity.FoodItem', but this dictionary requires a model item of type 'FoodManagementSystem.Models.FoodViewModel'. ---> 11/18/2020 3:08:01 PM
+Food ---> EditFood ---> The model item passed into the dictionary is of type 'FoodManagementSystem.Entity.FoodItem', but this dictionary requires a model item of type 'FoodManagementSystem.Models.FoodViewModel'. ---> 11/18/2020 3:08:01 PM
+Food ---> EditFood ---> The model item passed into the dictionary is of type 'FoodManagementSystem.Entity.FoodItem', but this dictionary requires a model item of type 'FoodManagementSystem.Models.FoodViewModel'. ---> 11/18/2020 3:08:01 PM
+Food ---> EditFood ---> The model item passed into the dictionary is of type 'FoodManagementSystem.Entity.FoodItem', but this dictionary requires a model item of type 'FoodManagementSystem.Models.FoodViewModel'. ---> 11/18/2020 3:08:14 PM
+Food ---> EditFood ---> The parameters dictionary contains a null entry for parameter 'id' of non-nullable type 'System.Int32' for method 'System.Web.Mvc.ActionResult EditFood(Int32)' in 'FoodManagementSystem.Controllers.FoodController'. An optional parameter must be a reference type, a nullable type, or be declared as an optional parameter.
+Parameter name: parameters ---> 11/18/2020 3:46:35 PM
+Food ---> EditFood ---> The parameters dictionary contains a null entry for parameter 'id' of non-nullable type 'System.Int32' for method 'System.Web.Mvc.ActionResult EditFood(Int32)' in 'FoodManagementSystem.Controllers.FoodController'. An optional parameter must be a reference type, a nullable type, or be declared as an optional parameter.
+Parameter name: parameters ---> 11/18/2020 3:48:29 PM
+Food ---> EditFood ---> The parameters dictionary contains a null entry for parameter 'id' of non-nullable type 'System.Int32' for method 'System.Web.Mvc.ActionResult EditFood(Int32)' in 'FoodManagementSystem.Controllers.FoodController'. An optional parameter must be a reference type, a nullable type, or be declared as an optional parameter.
+Parameter name: parameters ---> 11/18/2020 3:50:43 PM
+Food ---> EditFood ---> The parameters dictionary contains a null entry for parameter 'id' of non-nullable type 'System.Int32' for method 'System.Web.Mvc.ActionResult EditFood(Int32)' in 'FoodManagementSystem.Controllers.FoodController'. An optional parameter must be a reference type, a nullable type, or be declared as an optional parameter.
+Parameter name: parameters ---> 11/18/2020 4:02:18 PM
+Food ---> UpdateFood ---> 25022222222222222222222222222222222222222222222222222222222222222222222222222222222222222 is not a valid value for Decimal. ---> 11/18/2020 4:02:58 PM
+Food ---> UpdateFood ---> 25022222222222222222222222222222222222222222222222222222222222222222222222222222222222222 is not a valid value for Decimal. ---> 11/18/2020 4:03:03 PM
+Food ---> EditFood ---> The parameters dictionary contains a null entry for parameter 'id' of non-nullable type 'System.Int32' for method 'System.Web.Mvc.ActionResult EditFood(Int32)' in 'FoodManagementSystem.Controllers.FoodController'. An optional parameter must be a reference type, a nullable type, or be declared as an optional parameter.
+Parameter name: parameters ---> 11/18/2020 4:13:01 PM
+Food ---> EditFood ---> The parameters dictionary contains a null entry for parameter 'id' of non-nullable type 'System.Int32' for method 'System.Web.Mvc.ActionResult EditFood(Int32)' in 'FoodManagementSystem.Controllers.FoodController'. An optional parameter must be a reference type, a nullable type, or be declared as an optional parameter.
+Parameter name: parameters ---> 11/18/2020 4:22:39 PM
+Food ---> UpdateFood ---> The view 'UpdateFood' or its master was not found or no view engine supports the searched locations. The following locations were searched:
+~/Views/Food/UpdateFood.aspx
+~/Views/Food/UpdateFood.ascx
+~/Views/Shared/UpdateFood.aspx
+~/Views/Shared/UpdateFood.ascx
+~/Views/Food/UpdateFood.cshtml
+~/Views/Food/UpdateFood.vbhtml
+~/Views/Shared/UpdateFood.cshtml
+~/Views/Shared/UpdateFood.vbhtml ---> 11/18/2020 4:24:43 PM
+Food ---> UpdateFood ---> The view 'UpdateFood' or its master was not found or no view engine supports the searched locations. The following locations were searched:
+~/Views/Food/UpdateFood.aspx
+~/Views/Food/UpdateFood.ascx
+~/Views/Shared/UpdateFood.aspx
+~/Views/Shared/UpdateFood.ascx
+~/Views/Food/UpdateFood.cshtml
+~/Views/Food/UpdateFood.vbhtml
+~/Views/Shared/UpdateFood.cshtml
+~/Views/Shared/UpdateFood.vbhtml ---> 11/18/2020 4:24:49 PM
+Food ---> EditFood ---> The parameters dictionary contains a null entry for parameter 'id' of non-nullable type 'System.Int32' for method 'System.Web.Mvc.ActionResult EditFood(Int32)' in 'FoodManagementSystem.Controllers.FoodController'. An optional parameter must be a reference type, a nullable type, or be declared as an optional parameter.
+Parameter name: parameters ---> 11/18/2020 5:12:25 PM
+Food ---> EditFood ---> The parameters dictionary contains a null entry for parameter 'id' of non-nullable type 'System.Int32' for method 'System.Web.Mvc.ActionResult EditFood(Int32)' in 'FoodManagementSystem.Controllers.FoodController'. An optional parameter must be a reference type, a nullable type, or be declared as an optional parameter.
+Parameter name: parameters ---> 11/18/2020 5:26:04 PM
+Food ---> EditFood ---> The parameters dictionary contains a null entry for parameter 'id' of non-nullable type 'System.Int32' for method 'System.Web.Mvc.ActionResult EditFood(Int32)' in 'FoodManagementSystem.Controllers.FoodController'. An optional parameter must be a reference type, a nullable type, or be declared as an optional parameter.
+Parameter name: parameters ---> 11/18/2020 5:45:16 PM
+Food ---> EditFood ---> The parameters dictionary contains a null entry for parameter 'id' of non-nullable type 'System.Int32' for method 'System.Web.Mvc.ActionResult EditFood(Int32)' in 'FoodManagementSystem.Controllers.FoodController'. An optional parameter must be a reference type, a nullable type, or be declared as an optional parameter.
+Parameter name: parameters ---> 11/20/2020 10:44:10 AM
+Food ---> EditFood ---> H:\Repos\FoodManagementSystem\FoodManagementSystem\Views\Food\EditFood.cshtml(17): error CS1513: } expected ---> 11/20/2020 10:44:37 AM
+Food ---> EditFood ---> H:\Repos\FoodManagementSystem\FoodManagementSystem\Views\Food\EditFood.cshtml(17): error CS1513: } expected ---> 11/20/2020 10:45:39 AM
+Food ---> EditFood ---> H:\Repos\FoodManagementSystem\FoodManagementSystem\Views\Food\EditFood.cshtml(17): error CS1513: } expected ---> 11/20/2020 10:45:44 AM
+Food ---> EditFood ---> H:\Repos\FoodManagementSystem\FoodManagementSystem\Views\Food\EditFood.cshtml(17): error CS1513: } expected ---> 11/20/2020 10:45:49 AM
+Food ---> EditFood ---> H:\Repos\FoodManagementSystem\FoodManagementSystem\Views\Food\EditFood.cshtml(17): error CS1513: } expected ---> 11/20/2020 12:13:34 PM
+Food ---> EditFood ---> The parameters dictionary contains a null entry for parameter 'id' of non-nullable type 'System.Int32' for method 'System.Web.Mvc.ActionResult EditFood(Int32)' in 'FoodManagementSystem.Controllers.FoodController'. An optional parameter must be a reference type, a nullable type, or be declared as an optional parameter.
+Parameter name: parameters ---> 11/20/2020 12:15:41 PM
+Food ---> EditFood ---> The parameters dictionary contains a null entry for parameter 'id' of non-nullable type 'System.Int32' for method 'System.Web.Mvc.ActionResult EditFood(Int32)' in 'FoodManagementSystem.Controllers.FoodController'. An optional parameter must be a reference type, a nullable type, or be declared as an optional parameter.
+Parameter name: parameters ---> 11/20/2020 12:16:14 PM
+Food ---> EditFood ---> The parameters dictionary contains a null entry for parameter 'id' of non-nullable type 'System.Int32' for method 'System.Web.Mvc.ActionResult EditFood(Int32)' in 'FoodManagementSystem.Controllers.FoodController'. An optional parameter must be a reference type, a nullable type, or be declared as an optional parameter.
+Parameter name: parameters ---> 11/20/2020 12:18:12 PM
+Food ---> EditFood ---> The parameters dictionary contains a null entry for parameter 'id' of non-nullable type 'System.Int32' for method 'System.Web.Mvc.ActionResult EditFood(Int32)' in 'FoodManagementSystem.Controllers.FoodController'. An optional parameter must be a reference type, a nullable type, or be declared as an optional parameter.
+Parameter name: parameters ---> 11/20/2020 12:19:55 PM

@@ -29,9 +29,11 @@
             @Html.ActionLink("Add Restaurant", "AddRestaurant", "Restaurant")
             @Html.ActionLink("Add Food", "AddFood", "Food")
         }
-        @if(HttpContext.Current.User.IsInRole("User"))
+        @if (HttpContext.Current.User.IsInRole("User"))
         {
-            @Html.ActionLink("Restaurants", "DisplayRestaurant","User")
+            <span> @Html.ActionLink("Restaurants", "DisplayRestaurant", "User")</span>
+            @Html.ActionLink("View Cart", "DisplayCartItems", "User")
+
         }
     </div>
     @RenderBody()

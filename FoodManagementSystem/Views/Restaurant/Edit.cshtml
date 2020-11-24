@@ -9,26 +9,33 @@
 {
     @Html.AntiForgeryToken()
     @Html.HiddenFor(Model => Model.RestaurantID)
-    <table class="RestaurantContent">
+    <table class="RestaurantContent" border="1" align="center" cellpadding="10" style="background-color:white">
         <tr>
             <td>RestaurantName</td>
-            <td>@Html.EditorFor(Model => Model.RestaurantName,new { maxlength=25})</td>
+            <td>@Html.EditorFor(Model => Model.RestaurantName, new { maxlength = 25 })</td>
         </tr>
         <tr>
             <td>Cuisine</td>
-            <td>@Html.DropDownListFor(Model => Model.CuisineID, ViewBag.CuisineDetails as SelectList,"Select Cuisine" )</td>
+            <td>@Html.DropDownListFor(Model => Model.CuisineID, ViewBag.CuisineDetails as SelectList, "Select Cuisine")</td>
         </tr>
         <tr>
             <td>Location</td>
-            <td>@Html.EditorFor(Model => Model.Location,new { maxlength = 20 })</td> 
+            <td>@Html.EditorFor(Model => Model.Location, new { maxlength = 20 })</td>
         </tr>
         <tr>
             <td>PhoneNumber</td>
-            <td>@Html.EditorFor(Model=>Model.PhoneNumber, new { maxlength = 10 })</td>
+            <td>@Html.EditorFor(Model => Model.PhoneNumber, new { maxlength = 10 })</td>
         </tr>
+        <tr style="background-color:black">
+            <td colspan="2" align="center" >@Html.ActionLink("Cancel", "Index", new { @style = "text-align:center" })
+            <input class="BtnStyle" type="submit" value="Submit" /></td>
+        </tr>
+        
     </table>
-    @Html.ActionLink("Cancel", "Index")
-    <input class="BtnStyle" type="submit" value="Submit" />
+    
+
+
+
 }
 
 

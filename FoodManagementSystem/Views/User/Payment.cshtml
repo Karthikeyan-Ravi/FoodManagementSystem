@@ -1,0 +1,57 @@
+﻿@model FoodManagementSystem.Models.Payment
+@{
+    ViewBag.Title = "Payment";
+}
+@if (ViewBag.Message != null)
+{
+    Response.Write(ViewBag.Message);
+}
+else
+{
+    <h2>Payment</h2>
+    using (Html.BeginForm("Payment", "User", FormMethod.Post))
+    {
+        <table>
+            <tr>
+                <td>
+                    @Html.LabelFor(Model => Model.AccountNo)
+                </td>
+                <td>
+                    @Html.TextBoxFor(Model => Model.AccountNo)
+                    @Html.ValidationMessageFor(Model=>Model.AccountNo)
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    @Html.LabelFor(Model => Model.NameOnTheCard)
+                </td>
+                <td>
+                    @Html.TextBoxFor(Model => Model.NameOnTheCard)
+                    @Html.ValidationMessageFor(Model => Model.NameOnTheCard)
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    @Html.DropDownList("ExpiryMonth", Enumerable.Range(1, 12).Select(x => new SelectListItem { Text = x.ToString() }), "Expiry Month")
+                </td>
+                <td>
+                    @Html.DropDownList("Year", Enumerable.Range(DateTime.Now.Year, 10).Select(x => new SelectListItem { Text = x.ToString() }), "Year")
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    @Html.LabelFor(Model => Model.CVV)
+                </td>
+                <td>
+                    @Html.TextBoxFor(Model => Model.CVV)
+                    @Html.ValidationMessageFor(Model => Model.CVV)
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <input type="submit" id="payment" value="Confirm payment" />
+                </td>
+            </tr>
+        </table>
+    }
+}

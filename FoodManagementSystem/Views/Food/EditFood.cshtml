@@ -1,4 +1,4 @@
-﻿@model FoodManagementSystem.Entity.FoodItem
+﻿@model FoodManagementSystem.Models.FoodViewModel
 
 @{
     ViewBag.Title = "EditFood";
@@ -8,28 +8,47 @@
 @using (Html.BeginForm("UpdateFood", "Food", FormMethod.Post, new { enctype = "multipart/form-data" }))
 {
     @Html.AntiForgeryToken()
-    @Html.HiddenFor(Model=>Model.RestaurantID )
-    @Html.HiddenFor(Model=>Model.FoodID)
-    <table>
+    @Html.HiddenFor(Model => Model.RestaurantID)
+    @Html.HiddenFor(Model => Model.FoodID)
+    <table border="1" cellpadding="20px" align="center" style="background-color:white">
         <tr>
             <td>@Html.LabelFor(Model => Model.FoodName)</td>
-            <td>@Html.EditorFor(Model => Model.FoodName,new { maxlenghth=25})</td>
+            <td>
+                @Html.EditorFor(Model => Model.FoodName,new { htmlAttributes = new { @maxlength = "20" } })
+                @Html.ValidationMessageFor(Model => Model.FoodName)
+            </td>
         </tr>
         <tr>
             <td>FoodCategory</td>
-            <td>@Html.DropDownListFor(Model => Model.FoodCategoryID, ViewBag.FoodCategory as SelectList, "Select category")</td>
+            <td>
+                @Html.DropDownListFor(Model => Model.FoodCategoryID, ViewBag.FoodCategory as SelectList, "Select category")
+                @Html.ValidationMessageFor(Model => Model.FoodCategoryID)
+            </td>
         </tr>
         <tr>
             <td>Price</td>
-            <td>@Html.EditorFor(Model => Model.FoodPrice, new { @maxlength = 5 })</td>
+            <td>
+                @Html.EditorFor(Model => Model.FoodPrice, new { htmlAttributes = new { @maxlength = "4", @type = "number" } })
+                @Html.ValidationMessageFor(Model=>Model.FoodPrice)
+            </td>
         </tr>
         <tr>
             <td>Image</td>
-            <td><img style="min-height:200px;width:100%" src="~/FoodImages/@Html.DisplayFor(Model=>Model.FoodImagePath)" />
-            <input type="file" id="foodViewModel" name="ImageUpload" /> </td>
-
+            <td>
+                <img style="min-height:200px;width:100%" src="~/FoodImages/@Html.DisplayFor(Model=>Model.FoodImagePath)" />
+                <input type="file" id="foodViewModel" name="ImageUpload" accept="image/png,image/jpg,image/jpeg" />
+            </td>
+            @if (ViewBag.ErrorMessage != null)
+            {
+                Response.Write(ViewBag.ErrorMessage);
+            }
+        </tr>
+        <tr>
+            <td colspan="2" align="center" style="background-color:black">
+                @Html.ActionLink("Cancel", "DisplayRestaurantFoods")
+                <input type="submit" value="Submit" />
+            </td>
         </tr>
     </table>
-    @Html.ActionLink("Cancel", "DisplayRestaurantFoods")
-    <input type="submit" value="Submit" />
+   
 }

@@ -5,30 +5,33 @@
 }
 
 <h2>FoodItems</h2>
-<div class="rows" style="margin-bottom:100px">
+@*<div class="rows" style="margin-bottom:100px">
 
-    @foreach (FoodManagementSystem.Entity.FoodItem foodItem in Model)
-   {
-                foodItem.FoodImagePath = Path.Combine("~/FoodImages/", foodItem.FoodImagePath);
-        <div style="height:200px;margin-top:100px;background-color:rgba(255,255,255,0.6);padding-top:2%;margin-right:80%;padding-bottom:18%">
-            <img style="min-height:120px;width:100%" src="@Url.Content(foodItem.FoodImagePath)" />
-            <h3 style="color:#121E55;font-size:100%"><b>@foodItem.FoodName</b></h3>
-            <h3 style="color:#121E55;font-size:100%">@foodItem.FoodCategory.CategoryName</h3>
-            <h3 style="color:#121E55;font-size:100%">@foodItem.FoodPrice</h3>
-            @Html.ActionLink("Add to cart", "AddToCart", new { @id=foodItem.FoodID,restaurantId=foodItem.RestaurantID,mailId=HttpContext.Current.User.Identity.Name})
-            @*<h4 class="btn btn-danger" style="border-radius:20px 20px 20px 20px;padding-left:3%">@Html.ActionLink("Product Detail", "ViewProduct", "Cart", new { id = product.ProductId, @class = "LinkColor" }, null)</h4>*@
-        </div>
-    }
+        @foreach (FoodManagementSystem.Entity.FoodItem foodItem in Model)
+       {
+                    foodItem.FoodImagePath = Path.Combine("~/FoodImages/", foodItem.FoodImagePath);
+            <div style="height:200px;margin-top:100px;background-color:rgba(255,255,255,0.6);padding-top:2%;margin-right:80%;padding-bottom:18%">
+                <img style="min-height:120px;width:100%" src="@Url.Content(foodItem.FoodImagePath)" />
+                <h3 style="color:#121E55;font-size:100%"><b>@foodItem.FoodName</b></h3>
+                <h3 style="color:#121E55;font-size:100%">@foodItem.FoodCategory.CategoryName</h3>
+                <h3 style="color:#121E55;font-size:100%">@foodItem.FoodPrice</h3>
+                @Html.ActionLink("Add to cart", "AddToCart", new { @id=foodItem.FoodID,restaurantId=foodItem.RestaurantID,mailId=HttpContext.Current.User.Identity.Name})
+                <!--@*<h4 class="btn btn-danger" style="border-radius:20px 20px 20px 20px;padding-left:3%">@Html.ActionLink("Product Detail", "ViewProduct", "Cart", new { id = product.ProductId, @class = "LinkColor" }, null)</h4>
+            </div>
+        }
 
-</div>
-@*/*<table>
+    </div>*@
+<table border="1" align="left" cellpadding="20px" style="background-color:gray">
     <tr>
-        <td>FoodName</td>
-        <td>FoodCategory</td>
-        <td>Price</td>                                                           
+        <td>Name</td>
+        <td>Category</td>
+        <td>Price</td>
+        <td>Image</td>
+        <td></td>
     </tr>
     @foreach (var items in Model)
     {
+        items.FoodImagePath = Path.Combine("~/FoodImages/", items.FoodImagePath); 
         <tr>
             <td>
                 @items.FoodName
@@ -38,7 +41,12 @@
             </td>
             <td>
                 @items.FoodPrice
+            <td>
+                <img style="min-height:120px;width:100%" src="@Url.Content(items.FoodImagePath)" />
+            </td>
+            <td>
+                @Html.ActionLink("Add to cart", "AddToCart", new { @id = @items.FoodID, restaurantId = @items.RestaurantID, mailId = HttpContext.Current.User.Identity.Name })
             </td>
         </tr>
     }
-</table>*/*@
+</table>

@@ -20,7 +20,7 @@
                 @Html.LabelFor(Model => Model.FoodName)
             </td>
             <td>
-                @Html.TextBoxFor(Model => Model.FoodName, new { @maxlength = 25 })
+                @Html.TextBoxFor(Model => Model.FoodName, new { @maxlength = 25 , @type = "number" })
                 @Html.ValidationMessageFor(Model => Model.FoodName)
             </td>
         </tr>
@@ -38,7 +38,7 @@
                 @Html.LabelFor(Model => Model.FoodPrice)
             </td>
             <td>
-                @Html.TextBoxFor(Model => Model.FoodPrice, new { @maxlength = 5 })
+                @Html.TextBoxFor(Model => Model.FoodPrice, new {@type="number", @maxlength = "4" })
                 @Html.ValidationMessageFor(Model => Model.FoodPrice)
             </td>
         </tr>

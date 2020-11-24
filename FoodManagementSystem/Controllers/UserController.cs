@@ -39,6 +39,38 @@ namespace FoodManagementSystem.Controllers
             customerBL.AddToCart(cart);
             return RedirectToAction("DisplayFoodItems", new {id=restaurantId});
         }
+        public ActionResult DisplayCartItems()
+        {
+            Customer customer = customerBL.GetCustomerByMailId(this.HttpContext.User.Identity.Name);
+            IEnumerable<Cart> carts = customerBL.GetCartItems(customer.UserID);
+            int totalPrice=0;
+            foreach(var items in carts)
+            {
+                totalPrice = totalPrice + items.FoodItem.FoodPrice;
+            }
+            ViewBag.TotalPrice = totalPrice;
+            return View(carts);
+        }
+        public ActionResult DeleteCartItem(int cartId)
+        {
+            customerBL.DeleteCartItem(cartId);
+            return RedirectToAction("DisplayCartItems");
+        }
+        [HttpGet]
+        public ActionResult Payment()
+        {
+            return View();
+        }
+        [HttpPost]
+        public ActionResult Payment(Payment payment)
+        {
+            if(ModelState.IsValid)
+            {
+                ViewBag.Message = "Payment Successful";
+                
+            }
+            return View();
+        }
         ////creating an Reference of interface
         //ICustomerBL customerBL;
         //public UserController()

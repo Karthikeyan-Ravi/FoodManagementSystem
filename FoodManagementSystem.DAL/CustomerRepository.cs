@@ -17,6 +17,8 @@ namespace FoodManagementSystem.DAL
         List<Customer> GetCustomerDetails();
         Customer GetCustomerByMailId(string mailId);
         void AddToCart(Cart cart);
+        IEnumerable<Cart> GetCartItems(int id);
+        void DeleteCartItem(int cartId);
     }
     public class CustomerRepository: ICustomerRepository     //Implementing the interfce
     {
@@ -74,6 +76,23 @@ namespace FoodManagementSystem.DAL
             {
                 foodManagementDBContext.Carts.Add(cart);
                 foodManagementDBContext.SaveChanges();
+            }
+        }
+        public IEnumerable<Cart> GetCartItems(int id)
+        {
+            using(FoodManagementSystemDBContext foodManagementSystemDBContext=new FoodManagementSystemDBContext())
+            {
+                return foodManagementSystemDBContext.Carts.Include("FoodItem").Include("Customer").Where(u => u.UserId == id).ToList();
+            }
+        }
+       public void DeleteCartItem(int cartId)
+        {
+            using (FoodManagementSystemDBContext foodManagementSystemDBContext = new FoodManagementSystemDBContext())
+            {
+
+                Cart cart = foodManagementSystemDBContext.Carts.Find(cartId);
+                foodManagementSystemDBContext.Carts.Remove(cart);
+                foodManagementSystemDBContext.SaveChanges();
             }
         }
     }

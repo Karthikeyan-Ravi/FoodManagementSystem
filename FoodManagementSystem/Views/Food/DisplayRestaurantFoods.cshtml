@@ -9,11 +9,12 @@
 {
     TempData.Keep("RestaurantID");
 }
-<table border="1" class="DisplayFoodContent">
+<table border="1" class="DisplayFoodContent" align="center" cellpadding="20" style="background-color:white";>
     <tr>
         <td>FoodName</td>
         <td>FoodCategory</td>
         <td>Price</td>
+        <td>Image</td>
     </tr>
     @foreach (var items in ViewBag.restaurantFoods)
     {
@@ -32,8 +33,8 @@
                 <img style="min-height:200px;width:100%"src="@Url.Content(items.FoodImagePath)" />
             </td>
             <td>
-                @Html.ActionLink("Edit", "EditFood", new { id = items.FoodID })
-                @Html.ActionLink("Delete", "DeleteFood", new { id = items.FoodID, restaurantId = items.RestaurantID }, new { onclick = "return confirm('Are you sure you wish to delete this Food');" })
+                @Html.ActionLink("Edit", "EditFood", new { id = items.FoodID},new { @class = "editDeleteLink" })
+                @Html.ActionLink("Delete", "DeleteFood", new { id = items.FoodID, restaurantId = items.RestaurantID }, new { @class = "editDeleteLink" , onclick = "return confirm('Are you sure you wish to delete this Food');" })
             </td>
         </tr>
     }

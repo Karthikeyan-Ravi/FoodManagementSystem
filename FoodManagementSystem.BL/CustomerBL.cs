@@ -1,5 +1,7 @@
 ﻿using FoodManagementSystem.DAL;
 using FoodManagementSystem.Entity;
+using System.Collections;
+using System.Collections.Generic;
 
 namespace FoodManagementSystem.BL
 {
@@ -13,6 +15,8 @@ namespace FoodManagementSystem.BL
         Customer GetLogInDetails(Customer customerFields);
         Customer GetCustomerByMailId(string mailId);
         void AddToCart(Cart cart);
+        IEnumerable<Cart> GetCartItems(int id);
+        void DeleteCartItem(int cartId);
     }
     public class CustomerBL: ICustomerBL          //Implementing the interfce
     {
@@ -39,6 +43,13 @@ namespace FoodManagementSystem.BL
         {
             customerRepository.AddToCart(cart);
         }
+        public IEnumerable<Cart> GetCartItems(int id)
+        {
+            return customerRepository.GetCartItems(id);
+        }
+        public void DeleteCartItem(int cartId)
+        {
+            customerRepository.DeleteCartItem(cartId);
+        }
     }
 }
-
